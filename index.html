@@ -1,0 +1,1672 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Majú · Manual de marca</title>
+<meta name="description" content="Manual de identidad de Majú Agencia: logo, color, tipografía, voz, fotografía, aplicaciones, presentaciones y guía web.">
+<meta name="theme-color" content="#15171C">
+<meta property="og:title" content="Majú · Manual de marca">
+<meta property="og:description" content="Pasión que rinde cuentas. El sistema de marca de Majú Agencia.">
+<meta property="og:image" content="assets/img/slide-cover.webp">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+<script>
+/* Versión web: hace que las descargas funcionen en cualquier navegador
+   (en claude.ai el manual usaba el sistema de descargas de Claude). */
+(function(){
+  if(window.claude&&window.claude.use) return;
+  function save(o){
+    return new Promise(function(res){
+      var b=o.data instanceof Blob?o.data:new Blob([o.data]);
+      var u=URL.createObjectURL(b), a=document.createElement('a');
+      a.href=u; a.download=o.filename; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){URL.revokeObjectURL(u)},4000); res();
+    });
+  }
+  window.claude={use:function(n){ return Promise.resolve(n==='downloads'?{save:save}:null); }};
+})();
+</script>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: consola de marca. Barra superior fija con buscador, índice lateral con progreso, capítulos en scroll.
+   Fondo grafito profundo para la interfaz; el amarillo entra como bloques completos (color, cierre) y como la M viva. */
+:root{
+  color-scheme:dark;
+  --bg:#15171C;          /* grafito profundo: pantalla */
+  --s1:#1B1D23;          /* superficie */
+  --s2:#22252C;          /* superficie elevada */
+  --grafito:#2A2D35;     /* negro de marca */
+  --line:rgba(255,255,255,.08);
+  --line2:rgba(255,255,255,.14);
+  --tx:#F3F1EC;
+  --tx2:#A7A6A2;
+  --tx3:#7A7A79;
+  --y:#F5C400;           /* Amarillo Cerati */
+  --y2:#FFD43A;
+  --ink:#1A1600;         /* texto sobre amarillo */
+  --ink2:#4A3E00;
+  --v:#43A955;           /* Verde Sistema (solo UI) */
+  --err:#F0705A;
+  --d:"Geist","Helvetica Neue",Arial,sans-serif;
+  --b:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --m:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --ease-io:cubic-bezier(.77,0,.175,1);
+  --r:16px;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 var(--b);-webkit-font-smoothing:antialiased;padding-inline:0;padding-block:0;caret-color:var(--y)}
+::selection{background:var(--y);color:var(--ink)}
+*{scrollbar-width:thin;scrollbar-color:#3A3D46 transparent}
+h1,h2,h3,h4{font-family:var(--d);font-weight:500;letter-spacing:-.04em;margin:0;text-wrap:balance;color:var(--tx)}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--y);outline-offset:3px;border-radius:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mono{font-family:var(--m);font-size:12px;letter-spacing:.04em;color:var(--tx3);font-variant-numeric:tabular-nums}
+.ico{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.gut{padding-inline:clamp(16px,4vw,56px)}
+
+/* ───────── Barra superior ───────── */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;height:64px;display:flex;align-items:center;gap:20px;background:rgba(21,23,28,.78);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.top .brand svg{height:26px;width:auto;color:var(--y)}
+.top .brand span{color:var(--tx3)}
+.top .sp{flex:1}
+.kbtn{display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 10px 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--s1);color:var(--tx2);font-size:14px;min-width:0;transition:border-color 160ms ease,transform 160ms var(--ease)}
+.kbtn:active{transform:scale(.97)}
+.kbtn kbd{font-family:var(--m);font-size:11px;padding:2px 6px;border-radius:6px;background:var(--s2);color:var(--tx2)}
+.status{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--v);box-shadow:0 0 0 4px rgba(67,169,85,.16)}
+.prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
+.prog i{display:block;height:100%;width:100%;background:var(--y);transform-origin:0 50%;transform:scaleX(0)}
+@media (hover:hover) and (pointer:fine){.kbtn:hover{border-color:var(--line2);color:var(--tx)}}
+@media (max-width:720px){.status,.top .brand span{display:none}.kbtn .lbl{display:none}}
+
+/* ───────── Estructura ───────── */
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);gap:0;max-width:1440px;margin:0 auto}
+.index{position:sticky;top:64px;align-self:start;height:calc(100vh - 64px);padding:28px 20px 28px clamp(16px,2.4vw,32px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px;overflow:auto}
+.index .mono{padding:0 10px 10px}
+.ix{display:grid;grid-template-columns:28px 1fr 14px;align-items:center;gap:6px;padding:8px 10px;border-radius:10px;text-decoration:none;font-size:14px;color:var(--tx2);transition:background-color 160ms ease,color 160ms ease}
+.ix .n{font-family:var(--m);font-size:11px;color:var(--tx3)}
+.ix .ok{width:14px;height:14px;color:var(--v);opacity:0;transition:opacity 200ms ease}
+.ix.seen .ok{opacity:1}
+.ix[aria-current="true"]{background:var(--s2);color:var(--tx)}
+.ix[aria-current="true"] .n{color:var(--y)}
+@media (hover:hover) and (pointer:fine){.ix:hover{color:var(--tx)}}
+.index .meter{margin-top:auto;padding:14px 10px 0;display:flex;flex-direction:column;gap:8px}
+.bar{height:4px;border-radius:99px;background:var(--s2);overflow:hidden}
+.bar i{display:block;height:100%;width:100%;background:var(--v);transform-origin:0 50%;transform:scaleX(0);transition:transform 500ms var(--ease)}
+main{min-width:0}
+@media (max-width:1000px){.shell{grid-template-columns:minmax(0,1fr)}.index{display:none}}
+
+/* ───────── Capítulos ───────── */
+.ch{padding-block:clamp(72px,9vw,128px);border-bottom:1px solid var(--line);position:relative}
+.ch-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px 56px;align-items:end;margin-bottom:clamp(36px,4vw,56px)}
+.ch-head .num{font-family:var(--m);font-size:13px;color:var(--y);display:block;margin-bottom:18px}
+.ch-head h2{font-size:clamp(40px,5.6vw,80px);line-height:.98}
+.ch-head p{color:var(--tx2);max-width:46ch;font-size:17px}
+@media (max-width:860px){.ch-head{grid-template-columns:minmax(0,1fr)}}
+.lead-y{color:var(--y)}
+
+/* superficies */
+.card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:0 16px;border-radius:10px;font-weight:500;font-size:14px;white-space:nowrap;transition:transform 160ms var(--ease),background-color 160ms ease,border-color 160ms ease,color 160ms ease}
+.btn:active{transform:scale(.97)}
+a.btn{text-decoration:none}
+.btn-y{background:var(--y);color:var(--ink)}
+.btn-o{border:1px solid var(--line2);color:var(--tx)}
+.btn-k{background:var(--grafito);color:var(--y)}
+.btn.done{background:var(--v);color:#fff;border-color:var(--v)}
+@media (hover:hover) and (pointer:fine){.btn-y:hover{background:var(--y2)}.btn-o:hover{border-color:rgba(255,255,255,.3)}}
+
+/* control segmentado con indicador deslizante */
+.seg{position:relative;display:inline-flex;padding:4px;border-radius:12px;background:var(--s1);border:1px solid var(--line);max-width:100%;overflow-x:auto}
+.seg button{position:relative;z-index:1;height:34px;padding:0 14px;border-radius:8px;font-size:13px;color:var(--tx2);white-space:nowrap;transition:color 200ms ease}
+.seg button[aria-pressed="true"]{color:var(--ink)}
+.seg .pill{position:absolute;z-index:0;top:4px;left:0;height:34px;border-radius:8px;background:var(--y);transition:transform 260ms var(--ease),width 260ms var(--ease)}
+
+.chip{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:99px;font-size:13px;line-height:1.2;border:1px solid var(--line2);color:var(--tx2)}
+.chip.ok{border-color:rgba(67,169,85,.4);background:rgba(67,169,85,.1);color:#7CD38B}
+.chip.no{border-color:rgba(240,112,90,.4);background:rgba(240,112,90,.1);color:var(--err)}
+.chip.y{border-color:rgba(245,196,0,.4);background:rgba(245,196,0,.1);color:var(--y)}
+
+/* ───────── Portada ───────── */
+.hero{position:relative;overflow:hidden;min-height:min(820px,calc(100vh - 64px));display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px;padding-block:56px 72px;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:96px 96px;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 70% 50%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 70% 70% at 70% 50%,#000 20%,transparent 75%);opacity:.6}
+.hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:28px}
+.pill-lg{display:inline-flex;align-items:center;gap:12px;padding:5px 16px 5px 5px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:14px;color:#D9D6D0}
+.pill-lg b{font-family:var(--m);font-weight:500;font-size:12px;padding:4px 10px;border-radius:99px;background:rgba(245,196,0,.14);color:var(--y)}
+.hero h1{font-size:clamp(56px,8.4vw,128px);line-height:.92;letter-spacing:-.045em}
+.hero h1 .y{color:var(--y)}
+.cur{display:inline-block;width:.08em;height:.78em;background:var(--y);margin-left:.06em;vertical-align:-.02em;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero .sub{font-size:clamp(17px,1.3vw,20px);color:var(--tx2);max-width:36ch}
+.hero .sub b{color:var(--tx);font-weight:500}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-ctas .btn{min-height:52px;padding:0 22px;font-size:15px;border-radius:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.facts span{font-family:var(--m);font-size:12px;color:var(--tx2);padding:7px 11px;border:1px solid var(--line);border-radius:8px;background:rgba(21,23,28,.6)}
+.facts span:first-child{color:var(--y);border-color:rgba(245,196,0,.35)}
+.hero-vis{position:relative;z-index:1;align-self:stretch;min-height:520px}
+.hero-vis .coords{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;gap:12px}
+.hero-vis .hint{position:absolute;left:0;bottom:0;color:var(--y);transition:opacity 300ms ease}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);min-height:0}.hero-vis{min-height:380px}}
+
+.intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;padding-block:28px}
+.intro .card{padding:24px;display:flex;flex-direction:column;gap:10px}
+.intro h3{font-size:22px}
+.intro p{color:var(--tx2);font-size:15px}
+.intro .trait{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+
+/* ───────── Logo ───────── */
+.stage{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);transition:background-color 360ms var(--ease)}
+.stage-in{min-height:clamp(320px,38vw,520px);display:grid;place-items:center;padding:clamp(32px,6vw,80px)}
+.stage svg.wm{width:min(100%,640px);height:auto;transition:color 360ms var(--ease),transform 360ms var(--ease)}
+.stage .meta{position:absolute;left:20px;right:20px;top:16px;display:flex;justify-content:space-between;gap:12px;pointer-events:none}
+.stage .cs{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 240ms ease}
+.stage.show-cs .cs{opacity:1}
+.stage-bar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--s1);border-top:1px solid var(--line)}
+.stage-bar .verdict{display:flex;align-items:center;gap:10px;min-width:0;font-size:14px;color:var(--tx2)}
+.bg-graf{background:var(--grafito)} .bg-y{background:var(--y)} .bg-w{background:#fff} .bg-k{background:#0C0C0C}
+.var{display:flex;flex-direction:column;overflow:hidden}
+.var .pv{aspect-ratio:4/3;display:grid;place-items:center;padding:28px;max-width:100%}
+.var .pv svg{width:100%;max-height:100%}
+.var .cap{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;border-top:1px solid var(--line)}
+.var .cap b{font-family:var(--d);font-weight:500;font-size:16px;letter-spacing:-.02em}
+.anat{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;margin-top:16px}
+@media (max-width:860px){.anat{grid-template-columns:minmax(0,1fr)}}
+.anat .card{padding:24px}
+.anat-svg{width:100%;height:auto;display:block}
+.parts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.parts li{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:15px;color:var(--tx2)}
+.parts li:first-child{border-top:0}
+.parts li b{color:var(--tx);font-weight:500}
+.parts .k{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-family:var(--m);font-size:12px;background:rgba(245,196,0,.12);color:var(--y)}
+
+/* ───────── Movimiento ───────── */
+.motion{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+@media (max-width:900px){.motion{grid-template-columns:minmax(0,1fr)}}
+.clip{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:#000}
+.clip img{display:block;width:100%;height:auto}
+.clip .tag{position:absolute;left:14px;top:12px;display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:99px;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-family:var(--m);font-size:11px;color:var(--tx2)}
+.clip .tag i{width:6px;height:6px;border-radius:50%;background:var(--err);animation:rec 1.2s steps(1) infinite}
+@keyframes rec{50%{opacity:.25}}
+.clip-cap{display:flex;justify-content:space-between;gap:12px;padding:12px 2px 0;font-size:14px;color:var(--tx2)}
+.clip-cap b{color:var(--tx);font-weight:500}
+.mstack{display:flex;flex-direction:column;gap:16px}
+.mrules{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+.mrule{padding:18px;display:flex;flex-direction:column;gap:10px}
+.mrule svg.ico{width:20px;height:20px;color:var(--y)}
+.mrule b{font-family:var(--d);font-weight:500;font-size:17px;letter-spacing:-.02em}
+.mrule p{font-size:14px;color:var(--tx2)}
+
+/* ───────── Espacio y tamaño ───────── */
+.lab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:900px){.lab{grid-template-columns:minmax(0,1fr)}}
+.lab .card{padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.lab .head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.lab h3{font-size:20px;letter-spacing:-.025em}
+.cs-box{position:relative;display:grid;place-items:center;min-height:300px;border-radius:12px;background:var(--grafito);overflow:hidden}
+.cs-wrap{position:relative;width:min(78%,420px)}
+.cs-wrap svg{display:block;width:100%;height:auto;color:var(--y);position:relative;z-index:1}
+.cs-zone{position:absolute;inset:calc(var(--x) * -1);border:1px dashed rgba(245,196,0,.7);border-radius:4px;background:repeating-linear-gradient(45deg,rgba(245,196,0,.10) 0 6px,transparent 6px 12px);clip-path:inset(0 round 4px);transition:opacity 240ms ease,transform 300ms var(--ease)}
+.cs-off .cs-zone{opacity:0;transform:scale(.98)}
+.cs-x{position:absolute;font-family:var(--m);font-size:11px;color:var(--y)}
+.cs-off .cs-x{opacity:0}
+.cs-wrap{--x:clamp(14px,4.2vw,36px)}
+.range{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+input[type=range]{flex:1 1 200px;accent-color:var(--y);height:28px}
+.size-view{display:grid;place-items:center;min-height:300px;border-radius:12px;background:#0F1014;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:16px 16px;overflow:hidden;padding:16px}
+.size-view svg{color:var(--y);height:auto;transition:width 120ms linear}
+.verd{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--tx2)}
+.tbl{overflow-x:auto;margin-top:16px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);font-size:14px;vertical-align:top}
+th{font-family:var(--m);font-weight:400;font-size:12px;color:var(--tx3)}
+td b{font-weight:500}
+
+/* ───────── Usos / práctica ───────── */
+.quiz{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);overflow:hidden}
+@media (max-width:860px){.quiz{grid-template-columns:minmax(0,1fr)}}
+.q-view{position:relative;min-height:340px;display:grid;place-items:center;padding:40px;transition:background-color 300ms var(--ease)}
+.q-view svg{width:min(100%,420px);height:auto}
+.q-view .q-mark{position:absolute;right:16px;top:14px}
+.q-side{padding:28px;display:flex;flex-direction:column;gap:18px;border-left:1px solid var(--line)}
+@media (max-width:860px){.q-side{border-left:0;border-top:1px solid var(--line)}}
+.q-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.q-dots{display:flex;gap:5px}
+.q-dots i{width:18px;height:4px;border-radius:99px;background:var(--s2);transition:background-color 200ms ease}
+.q-dots i.on{background:var(--tx2)} .q-dots i.r{background:var(--v)} .q-dots i.w{background:var(--err)}
+.q-q{font-family:var(--d);font-size:26px;line-height:1.15;letter-spacing:-.03em}
+.q-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.q-actions .btn{min-height:52px;font-size:15px}
+.q-fb{min-height:96px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.q-fb p{color:var(--tx2);font-size:15px}
+.q-anim{animation:fbin 260ms var(--ease)}
+@keyframes fbin{from{opacity:0;transform:translateY(6px);filter:blur(2px)}}
+.rules{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0 32px}
+.rules li{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:15px;color:var(--tx2)}
+.rules li b{color:var(--tx);font-weight:500}
+.rules svg{width:18px;height:18px;margin-top:3px}
+.rules .no svg{color:var(--err)} .rules .si svg{color:var(--v)}
+
+/* ───────── Color (bloque amarillo) ───────── */
+.ch.yellow{background:var(--y);color:var(--ink);border-bottom:0}
+.ch.yellow h2,.ch.yellow h3{color:var(--ink)}
+.ch.yellow .ch-head .num{color:var(--ink2)}
+.ch.yellow .ch-head p{color:var(--ink2)}
+.sws{display:grid;grid-template-columns:1.6fr 1.2fr 1fr .8fr;gap:12px}
+@media (max-width:1100px){.sws{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.sws{grid-template-columns:minmax(0,1fr)}}
+.sw{border-radius:18px;overflow:hidden;background:#fff;color:var(--grafito);display:flex;flex-direction:column;box-shadow:0 18px 40px rgba(80,60,0,.18);transition:transform 260ms var(--ease)}
+@media (hover:hover) and (pointer:fine){.sw:hover{transform:translateY(-4px)}}
+.sw .chipc{min-height:200px;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.sw .chipc b{font-family:var(--d);font-weight:500;font-size:26px;letter-spacing:-.03em;line-height:1}
+.sw .chipc span{font-family:var(--m);font-size:12px}
+.sw dl{margin:0;padding:6px 14px 12px;display:flex;flex-direction:column}
+.sw .row{display:grid;grid-template-columns:62px minmax(0,1fr) auto;align-items:center;gap:8px;padding:8px 0;border-top:1px solid #ECE9E1}
+.sw .row:first-child{border-top:0}
+.sw dt{font-family:var(--m);font-size:11px;color:#7C7A73}
+.sw dd{margin:0;font-family:var(--m);font-size:13px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.cp{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:#8D8A82;transition:background-color 160ms ease,color 160ms ease,transform 160ms var(--ease)}
+.cp:active{transform:scale(.92)}
+.cp.done{background:var(--v);color:#fff}
+@media (hover:hover) and (pointer:fine){.cp:hover{background:#F2EFE7;color:var(--grafito)}}
+.ratio-wrap{margin-top:28px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:900px){.ratio-wrap{grid-template-columns:minmax(0,1fr)}}
+.ratio{display:flex;height:120px;border-radius:16px;overflow:hidden;box-shadow:inset 0 0 0 1.5px rgba(26,22,0,.25)}
+.ratio div{display:flex;flex-direction:column;justify-content:flex-end;padding:12px;font-family:var(--m);font-size:12px;min-width:0;overflow:hidden;white-space:nowrap}
+.ratio b{font-family:var(--d);font-weight:500;font-size:28px;letter-spacing:-.03em}
+.ratio-legend{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column}
+.ratio-legend li{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px 0;border-top:1px solid rgba(26,22,0,.18);font-size:15px;color:var(--ink2)}
+.ratio-legend li b{color:var(--ink);font-weight:500}
+.pairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.pairs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pair{aspect-ratio:1;border-radius:14px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.pair b{font-family:var(--d);font-weight:600;font-size:34px;letter-spacing:-.04em;line-height:1}
+.pair .st{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;align-self:flex-end}
+.pair .st svg{width:14px;height:14px;stroke-width:2.2}
+.pair .st.si{background:var(--v);color:#fff}.pair .st.no{background:#E5484D;color:#fff}
+.pair small{font-family:var(--m);font-size:10px;line-height:1.3}
+
+/* ───────── Tipografía ───────── */
+.faces{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:1000px){.faces{grid-template-columns:minmax(0,1fr)}}
+.face{padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.face .gl{font-size:clamp(88px,9vw,140px);line-height:.85;color:var(--y);letter-spacing:-.05em}
+.face h3{font-size:24px}
+.face p{color:var(--tx2);font-size:14px}
+.face .abc{font-size:14px;color:var(--tx2);overflow-wrap:anywhere;line-height:1.7}
+.face .wts{display:flex;flex-wrap:wrap;gap:6px}
+.tester{margin-top:16px;padding:0;overflow:hidden}
+.tester-in{display:flex;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
+.tester-in input{flex:1;min-width:0;background:transparent;border:0;outline:none;color:var(--tx);font:500 16px var(--b)}
+.tester-in input::placeholder{color:var(--tx3)}
+.scale{display:flex;flex-direction:column}
+.srow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:baseline;padding:18px 16px;border-top:1px solid var(--line)}
+.srow:first-child{border-top:0}
+.srow > div{min-width:0;overflow-wrap:anywhere}
+@media (max-width:620px){.srow{grid-template-columns:minmax(0,1fr);gap:6px}}
+
+/* ───────── Voz ───────── */
+.voice{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:1000px){.voice{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.voice{grid-template-columns:minmax(0,1fr)}}
+.vt{padding:20px;display:flex;flex-direction:column;gap:22px}
+.vt .si{font-family:var(--d);font-size:30px;letter-spacing:-.035em;line-height:1;color:var(--y)}
+.vt .no{font-size:14px;color:var(--tx3)}
+.vt .no s{color:var(--tx2);text-decoration-color:var(--err)}
+.rw-list{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.rw{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr);align-items:center;gap:8px}
+@media (max-width:720px){.rw{grid-template-columns:minmax(0,1fr)}.rw .arr{transform:rotate(90deg);justify-self:center}}
+.rw > div{padding:18px;border-radius:14px;font-size:16px}
+.rw .a{background:var(--s1);border:1px solid var(--line);color:var(--tx3);text-decoration:line-through;text-decoration-color:rgba(240,112,90,.7)}
+.rw .b{background:var(--y);color:var(--ink);font-weight:500}
+.rw .arr{color:var(--tx3);justify-self:center}
+
+/* ───────── Fotografía ───────── */
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.photos{grid-template-columns:minmax(0,1fr)}}
+.ph{overflow:hidden;display:flex;flex-direction:column}
+.ph .frame{position:relative;aspect-ratio:4/5;overflow:hidden;max-width:100%}
+.ph .frame .exif{position:absolute;left:12px;bottom:10px;font-family:var(--m);font-size:10px;color:rgba(255,255,255,.75);z-index:2}
+.ph .cap{padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.ph .cap b{font-family:var(--d);font-weight:500;font-size:18px;letter-spacing:-.02em}
+.ph .cap p{font-size:14px;color:var(--tx2)}
+.crop{position:absolute;width:16px;height:16px;border-color:rgba(255,255,255,.6);border-style:solid;border-width:0;z-index:2}
+.crop.tl{top:10px;left:10px;border-top-width:1.5px;border-left-width:1.5px}.crop.tr{top:10px;right:10px;border-top-width:1.5px;border-right-width:1.5px}
+.crop.bl{bottom:10px;left:10px;border-bottom-width:1.5px;border-left-width:1.5px}.crop.br{bottom:10px;right:10px;border-bottom-width:1.5px;border-right-width:1.5px}
+
+/* ───────── Aplicaciones ───────── */
+.tabs{margin-bottom:16px}
+.board{padding:clamp(20px,3vw,36px);border-radius:22px;background:#0F1014;border:1px solid var(--line);background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.2px);background-size:20px 20px}
+.mk-row{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.mk{display:flex;flex-direction:column;gap:10px;min-width:0}
+.mk .mono{display:flex;justify-content:space-between;gap:10px}
+.shadow{box-shadow:0 30px 60px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.3)}
+.ig{width:min(100%,320px);aspect-ratio:1;background:var(--y);color:var(--ink);padding:22px;display:flex;flex-direction:column;justify-content:space-between;border-radius:6px}
+.ig h4,.st h4,.li h4,.deck h4{color:var(--ink);font-weight:600;letter-spacing:-.045em;line-height:.95}
+.ig h4{font-size:40px}
+.blk{align-self:flex-start;background:var(--grafito);color:var(--y);padding:8px 12px;border-radius:8px;font-family:var(--m);font-size:11px}
+.st{width:min(100%,200px);aspect-ratio:9/16;background:var(--y);padding:16px;display:flex;flex-direction:column;justify-content:space-between;border-radius:10px}
+.st h4{font-size:30px}
+.st .cta{background:var(--grafito);color:var(--y);text-align:center;padding:10px;border-radius:99px;font-size:12px;font-weight:600}
+.li{width:min(100%,600px);aspect-ratio:4/1;background:var(--y);display:flex;align-items:center;justify-content:space-between;padding:0 6%;gap:16px;border-radius:6px;overflow:hidden;position:relative}
+.li h4{font-size:clamp(16px,2.4vw,28px)}
+.li .bigM{position:absolute;right:-3%;bottom:-48%;width:30%;color:var(--grafito)}
+.li h4{position:relative;z-index:1;max-width:66%}
+.card-biz{width:min(100%,320px);aspect-ratio:85/55;border-radius:10px;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.sig{width:min(100%,520px);background:#fff;color:#2A2D35;border-radius:10px;padding:18px;display:flex;align-items:center;gap:16px;font-size:13px;line-height:1.5}
+.sig img{width:64px;height:64px;border-radius:10px;flex:none;background:#000}
+.sig b{font-family:var(--d);font-weight:600;font-size:16px;letter-spacing:-.02em}
+.sig .rule{width:1px;align-self:stretch;background:#E6E3DB}
+.deck{width:min(100%,520px);aspect-ratio:16/9;background:var(--y);padding:5%;display:flex;flex-direction:column;justify-content:space-between;border-radius:8px;position:relative;overflow:hidden}
+.deck h4{font-size:clamp(24px,3.6vw,42px)}
+.deck .bigM{position:absolute;right:-6%;bottom:-20%;width:46%;color:var(--grafito)}
+.browser{width:min(100%,640px);border-radius:12px;overflow:hidden;background:#0C0D10;border:1px solid var(--line2)}
+.tabbar{display:flex;align-items:flex-end;gap:2px;padding:8px 10px 0;background:#1E2026}
+.ftab{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:8px 8px 0 0;background:#0C0D10;font-size:12px;color:var(--tx)}
+.ftab .fav{width:16px;height:16px;border-radius:4px;background:var(--grafito);display:grid;place-items:center}
+.ftab .fav svg{width:12px;color:var(--y)}
+.ftab.dim{background:transparent;color:var(--tx3)}
+.urlbar{padding:8px 12px;background:#0C0D10;border-bottom:1px solid var(--line)}
+.urlbar span{display:block;padding:6px 12px;border-radius:99px;background:#1E2026;font-family:var(--m);font-size:11px;color:var(--tx2)}
+.webhero{padding:28px;display:flex;flex-direction:column;gap:14px;background:#111215;position:relative;overflow:hidden}
+.webhero h4{font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-.045em;line-height:.95}
+.webhero h4 .y{color:var(--y)}
+.webhero .mono b{color:var(--y);font-weight:500}
+
+
+/* Fotografía real */
+.formula{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+@media (max-width:760px){.formula{grid-template-columns:minmax(0,1fr)}}
+.formula > div{display:grid;grid-template-columns:28px 1fr;gap:2px 12px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--s1)}
+.formula b{font-family:var(--d);font-weight:500;font-size:17px;letter-spacing:-.02em}
+.formula span:last-child{grid-column:2;font-size:13px;color:var(--tx2)}
+.sw-mini{width:22px;height:22px;border-radius:6px}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pgrid{grid-template-columns:minmax(0,1fr)}}
+.pf{margin:0;position:relative;overflow:hidden;border-radius:14px;background:var(--s1);min-width:0}
+.pf img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;transition:transform 600ms var(--ease)}
+.pgrid .p-wide{grid-column:span 2}
+.pgrid .p-wide img{aspect-ratio:auto;height:100%}
+@media (max-width:560px){.pgrid .p-wide{grid-column:auto}.pgrid .p-wide img{aspect-ratio:3/2}}
+.pf figcaption{position:absolute;left:12px;bottom:12px;right:12px;display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:10px;background:rgba(21,23,28,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);max-width:max-content}
+.pf figcaption b{font-family:var(--d);font-weight:500;font-size:16px;letter-spacing:-.02em}
+.pf figcaption span{font-size:13px;color:var(--tx2)}
+@media (hover:hover) and (pointer:fine){.pf:hover img{transform:scale(1.03)}}
+/* Piezas reales */
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.posts{grid-template-columns:minmax(0,1fr);max-width:420px}}
+.post{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.post img{width:100%;height:auto;border-radius:6px;display:block}
+.post figcaption{display:flex;flex-direction:column;gap:2px}
+.post figcaption b{font-family:var(--d);font-weight:500;font-size:16px;letter-spacing:-.02em}
+.anatomy-post{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}
+@media (max-width:900px){.anatomy-post{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:520px){.anatomy-post{grid-template-columns:minmax(0,1fr)}}
+.anatomy-post > div{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:14px;color:var(--tx2)}
+.anatomy-post b{color:var(--tx);font-weight:500}
+.anatomy-post .k{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-family:var(--m);font-size:12px;background:rgba(245,196,0,.12);color:var(--y)}
+.merch{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px}
+@media (max-width:760px){.merch{grid-template-columns:minmax(0,1fr)}}
+.merch .pf img{aspect-ratio:3/4}
+
+
+/* Kit de descarga */
+.kit{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);overflow:hidden}
+@media (max-width:900px){.kit{grid-template-columns:minmax(0,1fr)}}
+.kit-prev{display:flex;flex-direction:column;gap:10px;padding:20px;border-right:1px solid var(--line)}
+@media (max-width:900px){.kit-prev{border-right:0;border-bottom:1px solid var(--line)}}
+.checker{flex:1;min-height:260px;border-radius:12px;display:grid;place-items:center;padding:28px;background-color:#1E2027;background-image:conic-gradient(#262931 25%,transparent 0 50%,#262931 0 75%,transparent 0);background-size:20px 20px}
+.checker svg{max-width:80%;max-height:200px;width:auto;height:auto}
+.kit-ctl{padding:24px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.kit-ctl h3{font-size:24px}
+.kit-ctl p{color:var(--tx2);font-size:15px;margin-top:6px}
+.kit-row{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center;gap:12px}
+.kit-row .seg{justify-self:start}
+@media (max-width:520px){.kit-row{grid-template-columns:minmax(0,1fr)}}
+.kit-act{display:flex;gap:10px;flex-wrap:wrap}
+.kit-act .btn{min-height:48px;padding:0 20px;font-size:15px}
+.kit-note{font-size:13px;color:var(--tx3);min-height:20px}
+/* Tarjeta */
+.biz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media (max-width:760px){.biz{grid-template-columns:minmax(0,1fr)}}
+.biz img{width:100%;height:auto;border-radius:10px;display:block}
+/* Presentaciones */
+.decks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.decks{grid-template-columns:minmax(0,1fr)}}
+.dk{display:flex;flex-direction:column;overflow:hidden}
+.dk-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:16px;background:#0F1014;border-bottom:1px solid var(--line)}
+.dk.all .dk-strip{grid-template-columns:repeat(6,minmax(0,1fr))}
+.dk-strip img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:4px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.dk-strip img.fix{box-shadow:0 0 0 1.5px var(--y)}
+.dk-body{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.dk-body b{font-family:var(--d);font-weight:500;font-size:20px;letter-spacing:-.025em;display:flex;align-items:center;gap:10px}
+.dk-body .dot{width:14px;height:14px;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.dk-body small{display:block;font-size:13px;color:var(--tx2);margin-top:2px}
+.dk-body .btn{min-height:44px}
+
+
+/* Rutas por rol */
+.roles{display:flex;flex-direction:column;gap:10px;width:100%}
+.role-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;max-width:640px}
+@media (max-width:620px){.role-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.role{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(21,23,28,.6);text-decoration:none;transition:border-color 160ms ease,transform 160ms var(--ease)}
+.role:active{transform:scale(.97)}
+.role b{font-family:var(--d);font-weight:500;font-size:15px;letter-spacing:-.02em}
+.role small{font-size:12px;color:var(--tx3)}
+@media (hover:hover) and (pointer:fine){.role:hover{border-color:rgba(245,196,0,.5)}}
+/* Presentaciones: acciones */
+.dk-act{display:flex;gap:8px;flex-wrap:wrap}
+.dk-msg{padding:0 20px 16px;font-size:14px;color:var(--tx2);min-height:0}
+.dk-msg:empty{display:none}
+.dk-msg a{color:var(--y)}
+/* Fuentes */
+.fontlinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+@media (max-width:760px){.fontlinks{grid-template-columns:minmax(0,1fr)}}
+.fl{display:grid;grid-template-columns:56px 1fr 18px;align-items:center;gap:14px;padding:16px;text-decoration:none;transition:border-color 160ms ease}
+.fl-g{font-size:36px;line-height:1;color:var(--y);letter-spacing:-.04em}
+.fl b{display:block;font-family:var(--d);font-weight:500;font-size:17px;letter-spacing:-.02em}
+.fl small{font-size:13px;color:var(--tx2)}
+.fl .ico{color:var(--tx3)}
+@media (hover:hover) and (pointer:fine){.fl:hover{border-color:rgba(245,196,0,.5)}}
+.fuse{margin-top:16px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.fuse-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.fuse h3{font-size:20px}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:flex;flex-direction:column}
+.steps li{counter-increment:s;position:relative;padding:12px 0 12px 40px;border-top:1px solid var(--line);font-size:15px;color:var(--tx2)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:14px;font-family:var(--m);font-size:12px;color:var(--y)}
+#elColors td{white-space:nowrap}
+#elColors .cp{display:inline-grid;vertical-align:middle;width:28px;height:28px;margin-left:6px}
+.steps b{color:var(--tx);font-weight:500}
+.code{position:relative;background:#0F1014;border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.code pre{margin:0;font-family:var(--m);font-size:12.5px;line-height:1.7;color:#D9D6D0;overflow-x:auto;white-space:pre}
+.code .btn{align-self:flex-start}
+/* Copy */
+.nm{padding:20px;display:flex;flex-direction:column;gap:6px}
+.nm b{font-family:var(--d);font-weight:500;font-size:26px;letter-spacing:-.03em;color:var(--y)}
+.nm p{font-size:14px;color:var(--tx2)}
+.copyblocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+@media (max-width:860px){.copyblocks{grid-template-columns:minmax(0,1fr)}}
+.cb{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.cb:first-child{grid-column:1/-1}
+.cb-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cb-head .btn{min-height:34px;padding:0 12px;font-size:13px}
+.cb p{font-size:16px;color:#E3E1DC;max-width:65ch}
+.cb .cb-big{font-family:var(--d);font-weight:500;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.04em;color:var(--y);line-height:1}
+.lex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+@media (max-width:860px){.lex{grid-template-columns:minmax(0,1fr)}}
+.lex .card{padding:20px}
+.lex h3{font-size:20px;margin-bottom:6px}
+/* Guía web */
+.dev-dl{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 20px;border-radius:16px;background:var(--y);color:var(--ink);margin-bottom:16px}
+.dev-dl b{font-family:var(--d);font-weight:500;font-size:20px;letter-spacing:-.025em;display:block}
+.dev-dl small{font-size:14px;color:var(--ink2)}
+.dev-dl .btn-y{background:var(--grafito);color:var(--y)}
+.dev-dl .btn-o{border-color:rgba(26,22,0,.35);color:var(--ink)}
+.dev{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px}
+@media (max-width:1000px){.dev{grid-template-columns:minmax(0,1fr)}}
+.dev .big pre{max-height:520px;overflow:auto}
+.dev-side{display:flex;flex-direction:column;gap:16px;min-width:0}
+.sw-dot2{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.dev-note{font-size:13px;color:var(--tx3);padding:12px 16px}
+.comps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+@media (max-width:1100px){.comps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.comps{grid-template-columns:minmax(0,1fr)}}
+.comp{display:flex;flex-direction:column;overflow:hidden}
+.comp-prev{min-height:150px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:20px;background:#0F1014;border-bottom:1px solid var(--line)}
+.comp-meta{padding:16px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.comp-meta b{font-family:var(--d);font-weight:500;font-size:16px;letter-spacing:-.02em}
+.comp-meta small{font-size:13px;color:var(--tx2)}
+.comp-meta .btn{min-height:34px;padding:0 12px;font-size:13px;margin-top:6px}
+.spec2{padding:18px;display:flex;flex-direction:column;gap:8px}
+.spec2 b{font-family:var(--m);font-weight:400;font-size:14px;color:var(--y);overflow-wrap:anywhere}
+.spec2 small{font-size:13px;color:var(--tx2)}
+
+
+
+/* Fondos 4K (versión web) */
+.fondos{margin-top:16px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.fondos h3{font-size:22px}.fondos p{color:var(--tx2);font-size:15px;margin-top:6px;max-width:62ch}
+.fk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+@media (max-width:420px){.fk small{white-space:nowrap}.fk span{padding:8px 30px 10px 10px}.fk b{font-size:13px}.fk small{font-size:10px}.fk .ico{right:10px;bottom:12px}}
+.fk{display:flex;flex-direction:column;text-decoration:none;overflow:hidden;position:relative;transition:border-color 160ms ease,transform 160ms var(--ease)}
+.fk:active{transform:scale(.98)}
+.fk img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.fk span{display:flex;flex-direction:column;padding:10px 40px 12px 12px}
+.fk b{font-family:var(--d);font-weight:500;font-size:15px;letter-spacing:-.02em}
+.fk small{font-family:var(--m);font-size:11px;color:var(--tx3)}
+.fk .ico{position:absolute;right:12px;bottom:16px;color:var(--y)}
+@media (hover:hover) and (pointer:fine){.fk:hover{border-color:rgba(245,196,0,.45)}}
+/* Descargas de animaciones */
+.anim-dl{margin-top:16px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.ad-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.ad-head h3{font-size:22px}
+.ad-head p{color:var(--tx2);font-size:15px;margin-top:6px;max-width:62ch}
+.ad-list{display:flex;flex-direction:column}
+.ad-row{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+@media (max-width:760px){.ad-row{grid-template-columns:88px minmax(0,1fr)}.ad-row .ad-btns{grid-column:1/-1}}
+.ad-thumb{width:100%;aspect-ratio:16/9;object-fit:contain;border-radius:8px;background-color:#1E2027;background-image:conic-gradient(#262931 25%,transparent 0 50%,#262931 0 75%,transparent 0);background-size:12px 12px}
+.ad-row b{font-family:var(--d);font-weight:500;font-size:17px;letter-spacing:-.02em;display:block}
+.ad-row small{font-size:13px;color:var(--tx2)}
+.ad-btns{display:flex;gap:8px;flex-wrap:wrap}
+.ad-btns .btn{min-height:38px;padding:0 12px;font-size:13px;flex-direction:column;align-items:flex-start;gap:0;line-height:1.2;justify-content:center}
+.ad-btns .btn span{font-family:var(--m);font-size:10.5px;color:var(--tx3);font-weight:400}
+.ad-btns .btn-y span{color:var(--ink2)}
+/* Novedades */
+.kbtn{position:relative}
+.nov-dot{position:absolute;top:6px;right:6px;width:8px;height:8px;border-radius:50%;background:var(--y);box-shadow:0 0 0 3px var(--bg)}
+.nov{width:min(100%,600px)}
+.nov-list{list-style:none;margin:0;padding:8px 18px 18px;max-height:min(560px,64vh);overflow:auto}
+.nov-list > li{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:start;padding:14px 0;border-top:1px solid var(--line)}
+.nov-list > li:first-child{border-top:0}
+.nov-list ul li{padding:2px 0}
+.nov-list .v{font-family:var(--m);font-size:12px;color:var(--y);padding-top:3px}
+.nov-list .v small{display:block;color:var(--tx3);margin-top:2px}
+.nov-list b{font-family:var(--d);font-weight:500;font-size:16px;letter-spacing:-.02em}
+.nov-list ul{margin:6px 0 0;padding-left:18px;color:var(--tx2);font-size:14px}
+.nov-list .new{display:inline-block;margin-left:8px;font-family:var(--m);font-size:10px;padding:2px 7px;border-radius:99px;background:var(--y);color:var(--ink);vertical-align:2px}
+/* Comentar */
+.ch-head{position:relative}
+.cmt{position:absolute;top:0;right:0;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 12px;border-radius:99px;border:1px solid var(--line);background:var(--s1);color:var(--tx2);font-size:13px;transition:border-color 160ms ease,color 160ms ease,transform 160ms var(--ease)}
+.cmt:active{transform:scale(.97)}
+.ch.yellow .cmt{background:rgba(26,22,0,.08);border-color:rgba(26,22,0,.2);color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.cmt:hover{border-color:rgba(245,196,0,.5);color:var(--tx)}}
+@media (max-width:860px){.cmt{position:static;justify-self:start}}
+
+/* ───────── Cierre ───────── */
+.end{padding-block:clamp(72px,9vw,120px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;background:var(--y);color:var(--ink)}
+.end h2{color:var(--ink);font-size:clamp(44px,6vw,92px);line-height:.95}
+.end p{color:var(--ink2);margin-top:16px;max-width:44ch}
+.end svg.wm{width:min(100%,280px);color:var(--grafito)}
+@media (max-width:760px){.end{grid-template-columns:minmax(0,1fr)}}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:24px 40px}
+
+/* ───────── Buscador ───────── */
+.palette{position:fixed;inset:0;z-index:80;display:grid;place-items:start center;padding:12vh 16px 16px;background:rgba(8,9,11,.6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.pal{width:min(100%,560px);border-radius:16px;background:var(--s1);border:1px solid var(--line2);box-shadow:0 40px 80px rgba(0,0,0,.55);overflow:hidden}
+.pal-in{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.pal-in input{flex:1;min-width:0;background:transparent;border:0;outline:none;color:var(--tx);font:16px var(--b)}
+.pal ul{list-style:none;margin:0;padding:6px;max-height:min(420px,56vh);overflow:auto}
+.pal li{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;font-size:14px;color:var(--tx2);cursor:pointer}
+.pal li[aria-selected="true"]{background:var(--s2);color:var(--tx)}
+.pal li .sw-dot{width:16px;height:16px;border-radius:5px;flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.pal li .k{margin-left:auto;font-family:var(--m);font-size:11px;color:var(--tx3)}
+.pal .empty{padding:20px 16px;color:var(--tx3);font-size:14px}
+
+/* Aviso */
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:90;display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;background:var(--s2);border:1px solid var(--line2);box-shadow:0 16px 40px rgba(0,0,0,.4);font-size:14px;transform:translate(-50%,160%);transition:transform 400ms var(--ease)}
+.toast.show{transform:translate(-50%,0)}
+.toast svg{color:var(--v)}
+
+/* Revelado de títulos al entrar en pantalla (parten visibles; la animación es un acento) */
+.rv{display:inline-block}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cur,.clip .tag i{animation:none}
+  *{transition-duration:0ms!important}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="m" viewBox="0 0 402.79 329.9" fill="currentColor"><path d="m72.47,116.78l-.9-.9C28.01,149.85,0,202.84,0,262.36c0,23.83,4.49,46.61,12.67,67.54h85.44c-12.02-19.67-18.95-42.8-18.95-67.54,0-38.15,16.48-72.46,42.7-96.19l-47.2-47.2-2.19-2.19Z"/><path d="m347.23,110.84c-13.47-15.99-23.14-35.28-27.63-56.48-1.86-8.72-2.83-17.76-2.83-27.03s.99-18.52,2.89-27.33c-36.93,10.03-71.1,26.77-101.12,48.83-12.27,8.99-23.85,18.89-34.63,29.58-2.67,2.63-5.28,5.32-7.84,8.05-15.62,16.64-29.41,35.01-41.06,54.81-4.75,8.08-9.14,16.39-13.15,24.92l43.34,43.34c.45-.98.89-1.96,1.34-2.93,11.74-25.58,26.89-49.27,44.87-70.49,7.62-9,15.74-17.55,24.33-25.61,45.48,29.68,75.54,81.02,75.54,139.39,0,2.24-.04,4.47-.13,6.69.09,1.91.13,3.84.13,5.78,0,24.74-6.93,47.87-18.95,67.54h93.97c10.61-24.53,16.49-51.58,16.49-80.01,0-50.4-18.48-96.48-49.03-131.86-2.26-2.31-4.44-4.71-6.53-7.19Z"/></symbol>
+    <symbol id="wm" viewBox="0 0 594 270" fill="currentColor"><g transform="translate(0 1.5) scale(.6157)"><path d="m72.47,116.78l-.9-.9C28.01,149.85,0,202.84,0,262.36c0,23.83,4.49,46.61,12.67,67.54h85.44c-12.02-19.67-18.95-42.8-18.95-67.54,0-38.15,16.48-72.46,42.7-96.19l-47.2-47.2-2.19-2.19Z"/><path d="m347.23,110.84c-13.47-15.99-23.14-35.28-27.63-56.48-1.86-8.72-2.83-17.76-2.83-27.03s.99-18.52,2.89-27.33c-36.93,10.03-71.1,26.77-101.12,48.83-12.27,8.99-23.85,18.89-34.63,29.58-2.67,2.63-5.28,5.32-7.84,8.05-15.62,16.64-29.41,35.01-41.06,54.81-4.75,8.08-9.14,16.39-13.15,24.92l43.34,43.34c.45-.98.89-1.96,1.34-2.93,11.74-25.58,26.89-49.27,44.87-70.49,7.62-9,15.74-17.55,24.33-25.61,45.48,29.68,75.54,81.02,75.54,139.39,0,2.24-.04,4.47-.13,6.69.09,1.91.13,3.84.13,5.78,0,24.74-6.93,47.87-18.95,67.54h93.97c10.61-24.53,16.49-51.58,16.49-80.01,0-50.4-18.48-96.48-49.03-131.86-2.26-2.31-4.44-4.71-6.53-7.19Z"/></g><path fill-rule="evenodd" transform="translate(245 -5)" d="M 157.78 41.31 C 157.48 41.4, 157.17 41.53, 157.09 41.6 C 157.01 41.67, 156.6 41.82, 156.19 41.94 C 155.78 42.06, 155.23 42.33, 154.97 42.55 C 154.18 43.21, 153 44.36, 153 44.46 C 153 44.52, 152.81 44.84, 152.57 45.19 C 152.27 45.62, 152.05 46.17, 151.85 47 C 151.56 48.18, 151.56 48.23, 151.53 58.25 L 151.49 68.31 151.83 69.74 C 152.03 70.56, 152.29 71.32, 152.46 71.55 C 152.61 71.76, 152.83 72.11, 152.95 72.31 C 153.18 72.73, 154.43 74, 154.61 74 C 154.67 74, 154.96 74.2, 155.25 74.44 C 155.53 74.67, 156 74.93, 156.29 75 C 156.58 75.08, 157.23 75.29, 157.75 75.47 L 158.69 75.81 170.19 75.81 L 181.69 75.81 182.5 75.53 C 182.95 75.38, 183.63 75.17, 184.02 75.06 C 184.8 74.84, 185.13 74.59, 186.76 72.95 C 187.46 72.25, 187.92 71.67, 188.02 71.39 C 188.1 71.14, 188.34 70.6, 188.55 70.2 L 188.94 69.45 188.94 58.51 L 188.94 47.56 188.54 46.75 C 188.33 46.3, 188.09 45.73, 188.01 45.48 C 187.93 45.23, 187.78 44.95, 187.69 44.87 C 187.59 44.79, 187.31 44.42, 187.06 44.05 C 186.82 43.68, 186.35 43.2, 186.03 42.98 C 185.7 42.75, 185.33 42.47, 185.19 42.35 C 185.06 42.22, 184.72 42.06, 184.44 41.99 C 184.17 41.91, 183.66 41.7, 183.31 41.52 L 182.69 41.19 170.5 41.16 C 160.57 41.14, 158.21 41.17, 157.78 41.31 M 345.99 61.42 C 345.4 61.72, 344.75 62.01, 344.54 62.05 C 344.33 62.1, 344.05 62.24, 343.91 62.37 C 343.59 62.67, 343.03 62.95, 342.55 63.05 C 342.33 63.1, 342.05 63.24, 341.91 63.37 C 341.59 63.67, 341.03 63.95, 340.56 64.05 C 340.35 64.1, 340.02 64.27, 339.82 64.44 C 339.62 64.62, 339.14 64.85, 338.76 64.96 C 338.38 65.07, 337.75 65.35, 337.37 65.58 C 336.99 65.81, 336.6 66, 336.5 66 C 336.4 66, 335.95 66.23, 335.5 66.5 C 335.05 66.77, 334.6 67, 334.5 67 C 334.4 67, 333.95 67.23, 333.5 67.5 C 333.05 67.77, 332.6 68, 332.5 68 C 332.4 68, 332.01 68.19, 331.63 68.42 C 331.25 68.66, 330.74 68.89, 330.5 68.94 C 329.97 69.05, 329.43 69.32, 329.09 69.63 C 328.95 69.76, 328.67 69.9, 328.45 69.95 C 327.97 70.05, 327.41 70.33, 327.09 70.63 C 326.95 70.76, 326.67 70.9, 326.45 70.95 C 325.97 71.05, 325.41 71.33, 325.09 71.63 C 324.96 71.75, 324.57 71.92, 324.24 72 C 323.91 72.08, 323.39 72.31, 323.1 72.5 C 322.8 72.7, 322.3 72.92, 321.99 73 C 321.67 73.08, 321.23 73.31, 321 73.5 C 320.77 73.7, 320.32 73.92, 320 74 C 319.68 74.08, 319.23 74.3, 319 74.5 C 318.77 74.7, 318.32 74.92, 318 75 C 317.68 75.08, 317.24 75.3, 317.01 75.49 C 316.74 75.72, 316.33 75.9, 315.88 75.99 C 315.49 76.07, 315.05 76.23, 314.92 76.36 C 314.59 76.67, 314.03 76.95, 313.55 77.05 C 313.33 77.1, 313.05 77.24, 312.91 77.37 C 312.59 77.67, 312.03 77.95, 311.55 78.05 C 311.33 78.1, 311.05 78.24, 310.91 78.37 C 310.59 78.67, 310.03 78.95, 309.55 79.05 C 309.33 79.1, 308.97 79.28, 308.74 79.45 C 308.5 79.62, 308.05 79.84, 307.72 79.94 C 307.39 80.03, 306.8 80.31, 306.4 80.56 C 306.01 80.8, 305.6 81, 305.5 81 C 305.4 81, 304.95 81.23, 304.5 81.5 C 304.05 81.77, 303.59 82, 303.48 82 C 303.37 82, 302.98 82.2, 302.62 82.44 C 302.26 82.68, 301.71 82.94, 301.39 83.02 C 300.71 83.18, 300.42 83.32, 300.08 83.64 C 299.95 83.76, 299.67 83.9, 299.45 83.95 C 298.97 84.05, 298.41 84.33, 298.09 84.63 C 297.95 84.76, 297.68 84.9, 297.49 84.94 C 297.3 84.98, 296.92 85.19, 296.66 85.4 C 296.4 85.6, 295.98 85.86, 295.72 85.96 C 295.46 86.07, 295.15 86.28, 295.02 86.44 C 294.9 86.59, 294.57 86.84, 294.28 86.98 C 294 87.13, 293.72 87.33, 293.66 87.42 C 293.61 87.52, 293.31 87.77, 293 87.98 C 291.93 88.72, 288.88 92.03, 288.88 92.47 C 288.88 92.55, 288.73 92.71, 288.56 92.83 C 288.38 92.94, 288.12 93.27, 287.98 93.55 C 287.83 93.83, 287.59 94.22, 287.43 94.4 C 287.27 94.59, 287.08 94.96, 287 95.22 C 286.91 95.48, 286.69 95.86, 286.5 96.06 C 286.28 96.3, 286.1 96.69, 286.01 97.11 C 285.93 97.48, 285.73 97.94, 285.57 98.14 C 285.27 98.5, 285 99.21, 285 99.65 C 285 99.77, 284.8 100.41, 284.56 101.08 C 284.21 102.04, 284.09 102.61, 283.99 103.8 C 283.92 104.63, 283.78 105.72, 283.68 106.22 C 283.54 106.95, 283.5 108.66, 283.5 114.87 L 283.5 122.61 283.78 122.81 C 284.3 123.17, 285.16 123, 285.97 122.37 C 286.13 122.25, 286.55 122.08, 286.91 122 C 287.27 121.91, 287.9 121.66, 288.31 121.43 C 288.73 121.21, 289.26 120.98, 289.5 120.94 C 289.74 120.89, 290.25 120.66, 290.62 120.43 C 291 120.21, 291.52 119.99, 291.76 119.95 C 292.01 119.91, 292.46 119.71, 292.76 119.51 C 293.07 119.31, 293.59 119.08, 293.94 118.99 C 294.28 118.91, 294.84 118.69, 295.19 118.49 C 295.53 118.3, 296.07 118.08, 296.38 118 C 296.68 117.92, 297.19 117.7, 297.5 117.5 C 297.81 117.31, 298.26 117.11, 298.5 117.06 C 298.74 117.01, 299.27 116.79, 299.69 116.57 C 300.1 116.34, 300.72 116.09, 301.06 116.01 C 301.41 115.92, 301.93 115.69, 302.23 115.5 C 302.53 115.3, 303.07 115.08, 303.44 115 C 303.81 114.92, 304.33 114.71, 304.59 114.54 C 304.85 114.36, 305.39 114.11, 305.8 113.99 C 306.2 113.86, 306.73 113.63, 306.98 113.46 C 307.23 113.29, 307.76 113.08, 308.15 113 C 308.54 112.93, 308.93 112.78, 309.01 112.67 C 309.25 112.39, 309.79 112.14, 310.49 111.99 C 310.83 111.92, 311.35 111.7, 311.65 111.51 C 311.94 111.31, 312.52 111.06, 312.92 110.94 C 313.32 110.83, 313.86 110.6, 314.11 110.44 C 314.36 110.28, 314.85 110.08, 315.21 110 C 315.56 109.92, 316.04 109.72, 316.26 109.56 C 316.66 109.26, 316.98 109.13, 317.95 108.88 C 318.23 108.81, 318.62 108.61, 318.82 108.44 C 319.04 108.25, 319.48 108.07, 319.92 107.98 C 320.34 107.9, 320.8 107.71, 321.01 107.54 C 321.2 107.37, 321.72 107.14, 322.15 107.02 C 322.58 106.89, 323.15 106.65, 323.41 106.47 C 323.67 106.29, 324.19 106.08, 324.56 106 C 324.93 105.92, 325.47 105.7, 325.77 105.5 C 326.07 105.31, 326.59 105.08, 326.94 104.99 C 327.28 104.91, 327.86 104.67, 328.23 104.47 C 328.59 104.27, 329.15 104.03, 329.48 103.94 C 329.8 103.86, 330.34 103.61, 330.68 103.39 C 331.02 103.18, 331.4 103, 331.53 103 C 331.86 103, 332.58 102.68, 332.89 102.39 C 333.04 102.25, 333.33 102.1, 333.55 102.05 C 334.01 101.96, 334.6 101.66, 334.85 101.42 C 334.94 101.33, 335.32 101.1, 335.7 100.93 C 336.07 100.75, 336.38 100.56, 336.38 100.5 C 336.38 100.44, 336.69 100.24, 337.07 100.05 C 337.45 99.87, 337.82 99.61, 337.88 99.48 C 337.95 99.36, 338.17 99.17, 338.37 99.06 C 338.69 98.9, 341.44 96.19, 342.5 95 C 343.01 94.43, 343.68 93.44, 343.99 92.81 C 344.13 92.53, 344.38 92.17, 344.56 92 C 344.73 91.84, 344.94 91.48, 345.01 91.2 C 345.08 90.92, 345.3 90.49, 345.49 90.25 C 345.68 90.01, 345.88 89.67, 345.93 89.5 C 345.98 89.33, 346.21 88.76, 346.44 88.25 C 346.68 87.73, 346.94 86.97, 347.01 86.56 C 347.09 86.15, 347.28 85.49, 347.45 85.1 C 348.05 83.67, 348.12 82.15, 348.12 71.24 C 348.12 61.76, 348.11 61.28, 347.9 61.08 C 347.54 60.76, 347.14 60.83, 345.99 61.42 M 62.06 93.67 C 61.83 93.77, 60.84 93.87, 59.5 93.92 C 56.72 94.03, 55.21 94.21, 54.51 94.51 C 54.21 94.65, 53.56 94.81, 53.07 94.88 C 51.21 95.16, 50.67 95.28, 50.19 95.57 C 49.91 95.73, 49.3 95.93, 48.83 96.01 C 48.36 96.09, 47.68 96.32, 47.3 96.52 C 46.93 96.71, 46.33 96.94, 45.97 97.02 C 45.61 97.09, 45.06 97.32, 44.75 97.52 C 44.44 97.72, 43.95 97.95, 43.67 98.02 C 43.38 98.09, 43.04 98.25, 42.91 98.37 C 42.59 98.67, 42.03 98.95, 41.55 99.05 C 41.34 99.1, 41.01 99.3, 40.82 99.49 C 40.63 99.69, 40.23 99.92, 39.94 100 C 39.64 100.08, 39.25 100.31, 39.09 100.5 C 38.92 100.68, 38.52 100.96, 38.2 101.12 C 37.89 101.27, 37.62 101.44, 37.62 101.5 C 37.62 101.56, 37.31 101.76, 36.93 101.95 C 36.55 102.13, 36.18 102.39, 36.12 102.52 C 36.05 102.64, 35.82 102.84, 35.6 102.95 C 35.38 103.06, 35.02 103.33, 34.8 103.55 C 34.58 103.76, 34.08 104.19, 33.69 104.5 C 31.86 105.94, 28.38 109.29, 28.04 109.94 C 27.84 110.32, 27.2 111.09, 26.43 111.88 C 26.19 112.13, 26 112.37, 26 112.43 C 26 112.49, 25.8 112.77, 25.55 113.05 C 25.02 113.66, 24.39 114.59, 23.94 115.41 C 23.77 115.73, 23.57 116, 23.5 116 C 23.43 116, 23.24 116.27, 23.07 116.61 C 22.9 116.94, 22.63 117.38, 22.46 117.58 C 22.3 117.77, 22.1 118.13, 22.02 118.36 C 21.94 118.6, 21.73 118.98, 21.55 119.21 C 21.38 119.44, 21.12 119.88, 20.99 120.18 C 20.85 120.49, 20.61 120.9, 20.44 121.1 C 20.28 121.29, 20.07 121.72, 19.99 122.03 C 19.91 122.35, 19.71 122.8, 19.54 123.02 C 19.38 123.25, 19.15 123.75, 19.04 124.12 C 18.93 124.5, 18.75 124.92, 18.63 125.06 C 18.3 125.44, 18.17 125.74, 18.01 126.52 C 17.93 126.91, 17.7 127.47, 17.5 127.77 C 17.28 128.11, 17.09 128.63, 16.99 129.17 C 16.91 129.64, 16.69 130.31, 16.5 130.67 C 16.3 131.03, 16.06 131.81, 15.95 132.41 C 15.84 133, 15.61 133.76, 15.44 134.09 C 15.26 134.44, 15.08 135.11, 15 135.71 C 14.93 136.27, 14.73 137.14, 14.56 137.64 C 14.39 138.15, 14.16 139.2, 14.06 140 C 13.81 141.94, 13.53 143.52, 13.37 143.94 C 13.05 144.78, 12.94 147.74, 12.94 155.5 C 12.94 163.28, 13.05 166.22, 13.38 167.07 C 13.55 167.52, 13.96 170.04, 14.06 171.3 C 14.1 171.84, 14.27 172.63, 14.43 173.06 C 14.59 173.49, 14.82 174.4, 14.94 175.08 C 15.05 175.76, 15.31 176.73, 15.51 177.24 C 15.71 177.74, 15.94 178.56, 16 179.05 C 16.08 179.6, 16.27 180.22, 16.5 180.66 C 16.71 181.06, 16.94 181.68, 17.02 182.04 C 17.09 182.4, 17.31 182.97, 17.5 183.31 C 17.69 183.66, 17.91 184.23, 18 184.59 C 18.08 184.95, 18.31 185.48, 18.5 185.78 C 18.7 186.07, 18.93 186.59, 19.01 186.94 C 19.1 187.28, 19.32 187.76, 19.51 188 C 19.7 188.24, 19.92 188.69, 20 188.99 C 20.08 189.29, 20.31 189.74, 20.5 189.99 C 20.7 190.24, 20.92 190.67, 20.99 190.96 C 21.07 191.25, 21.33 191.72, 21.56 192 C 21.8 192.29, 22 192.59, 22 192.68 C 22 192.77, 22.19 193.09, 22.43 193.4 C 22.67 193.71, 22.9 194.12, 22.95 194.3 C 22.99 194.48, 23.19 194.78, 23.4 194.97 C 23.6 195.16, 23.85 195.51, 23.95 195.75 C 24.05 195.99, 24.3 196.36, 24.49 196.56 C 24.69 196.77, 24.93 197.11, 25.04 197.31 C 25.14 197.52, 25.4 197.85, 25.61 198.05 C 25.83 198.26, 26 198.48, 26 198.54 C 26 198.61, 26.21 198.9, 26.47 199.19 C 27.39 200.24, 27.92 200.88, 28.14 201.22 C 28.58 201.91, 32.01 205.17, 33.69 206.5 C 34.08 206.81, 34.58 207.24, 34.8 207.45 C 35.02 207.67, 35.38 207.94, 35.6 208.05 C 35.82 208.16, 36.05 208.36, 36.12 208.48 C 36.18 208.61, 36.55 208.87, 36.93 209.05 C 37.31 209.24, 37.62 209.44, 37.62 209.5 C 37.62 209.56, 37.89 209.73, 38.2 209.88 C 38.52 210.04, 38.92 210.32, 39.09 210.5 C 39.25 210.69, 39.64 210.92, 39.94 211 C 40.23 211.08, 40.63 211.31, 40.82 211.51 C 41.01 211.7, 41.34 211.9, 41.55 211.95 C 42.03 212.05, 42.59 212.33, 42.91 212.63 C 43.04 212.75, 43.38 212.91, 43.67 212.98 C 43.97 213.06, 44.42 213.27, 44.7 213.45 C 44.97 213.64, 45.59 213.89, 46.08 214.01 C 46.56 214.13, 47.17 214.38, 47.43 214.55 C 47.69 214.73, 48.11 214.9, 48.36 214.94 C 49.31 215.09, 49.95 215.28, 50.32 215.51 C 50.53 215.64, 51.12 215.81, 51.63 215.89 C 52.49 216.02, 53.44 216.23, 55.25 216.69 C 56.04 216.89, 58.7 217.12, 60.11 217.12 C 60.64 217.12, 61.4 217.21, 61.79 217.31 C 62.76 217.57, 66.56 217.57, 67.73 217.32 C 68.19 217.22, 69.38 217.11, 70.38 217.07 C 72.55 216.98, 73.5 216.84, 74.63 216.44 C 75.1 216.28, 75.89 216.08, 76.39 216.01 C 76.88 215.93, 77.65 215.72, 78.08 215.55 C 78.51 215.38, 79.26 215.13, 79.75 214.99 C 80.24 214.86, 80.84 214.61, 81.1 214.45 C 81.35 214.29, 81.85 214.09, 82.2 214 C 82.56 213.92, 82.96 213.75, 83.09 213.63 C 83.41 213.33, 83.97 213.05, 84.44 212.95 C 84.65 212.9, 85.01 212.71, 85.24 212.51 C 85.47 212.32, 85.88 212.08, 86.15 211.99 C 86.42 211.9, 86.75 211.7, 86.87 211.54 C 87 211.38, 87.3 211.16, 87.54 211.06 C 87.78 210.96, 88.14 210.73, 88.34 210.55 C 88.53 210.37, 88.89 210.12, 89.14 210.01 C 89.39 209.9, 89.79 209.61, 90.04 209.37 C 90.28 209.13, 90.72 208.74, 91.01 208.5 C 92.22 207.51, 94.56 205.22, 95.43 204.19 C 95.67 203.91, 96.06 203.47, 96.31 203.19 C 96.81 202.66, 97.53 201.64, 97.97 200.84 C 98.12 200.56, 98.41 200.17, 98.61 199.98 C 98.81 199.78, 99.01 199.47, 99.06 199.29 C 99.1 199.1, 99.3 198.75, 99.49 198.51 C 99.68 198.26, 99.96 197.81, 100.1 197.5 C 100.53 196.54, 101.14 196, 101.78 196 C 102.83 196, 103.12 196.53, 103.12 198.39 C 103.12 199.03, 103.2 199.69, 103.31 200 C 103.42 200.29, 103.5 200.74, 103.5 200.99 C 103.5 201.25, 103.58 201.7, 103.68 202.01 C 103.78 202.31, 103.92 203.01, 104 203.55 C 104.09 204.23, 104.24 204.73, 104.49 205.17 C 104.69 205.53, 104.89 206.03, 104.94 206.29 C 104.99 206.55, 105.22 207.04, 105.45 207.37 C 105.67 207.7, 105.94 208.17, 106.04 208.41 C 106.15 208.66, 106.37 208.95, 106.55 209.06 C 106.72 209.18, 106.9 209.39, 106.95 209.54 C 107.06 209.9, 108.96 211.84, 109.43 212.09 C 109.64 212.2, 109.9 212.41, 110.02 212.56 C 110.14 212.72, 110.42 212.92, 110.65 213.01 C 110.87 213.1, 111.33 213.36, 111.66 213.59 C 112 213.81, 112.37 214, 112.48 214 C 112.59 214, 113 214.2, 113.39 214.44 C 113.9 214.75, 114.33 214.91, 114.97 215 C 115.45 215.06, 116.01 215.18, 116.2 215.26 C 117.88 215.92, 117.72 215.91, 128.4 215.96 L 138.36 216.02 139.15 215.25 L 139.94 214.48 139.94 166.08 L 139.94 117.69 139.67 116.94 C 139.3 115.92, 139.16 115.36, 139 114.26 C 138.92 113.67, 138.74 113.11, 138.51 112.7 C 138.32 112.35, 138.09 111.78, 138.01 111.44 C 137.93 111.09, 137.7 110.59, 137.51 110.31 C 137.32 110.04, 137.09 109.59, 137 109.32 C 136.91 109.05, 136.65 108.59, 136.42 108.28 C 136.19 107.98, 136 107.65, 136 107.56 C 136 107.47, 135.78 107.13, 135.5 106.81 C 135.22 106.49, 135 106.19, 135 106.12 C 135 106.06, 134.78 105.76, 134.5 105.44 C 134.22 105.12, 134 104.8, 134 104.73 C 134 104.57, 130.42 101, 130.25 101 C 130.18 101, 129.91 100.8, 129.64 100.56 C 129.38 100.32, 128.96 100.04, 128.71 99.94 C 128.47 99.84, 128.19 99.65, 128.1 99.51 C 128.01 99.38, 127.71 99.17, 127.43 99.05 C 127.16 98.92, 126.74 98.67, 126.5 98.49 C 126.26 98.31, 125.84 98.09, 125.56 98 C 125.29 97.92, 124.8 97.68, 124.47 97.48 C 124.15 97.27, 123.61 97.03, 123.29 96.94 C 122.96 96.85, 122.36 96.63, 121.97 96.44 C 121.57 96.26, 120.87 96.05, 120.41 95.99 C 119.94 95.92, 119.22 95.76, 118.81 95.63 C 118.4 95.49, 117.7 95.32, 117.25 95.24 C 116.34 95.08, 105.9 94.92, 105.17 95.06 C 104.57 95.17, 103.38 96.35, 103.24 96.99 C 103.18 97.23, 103.13 101.12, 103.13 105.62 C 103.12 110.74, 103.08 113.98, 103 114.27 C 102.85 114.78, 102.49 114.99, 101.69 115.02 C 101.25 115.04, 101.14 114.98, 100.6 114.39 C 100.27 114.03, 100 113.63, 100 113.51 C 100 113.38, 99.78 112.95, 99.5 112.55 C 99.23 112.14, 99 111.74, 99 111.66 C 99 111.57, 98.81 111.29, 98.58 111.03 C 98.36 110.77, 98.1 110.39, 98.01 110.17 C 97.93 109.95, 97.71 109.64, 97.54 109.48 C 97.37 109.32, 97.12 108.98, 96.99 108.72 C 96.85 108.46, 96.62 108.17, 96.46 108.06 C 96.29 107.96, 96.11 107.75, 96.04 107.59 C 95.75 106.97, 92.83 104.01, 91.01 102.5 C 90.72 102.26, 90.29 101.87, 90.05 101.64 C 89.81 101.41, 89.33 101.08, 88.99 100.91 C 88.65 100.74, 88.38 100.56, 88.38 100.5 C 88.38 100.44, 88.11 100.27, 87.8 100.12 C 87.48 99.96, 87.08 99.68, 86.91 99.5 C 86.75 99.31, 86.36 99.08, 86.06 99 C 85.77 98.92, 85.37 98.69, 85.18 98.49 C 84.99 98.3, 84.67 98.1, 84.45 98.05 C 83.97 97.95, 83.41 97.67, 83.09 97.37 C 82.96 97.25, 82.56 97.08, 82.2 97 C 81.85 96.91, 81.37 96.72, 81.12 96.57 C 80.65 96.27, 80.08 96.07, 79.35 95.94 C 79.09 95.9, 78.52 95.69, 78.07 95.49 C 77.63 95.28, 76.88 95.06, 76.41 94.99 C 75.95 94.92, 75.16 94.73, 74.67 94.56 C 73.5 94.16, 72.59 94.03, 70.31 93.93 C 69.28 93.89, 68.1 93.77, 67.69 93.68 C 66.68 93.44, 62.59 93.44, 62.06 93.67 M 152.7 95.68 C 151.4 96.93, 151.5 95.83, 151.5 109 C 151.5 118.54, 151.53 120.6, 151.68 121.21 C 151.83 121.83, 151.87 129.23, 151.96 172.19 C 152.02 199.82, 152.05 223.82, 152.03 225.5 C 151.99 228.81, 151.89 229.74, 151.44 230.62 C 151.29 230.93, 151.1 231.54, 151.02 231.96 C 150.93 232.49, 150.75 232.94, 150.45 233.38 C 150.2 233.74, 150 234.13, 150 234.26 C 150 234.54, 149.31 235.42, 148.31 236.39 C 147.9 236.8, 147.37 237.33, 147.12 237.57 C 146.88 237.81, 146.62 238, 146.53 238 C 146.45 238, 146.16 238.19, 145.91 238.42 C 145.65 238.66, 145.18 238.92, 144.87 239 C 144.57 239.08, 144.07 239.31, 143.78 239.5 C 143 240.01, 141.37 240.18, 138.19 240.09 C 135.68 240.01, 134.58 239.85, 133.97 239.45 C 133.81 239.35, 133.29 239.16, 132.81 239.02 C 132.33 238.89, 131.66 238.61, 131.31 238.39 C 130.9 238.14, 130.45 237.98, 129.98 237.92 L 129.27 237.84 129.06 238.27 C 128.94 238.5, 128.69 238.87, 128.5 239.08 C 128.31 239.3, 128.08 239.69, 128 239.96 C 127.91 240.22, 127.68 240.61, 127.49 240.81 C 127.29 241.02, 127.06 241.39, 126.98 241.63 C 126.9 241.87, 126.65 242.31, 126.42 242.61 C 126.19 242.91, 126 243.23, 126 243.32 C 126 243.41, 125.81 243.71, 125.57 243.99 C 125.34 244.27, 125.08 244.71, 124.99 244.97 C 124.91 245.23, 124.68 245.61, 124.49 245.81 C 124.29 246.02, 124.06 246.39, 123.98 246.63 C 123.9 246.87, 123.65 247.31, 123.42 247.61 C 123.19 247.91, 123 248.23, 123 248.32 C 123 248.41, 122.81 248.71, 122.57 248.99 C 122.34 249.27, 122.08 249.71, 121.99 249.97 C 121.91 250.23, 121.68 250.61, 121.49 250.81 C 121.29 251.02, 121.06 251.39, 120.98 251.63 C 120.9 251.87, 120.65 252.31, 120.42 252.61 C 120.19 252.91, 120 253.23, 120 253.32 C 120 253.41, 119.81 253.71, 119.57 253.99 C 119.34 254.27, 119.08 254.71, 118.99 254.97 C 118.91 255.23, 118.68 255.61, 118.49 255.81 C 118.29 256.02, 118.06 256.39, 117.98 256.63 C 117.9 256.87, 117.65 257.31, 117.42 257.61 C 117.19 257.91, 117 258.23, 117 258.32 C 117 258.41, 116.81 258.71, 116.57 258.99 C 116.34 259.27, 116.08 259.71, 115.99 259.97 C 115.91 260.23, 115.69 260.61, 115.51 260.81 C 115.32 261.02, 115.01 261.51, 114.81 261.9 L 114.46 262.62 114.69 263.13 C 114.82 263.41, 115.07 263.75, 115.24 263.89 C 115.42 264.02, 115.76 264.3, 116 264.51 C 116.24 264.71, 116.69 265.09, 117 265.35 C 117.31 265.61, 117.79 265.96, 118.06 266.11 C 118.33 266.27, 118.63 266.5, 118.71 266.62 C 118.8 266.75, 119.08 266.93, 119.34 267.03 C 119.6 267.14, 119.92 267.34, 120.05 267.49 C 120.19 267.64, 120.53 267.86, 120.8 267.99 C 121.08 268.11, 121.48 268.37, 121.69 268.55 C 121.89 268.73, 122.26 268.94, 122.5 269 C 122.74 269.07, 123.24 269.32, 123.62 269.56 C 123.99 269.8, 124.39 270, 124.49 270 C 124.6 270, 124.99 270.19, 125.37 270.43 C 125.75 270.66, 126.32 270.92, 126.62 271 C 126.93 271.08, 127.47 271.31, 127.81 271.5 C 128.16 271.69, 128.77 271.92, 129.18 272 C 129.59 272.09, 130.33 272.31, 130.82 272.51 C 131.3 272.7, 131.95 272.9, 132.26 272.95 C 132.88 273.04, 133.85 273.29, 134.88 273.63 C 135.26 273.76, 136.22 273.92, 137.01 273.98 C 138.9 274.15, 140.57 274.46, 141.19 274.76 C 141.65 274.98, 141.98 275, 145.4 275 C 148.99 275, 149.12 274.99, 149.25 274.75 C 149.35 274.56, 149.51 274.5, 149.91 274.5 C 150.2 274.5, 150.66 274.42, 150.94 274.32 C 151.21 274.23, 152.03 274.11, 152.75 274.07 C 154.28 273.96, 155.65 273.71, 156.53 273.36 C 156.87 273.23, 157.55 273.07, 158.04 273 C 158.59 272.92, 159.21 272.73, 159.64 272.51 C 160.03 272.31, 160.67 272.08, 161.06 272.01 C 161.46 271.94, 162.03 271.71, 162.34 271.51 C 162.64 271.31, 163.17 271.08, 163.52 271.01 C 164.21 270.86, 164.55 270.7, 164.92 270.36 C 165.05 270.24, 165.33 270.1, 165.55 270.05 C 166.03 269.95, 166.59 269.67, 166.91 269.37 C 167.05 269.24, 167.32 269.1, 167.51 269.06 C 167.7 269.02, 168.07 268.82, 168.33 268.61 C 168.58 268.41, 169.05 268.13, 169.36 267.99 C 169.66 267.86, 170 267.63, 170.09 267.5 C 170.19 267.36, 170.47 267.16, 170.73 267.05 C 170.98 266.95, 171.36 266.7, 171.56 266.51 C 171.77 266.31, 172.11 266.06, 172.33 265.96 C 172.55 265.85, 172.89 265.6, 173.09 265.41 C 173.29 265.22, 173.93 264.64, 174.51 264.12 C 176.34 262.5, 178.79 259.93, 179.04 259.41 C 179.11 259.25, 179.29 259.04, 179.45 258.94 C 179.61 258.83, 179.84 258.57, 179.95 258.34 C 180.06 258.12, 180.31 257.77, 180.51 257.56 C 180.7 257.36, 180.95 256.99, 181.05 256.75 C 181.15 256.51, 181.41 256.15, 181.62 255.96 C 181.83 255.76, 182 255.53, 182 255.44 C 182 255.34, 182.2 255, 182.45 254.68 C 182.7 254.35, 182.96 253.91, 183.03 253.7 C 183.1 253.49, 183.31 253.14, 183.51 252.94 C 183.7 252.73, 183.92 252.31, 184 252 C 184.08 251.69, 184.3 251.24, 184.49 251 C 184.68 250.76, 184.9 250.28, 184.99 249.94 C 185.07 249.59, 185.28 249.11, 185.45 248.86 C 185.63 248.61, 185.84 248.07, 185.94 247.67 C 186.03 247.27, 186.28 246.57, 186.48 246.12 C 186.69 245.68, 186.92 244.9, 186.99 244.4 C 187.07 243.9, 187.21 243.27, 187.31 243 C 187.42 242.72, 187.58 242.28, 187.68 242.01 C 187.78 241.75, 187.95 240.72, 188.05 239.73 C 188.23 238.04, 188.43 236.87, 188.77 235.44 C 189 234.44, 188.91 167.64, 188.67 166.96 C 188.53 166.55, 188.5 162.41, 188.5 140.99 C 188.5 120.88, 188.47 115.44, 188.34 115.16 C 188.23 114.9, 188.17 112.59, 188.12 105.61 L 188.06 96.41 187.33 95.71 L 186.59 95 170 95 L 153.41 95 152.7 95.68 M 201.5 95.16 L 201.19 95.32 201.11 106.94 C 201 124.58, 201 169.21, 201.12 171.19 C 201.18 172.15, 201.37 173.72, 201.54 174.69 C 201.71 175.65, 201.89 176.94, 201.93 177.56 C 202.04 178.96, 202.19 179.8, 202.56 181.01 C 202.72 181.53, 202.92 182.43, 203 183.01 C 203.08 183.59, 203.28 184.37, 203.46 184.75 C 203.63 185.13, 203.85 185.85, 203.95 186.36 C 204.05 186.87, 204.32 187.72, 204.56 188.25 C 204.8 188.78, 205 189.3, 205 189.39 C 205 189.79, 205.28 190.52, 205.57 190.86 C 205.73 191.06, 205.94 191.52, 206.01 191.89 C 206.09 192.25, 206.31 192.75, 206.51 193 C 206.7 193.24, 206.92 193.69, 207 193.99 C 207.08 194.29, 207.3 194.74, 207.49 194.99 C 207.68 195.24, 207.93 195.7, 208.05 196.01 C 208.16 196.33, 208.39 196.72, 208.56 196.87 C 208.73 197.03, 208.93 197.36, 209.01 197.61 C 209.1 197.86, 209.3 198.22, 209.46 198.42 C 209.63 198.62, 209.87 198.99, 209.99 199.24 C 210.12 199.48, 210.4 199.85, 210.61 200.05 C 210.83 200.26, 211 200.49, 211 200.58 C 211 200.66, 211.23 201.01, 211.5 201.34 C 211.78 201.67, 212.44 202.46, 212.97 203.1 C 214.59 205.05, 216.78 207.18, 218.13 208.12 C 218.37 208.28, 218.61 208.49, 218.66 208.59 C 218.72 208.68, 219 208.87, 219.29 209.02 C 219.58 209.17, 219.89 209.39, 219.98 209.52 C 220.07 209.65, 220.38 209.87, 220.66 210.02 C 220.95 210.16, 221.33 210.41, 221.5 210.57 C 221.67 210.73, 222.01 210.94, 222.25 211.04 C 222.49 211.15, 222.82 211.37, 222.98 211.54 C 223.14 211.71, 223.51 211.91, 223.8 212 C 224.1 212.08, 224.52 212.31, 224.75 212.5 C 224.98 212.7, 225.4 212.91, 225.68 212.98 C 225.96 213.06, 226.44 213.28, 226.75 213.48 C 227.06 213.68, 227.62 213.91, 228 213.99 C 228.38 214.07, 228.93 214.29, 229.22 214.49 C 229.53 214.7, 230.05 214.9, 230.49 214.98 C 230.9 215.05, 231.67 215.29, 232.21 215.5 C 232.78 215.73, 233.6 215.94, 234.19 216.01 C 235.19 216.13, 235.99 216.32, 236.94 216.67 C 237.28 216.79, 238.42 216.91, 240.26 217 C 241.8 217.09, 243.39 217.23, 243.79 217.33 C 244.85 217.58, 249.34 217.57, 249.96 217.31 C 250.2 217.21, 250.72 217.12, 251.1 217.12 C 252.46 217.12, 255.32 216.84, 255.81 216.66 C 256.09 216.56, 256.51 216.4, 256.75 216.31 C 256.99 216.22, 257.63 216.09, 258.16 216.01 C 258.69 215.94, 259.4 215.74, 259.72 215.58 C 260.38 215.25, 260.96 215.06, 261.64 214.94 C 261.89 214.9, 262.32 214.72, 262.58 214.54 C 262.85 214.36, 263.3 214.14, 263.59 214.05 C 264.22 213.86, 264.59 213.67, 264.91 213.37 C 265.04 213.25, 265.39 213.09, 265.69 213.01 C 266 212.94, 266.43 212.71, 266.65 212.52 C 266.88 212.32, 267.26 212.1, 267.5 212.02 C 267.74 211.94, 268.11 211.73, 268.31 211.55 C 268.52 211.37, 268.91 211.11, 269.19 210.99 C 269.46 210.86, 269.85 210.59, 270.04 210.38 C 270.24 210.17, 270.46 210, 270.53 210 C 270.6 210, 271.12 209.59, 271.67 209.08 C 272.23 208.58, 272.86 208.07, 273.07 207.97 C 273.43 207.78, 275.55 205.6, 275.97 204.98 C 276.19 204.66, 276.93 203.78, 277.49 203.19 C 277.68 202.98, 277.94 202.63, 278.05 202.4 C 278.17 202.17, 278.35 201.95, 278.45 201.92 C 278.55 201.88, 278.77 201.58, 278.93 201.27 C 279.09 200.95, 279.4 200.47, 279.61 200.2 C 279.83 199.93, 280 199.65, 280 199.57 C 280 199.49, 280.2 199.22, 280.44 198.97 C 280.69 198.7, 280.93 198.27, 281.01 197.95 C 281.09 197.64, 281.31 197.25, 281.51 197.05 C 281.71 196.86, 281.94 196.47, 282.01 196.19 C 282.09 195.92, 282.29 195.5, 282.46 195.27 C 282.64 195.04, 282.85 194.57, 282.95 194.22 C 283.17 193.37, 283.42 193.11, 283.72 193.41 C 283.91 193.61, 283.95 194.05, 284.02 197.54 C 284.08 200.76, 284.13 201.53, 284.31 202 C 284.53 202.58, 284.92 204.1, 285.05 204.89 C 285.1 205.14, 285.29 205.59, 285.49 205.89 C 285.69 206.19, 285.92 206.69, 286 207 C 286.08 207.31, 286.3 207.73, 286.49 207.94 C 286.67 208.14, 286.9 208.47, 286.98 208.67 C 287.43 209.72, 290.29 212.58, 291.35 213.03 C 291.53 213.11, 291.86 213.33, 292.06 213.51 C 292.27 213.7, 292.69 213.92, 293 214 C 293.31 214.08, 293.85 214.31, 294.19 214.5 C 294.55 214.71, 295.18 214.92, 295.67 215 C 296.13 215.07, 296.88 215.27, 297.33 215.44 C 298.67 215.94, 300.48 216.02, 310.95 215.97 C 318.79 215.94, 320.5 215.91, 320.67 215.77 C 320.86 215.61, 320.88 212.11, 320.88 167.98 L 320.88 120.38 320.62 120.12 C 320.28 119.78, 319.34 119.89, 318.35 120.39 C 317.96 120.58, 317.25 120.85, 316.78 120.98 C 316.3 121.12, 315.69 121.37, 315.42 121.54 C 315.16 121.71, 314.6 121.92, 314.19 122 C 313.77 122.08, 313.16 122.31, 312.81 122.5 C 312.47 122.7, 311.84 122.94, 311.41 123.04 C 310.98 123.14, 310.41 123.37, 310.14 123.55 C 309.87 123.74, 309.36 123.93, 308.95 124 C 308.51 124.07, 308 124.26, 307.66 124.49 C 307.35 124.7, 306.89 124.9, 306.64 124.95 C 305.9 125.07, 305.34 125.27, 304.95 125.54 C 304.75 125.68, 304.17 125.89, 303.65 126.02 C 303.14 126.14, 302.51 126.38, 302.26 126.56 C 302.01 126.73, 301.47 126.94, 301.06 127.01 C 300.64 127.09, 300.07 127.3, 299.77 127.5 C 299.47 127.7, 298.91 127.93, 298.52 128.01 C 298.13 128.09, 297.53 128.31, 297.19 128.5 C 296.84 128.69, 296.25 128.91, 295.88 128.99 C 295.5 129.07, 294.99 129.27, 294.75 129.44 C 294.5 129.61, 293.88 129.86, 293.35 129.99 C 292.83 130.12, 292.11 130.38, 291.76 130.56 C 291.42 130.73, 290.85 130.94, 290.51 131.01 C 290.16 131.08, 289.67 131.28, 289.42 131.46 C 289.17 131.63, 288.52 131.88, 287.98 132.01 C 287.44 132.15, 286.8 132.39, 286.55 132.56 C 286.3 132.73, 285.89 132.9, 285.64 132.94 C 284.84 133.07, 284.37 133.35, 284.18 133.81 C 284.03 134.18, 284 136.24, 284 147.59 C 284 161.43, 283.94 163.24, 283.49 164.55 C 283.35 164.96, 283.15 165.95, 283.04 166.74 C 282.9 167.8, 282.75 168.39, 282.48 168.96 C 282.28 169.38, 282.06 170.07, 281.98 170.48 C 281.9 170.93, 281.7 171.47, 281.49 171.78 C 281.3 172.08, 281.08 172.6, 281 172.94 C 280.92 173.28, 280.71 173.76, 280.51 174 C 280.32 174.24, 280.09 174.66, 280 174.94 C 279.91 175.21, 279.65 175.65, 279.42 175.91 C 279.19 176.16, 279 176.46, 279 176.56 C 279 176.65, 278.77 176.99, 278.5 177.31 C 278.23 177.63, 278 177.94, 278 178 C 278 178.29, 275.78 180.62, 274.69 181.5 C 274.3 181.81, 273.8 182.21, 273.58 182.39 C 273.37 182.57, 272.94 182.84, 272.63 183 C 272.32 183.15, 271.98 183.41, 271.85 183.56 C 271.73 183.71, 271.37 183.91, 271.04 184 C 270.71 184.09, 270.15 184.32, 269.8 184.51 C 269.45 184.71, 268.86 184.93, 268.49 185.01 C 268.12 185.09, 267.52 185.29, 267.16 185.44 C 265.89 186, 265.32 186.06, 260.81 186.06 C 256.2 186.06, 255.61 186, 253.84 185.35 C 253.31 185.16, 252.77 185, 252.65 185 C 252.21 185, 251.5 184.73, 251.15 184.44 C 250.95 184.27, 250.51 184.07, 250.18 184 C 249.81 183.92, 249.41 183.72, 249.19 183.51 C 248.98 183.31, 248.61 183.09, 248.36 183.01 C 248.11 182.93, 247.68 182.67, 247.4 182.43 C 247.13 182.2, 246.84 182, 246.76 182 C 246.56 182, 243.21 178.63, 242.89 178.09 C 242.73 177.84, 242.56 177.62, 242.51 177.62 C 242.45 177.62, 242.23 177.29, 242.01 176.88 C 241.79 176.47, 241.53 176.08, 241.43 176.03 C 241.33 175.97, 241.14 175.64, 241.01 175.29 C 240.88 174.93, 240.64 174.46, 240.47 174.23 C 240.29 174, 240.06 173.48, 239.94 173.07 C 239.82 172.65, 239.62 172.16, 239.48 171.98 C 239.35 171.79, 239.13 171.09, 238.98 170.41 C 238.84 169.74, 238.64 168.96, 238.54 168.69 C 238.16 167.69, 238.01 166.66, 237.93 164.57 C 237.88 163.33, 237.77 162.24, 237.67 161.95 C 237.41 161.2, 237.42 143.75, 237.69 143 C 237.99 142.15, 237.97 95.48, 237.67 95.23 C 237.37 94.99, 201.98 94.92, 201.5 95.16 M 75.12 125.69 C 74.75 125.78, 73.68 125.91, 72.75 125.98 C 71.78 126.05, 70.82 126.19, 70.5 126.31 C 69.55 126.66, 68.59 126.97, 67.95 127.12 C 67.61 127.19, 67.19 127.36, 67.01 127.49 C 66.83 127.62, 66.35 127.82, 65.93 127.94 C 65.52 128.06, 65.01 128.32, 64.78 128.51 C 64.56 128.71, 64.15 128.93, 63.87 129.02 C 63.59 129.1, 63.26 129.29, 63.14 129.44 C 63.02 129.6, 62.7 129.83, 62.43 129.97 C 62.16 130.11, 61.83 130.35, 61.69 130.5 C 61.55 130.65, 61.24 130.88, 61 131 C 60.57 131.22, 57.51 134.29, 56.61 135.38 C 56.36 135.69, 56.04 136.18, 55.89 136.47 C 55.74 136.76, 55.57 137, 55.5 137 C 55.43 137, 55.27 137.21, 55.14 137.47 C 55.01 137.73, 54.7 138.24, 54.45 138.61 C 54.2 138.97, 54 139.37, 54 139.48 C 54 139.59, 53.8 140.01, 53.55 140.41 C 53.3 140.82, 53.02 141.43, 52.93 141.77 C 52.84 142.12, 52.62 142.61, 52.45 142.86 C 52.26 143.14, 52.08 143.65, 51.99 144.19 C 51.91 144.67, 51.69 145.43, 51.5 145.88 C 51.23 146.51, 51.11 147.11, 50.94 148.6 C 50.82 149.65, 50.68 150.69, 50.62 150.91 C 50.55 151.13, 50.5 151.68, 50.5 152.12 C 50.5 152.57, 50.41 153.28, 50.31 153.69 C 50.1 154.57, 50.07 156.38, 50.26 157 C 50.33 157.24, 50.44 158, 50.49 158.69 C 50.58 159.81, 50.79 161.5, 51.12 163.88 C 51.19 164.33, 51.36 164.96, 51.5 165.29 C 51.65 165.62, 51.85 166.35, 51.96 166.91 C 52.08 167.55, 52.28 168.15, 52.49 168.5 C 52.69 168.81, 52.91 169.34, 52.99 169.69 C 53.07 170.03, 53.3 170.51, 53.5 170.76 C 53.69 171.01, 53.92 171.46, 54 171.76 C 54.08 172.06, 54.28 172.45, 54.43 172.62 C 54.59 172.8, 54.84 173.16, 54.97 173.44 C 55.11 173.71, 55.34 174.05, 55.49 174.18 C 55.64 174.31, 55.91 174.69, 56.09 175.02 C 56.27 175.35, 56.46 175.62, 56.51 175.62 C 56.56 175.62, 56.73 175.84, 56.89 176.09 C 57.22 176.64, 59.42 178.83, 60.38 179.56 C 60.73 179.84, 61.21 180.22, 61.43 180.4 C 61.65 180.59, 62.08 180.85, 62.39 180.98 C 62.69 181.11, 63.07 181.36, 63.23 181.53 C 63.39 181.71, 63.76 181.91, 64.05 182 C 64.35 182.08, 64.77 182.3, 65 182.5 C 65.25 182.72, 65.67 182.9, 66.11 182.99 C 66.5 183.07, 67.05 183.29, 67.33 183.48 C 67.7 183.73, 68.15 183.88, 68.83 183.99 C 69.37 184.08, 70.16 184.29, 70.59 184.45 C 71.85 184.95, 72.71 185.04, 76.75 185.04 C 80.78 185.05, 81.17 185.01, 83.06 184.42 C 83.61 184.24, 84.39 184.05, 84.79 183.98 C 85.18 183.92, 85.88 183.67, 86.33 183.43 C 86.78 183.2, 87.27 183, 87.42 183 C 87.57 183, 88.05 182.77, 88.5 182.5 C 88.95 182.23, 89.41 182, 89.53 182 C 89.65 182, 89.96 181.81, 90.22 181.58 C 90.48 181.35, 90.91 181.08, 91.17 180.99 C 91.44 180.89, 91.74 180.68, 91.85 180.52 C 91.95 180.37, 92.2 180.15, 92.41 180.04 C 92.61 179.94, 92.99 179.65, 93.25 179.39 C 93.51 179.14, 93.97 178.74, 94.27 178.5 C 94.58 178.26, 95.11 177.72, 95.47 177.31 C 95.82 176.9, 96.31 176.34, 96.56 176.06 C 97.37 175.16, 97.82 174.57, 97.97 174.23 C 98.04 174.05, 98.31 173.64, 98.55 173.31 C 98.8 172.99, 99 172.66, 99 172.57 C 99 172.49, 99.19 172.17, 99.43 171.86 C 99.66 171.56, 99.92 171.06, 100 170.75 C 100.08 170.44, 100.25 170.07, 100.37 169.94 C 100.71 169.56, 100.96 169, 101.06 168.39 C 101.11 168.09, 101.31 167.5, 101.51 167.08 C 101.71 166.66, 101.93 165.89, 102.01 165.38 C 102.09 164.86, 102.28 164.09, 102.44 163.66 C 102.94 162.34, 103.06 160.74, 103.06 155.5 C 103.06 150.27, 102.94 148.66, 102.45 147.34 C 102.29 146.91, 102.09 146.18, 102.01 145.7 C 101.93 145.23, 101.72 144.57, 101.55 144.23 C 101.38 143.9, 101.15 143.27, 101.05 142.84 C 100.94 142.41, 100.66 141.75, 100.42 141.37 C 100.19 140.99, 100 140.59, 100 140.48 C 100 140.37, 99.81 139.99, 99.57 139.64 C 99.34 139.29, 99.08 138.82, 99.01 138.58 C 98.93 138.35, 98.75 138.05, 98.61 137.92 C 98.46 137.79, 98.22 137.43, 98.06 137.12 C 97.91 136.82, 97.65 136.45, 97.5 136.31 C 97.35 136.18, 97.14 135.9, 97.03 135.69 C 96.93 135.49, 96.68 135.15, 96.47 134.94 C 94.88 133.3, 93.44 131.87, 93.04 131.53 C 92.78 131.31, 92.31 130.91, 92 130.65 C 91.69 130.38, 91.24 130.09, 91 130 C 90.76 129.91, 90.35 129.64, 90.09 129.41 C 89.84 129.19, 89.55 129, 89.45 129 C 89.35 129, 88.98 128.8, 88.62 128.56 C 88.26 128.32, 87.72 128.06, 87.42 127.98 C 87.12 127.91, 86.62 127.68, 86.32 127.48 C 85.99 127.26, 85.47 127.06, 84.98 126.98 C 84.54 126.9, 83.93 126.71, 83.62 126.56 C 82.92 126.2, 82.02 126.04, 79.92 125.88 C 79.02 125.81, 78.13 125.7, 77.94 125.63 C 77.49 125.45, 75.97 125.49, 75.12 125.69"/></symbol>
+    <clipPath id="noTilde"><path d="M0 0H520V122L594 96V270H0Z"/></clipPath>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4A8 8 0 1 1 20 12z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-3.9 0-7-2.7-7-6.5 0-3 2-5.2 3.6-6.8.4 1.6 1.4 2.8 2.6 3.3-.3-3.3 1.2-6.2 3.8-8 0 3 1.3 4.6 2.8 6.2A7.6 7.6 0 0 1 19 14.5c0 3.8-3.1 6.5-7 6.5z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15l6-6"/><path d="M10.5 6.5l1.3-1.3a4 4 0 0 1 5.7 5.7l-1.3 1.3M13.5 17.5l-1.3 1.3a4 4 0 0 1-5.7-5.7l1.3-1.3"/></symbol>
+    <symbol id="i-vector" viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="16" width="5" height="5" rx="1"/><path d="M8 5.5h5a5 5 0 0 1 5 5v5.5"/></symbol>
+    <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3"/></symbol>
+  </defs>
+</svg>
+
+<header class="top gut">
+  <a class="brand" href="#inicio" aria-label="Majú, ir al inicio">
+    <svg viewBox="0 0 594 270" aria-hidden="true"><use href="#wm"/></svg>
+    <span class="mono">Manual de marca · v6.1</span>
+  </a>
+  <span class="sp"></span>
+  <span class="status mono"><i></i>Propuesta 2 · aprobación</span>
+  <button class="kbtn" id="openNov" aria-haspopup="dialog"><svg class="ico"><use href="#i-spark"/></svg><span class="lbl">Novedades</span><i class="nov-dot" id="novDot" hidden></i></button>
+  <button class="kbtn" id="openPal" aria-haspopup="dialog"><svg class="ico"><use href="#i-search"/></svg><span class="lbl">Buscar en el manual</span><kbd>⌘K</kbd></button>
+  <div class="prog" aria-hidden="true"><i id="prog"></i></div>
+</header>
+
+<div class="shell">
+  <nav class="index" aria-label="Capítulos">
+    <span class="mono">Capítulos</span>
+    <a class="ix" href="#inicio" data-s="inicio"><span class="n">00</span>Inicio<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#logo" data-s="logo"><span class="n">01</span>Logo<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#movimiento" data-s="movimiento"><span class="n">02</span>Movimiento<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#espacio" data-s="espacio"><span class="n">03</span>Espacio y tamaño<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#usos" data-s="usos"><span class="n">04</span>Usos y práctica<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#color" data-s="color"><span class="n">05</span>Color<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#tipografia" data-s="tipografia"><span class="n">06</span>Tipografía<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#voz" data-s="voz"><span class="n">07</span>Tono de voz<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#fotografia" data-s="fotografia"><span class="n">08</span>Fotografía<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#aplicaciones" data-s="aplicaciones"><span class="n">09</span>Aplicaciones<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#presentaciones" data-s="presentaciones"><span class="n">10</span>Presentaciones<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#copy" data-s="copy"><span class="n">11</span>Copy y cuentas<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <a class="ix" href="#web" data-s="web"><span class="n">12</span>Guía web<svg class="ok ico"><use href="#i-check"/></svg></a>
+    <div class="meter">
+      <div style="display:flex;justify-content:space-between"><span class="mono">Recorrido</span><span class="mono" id="seenN">0/13</span></div>
+      <div class="bar"><i id="seenBar"></i></div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═════════ 00 · INICIO ═════════ -->
+    <section class="hero gut" id="inicio" data-sec>
+      <canvas id="field" aria-hidden="true"></canvas>
+      <div class="grid" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <span class="pill-lg"><b>v6.1</b>Identidad visual · Majú Agencia S.A.S.</span>
+        <h1>Manual de <span class="y">marca</span><span class="cur" aria-hidden="true"></span></h1>
+        <p class="sub">Las reglas para que Majú se vea igual de fuerte en un post, una web o una tarjeta. <b>Pasión que rinde cuentas</b>, también en cada píxel.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-y" href="#logo">Empezar el recorrido <svg class="ico"><use href="#i-arrow"/></svg></a>
+          <button class="btn btn-o" data-open-pal><svg class="ico"><use href="#i-search"/></svg>Buscar un color o regla</button>
+        </div>
+        <div class="roles"><span class="mono">¿Qué vienes a hacer?</span><div class="role-row">
+          <a class="role" href="#kit"><b>Diseño</b><small>Logo, color, kit</small></a>
+          <a class="role" href="#aplicaciones"><b>Contenido</b><small>Posts, fotos, motion</small></a>
+          <a class="role" href="#copy"><b>Copy</b><small>Nombre, textos, voz</small></a>
+          <a class="role" href="#presentaciones"><b>Cuentas</b><small>Slides y propuestas</small></a>
+          <a class="role" href="#web"><b>Desarrollo</b><small>Tokens y Elementor</small></a>
+        </div></div>
+      </div>
+      <div class="hero-vis" id="heroVis" aria-hidden="true">
+        <div class="coords"><span class="mono">M-01 · LLAMA ACTIVA</span><span class="mono" id="xy">X 0,000 / Y 0,000</span></div>
+        <span class="hint mono" id="hint">PASA EL CURSOR SOBRE LA M · HAZ CLIC</span>
+      </div>
+    </section>
+
+    <div class="intro gut">
+      <div class="card"><h3>Para qué sirve</h3><p>Define cómo se aplica, reproduce y comporta la marca en piezas digitales e impresas. Es de uso obligatorio para el equipo y los proveedores.</p></div>
+      <div class="card"><h3>Hasta dónde llega</h3><p>Cualquier cambio que no aparezca aquí cuenta como uso incorrecto. Si tienes una duda, primero busca aquí y luego pregunta.</p></div>
+      <div class="card"><h3>Héroe + Creador</h3><p>La personalidad que todo debe transmitir.</p><div class="trait"><span class="chip y">Directa</span><span class="chip y">Técnica</span><span class="chip y">Cálida</span><span class="chip y">Segura</span><span class="chip y">Apasionada</span></div></div>
+    </div>
+
+    <!-- ═════════ 01 · LOGO ═════════ -->
+    <section class="ch gut" id="logo" data-sec>
+      <div class="ch-head">
+        <div><span class="num">01 / Logo</span><h2 class="rv">La M es una <span class="lead-y">llama</span>.</h2></div>
+        <p>Imagotipo: un símbolo que funciona solo, más la palabra “ajú”. Las dos puntas de la M son llamas asimétricas, un guiño a <i>Amor Amarillo</i>. Cambia el fondo y mira qué versión le toca.</p>
+      </div>
+
+      <div class="stage bg-graf" id="stage">
+        <div class="meta"><span class="mono" id="stageL">FONDO · GRAFITO #2A2D35</span><span class="mono" id="stageR">LOGO · AMARILLO CERATI</span></div>
+        <div class="stage-in"><svg class="wm" id="stageLogo" viewBox="0 0 594 270" role="img" aria-label="Logo Majú" style="color:var(--y)"><use href="#wm"/></svg></div>
+        <div class="stage-bar">
+          <div class="seg" id="bgSeg" role="group" aria-label="Fondo">
+            <span class="pill" aria-hidden="true"></span>
+            <button data-bg="graf" aria-pressed="true">Grafito</button>
+            <button data-bg="y" aria-pressed="false">Amarillo</button>
+            <button data-bg="w" aria-pressed="false">Blanco</button>
+            <button data-bg="k" aria-pressed="false">Negro</button>
+          </div>
+          <div class="verdict" id="bgVerdict"></div>
+        </div>
+      </div>
+
+      <div class="card kit" id="kit">
+        <div class="kit-prev"><div class="checker" id="kitPrev"></div><span class="mono" id="kitName"></span></div>
+        <div class="kit-ctl">
+          <div><h3>Descarga el logo</h3><p>SVG para web e imprenta. PNG con fondo transparente para Slides, documentos y redes.</p></div>
+          <div class="kit-row"><span class="mono">Versión</span><div class="seg" id="kVer" role="group" aria-label="Versión"><span class="pill" aria-hidden="true"></span><button data-v="h" aria-pressed="true">Horizontal</button><button data-v="s" aria-pressed="false">Símbolo</button><button data-v="f" aria-pressed="false">Favicon</button></div></div>
+          <div class="kit-row"><span class="mono">Color</span><div class="seg" id="kCol" role="group" aria-label="Color"><span class="pill" aria-hidden="true"></span><button data-v="#F5C400" aria-pressed="true">Amarillo</button><button data-v="#2A2D35" aria-pressed="false">Grafito</button><button data-v="#FFFFFF" aria-pressed="false">Blanco</button><button data-v="#0C0C0C" aria-pressed="false">Negro</button></div></div>
+          <div class="kit-row"><span class="mono">Formato</span><div class="seg" id="kFmt" role="group" aria-label="Formato"><span class="pill" aria-hidden="true"></span><button data-v="svg" aria-pressed="true">SVG</button><button data-v="png" aria-pressed="false">PNG</button></div></div>
+          <div class="kit-row" id="kSizeRow" hidden><span class="mono">Ancho</span><div class="seg" id="kSize" role="group" aria-label="Ancho en píxeles"><span class="pill" aria-hidden="true"></span><button data-v="1024" aria-pressed="false">1024 px</button><button data-v="2048" aria-pressed="true">2048 px</button><button data-v="4096" aria-pressed="false">4096 px</button></div></div>
+          <div class="kit-act"><button class="btn btn-y" id="kDl" hidden><svg class="ico"><use href="#i-down"/></svg>Descargar</button><button class="btn btn-o" id="kCopy"><svg class="ico"><use href="#i-copy"/></svg>Copiar SVG</button></div>
+          <p class="kit-note" id="kNote"></p>
+        </div>
+      </div>
+
+      <div class="g3" style="margin-top:16px">
+        <div class="card var"><div class="pv bg-graf"><svg viewBox="0 0 594 270" style="color:var(--y)"><use href="#wm"/></svg></div><div class="cap"><b>Horizontal</b><span class="chip ok">Principal</span></div></div>
+        <div class="card var"><div class="pv bg-graf"><svg viewBox="0 0 402.79 329.9" style="color:var(--y);width:46%"><use href="#m"/></svg></div><div class="cap"><b>Símbolo M‑llama</b><span class="chip">Avatar · app</span></div></div>
+        <div class="card var"><div class="pv" style="background:#0F1014;gap:18px;display:flex;align-items:center;justify-content:center">
+            <span style="width:64px;height:64px;border-radius:14px;background:var(--grafito);display:grid;place-items:center"><svg viewBox="0 0 402.79 329.9" style="width:40px;color:var(--y)"><use href="#m"/></svg></span>
+            <span style="width:32px;height:32px;border-radius:8px;background:var(--grafito);display:grid;place-items:center"><svg viewBox="0 0 402.79 329.9" style="width:20px;color:var(--y)"><use href="#m"/></svg></span>
+            <span style="width:16px;height:16px;border-radius:4px;background:var(--grafito);display:grid;place-items:center"><svg viewBox="0 0 402.79 329.9" style="width:11px;color:var(--y)"><use href="#m"/></svg></span>
+          </div><div class="cap"><b>Favicon</b><span class="chip">64 · 32 · 16 px</span></div></div>
+      </div>
+
+      <div class="anat">
+        <div class="card">
+          <svg class="anat-svg" viewBox="-30 -30 654 330" aria-label="Anatomía del logo">
+            <g stroke="rgba(255,255,255,.08)" stroke-width="1">
+              <path d="M-30 1.5H624M-30 204.5H624M-30 270H624M0 -30V300M248 -30V300M594 -30V300"/>
+            </g>
+            <use href="#wm" width="594" height="270" style="color:var(--y)"/>
+            <g font-family="Geist Mono, monospace" font-size="11" fill="#A7A6A2">
+              <circle cx="72" cy="117" r="9" fill="none" stroke="#F5C400" stroke-width="1.5"/><text x="58" y="98" fill="#F5C400">1</text>
+              <circle cx="196" cy="2" r="9" fill="none" stroke="#F5C400" stroke-width="1.5"/><text x="210" y="14" fill="#F5C400">2</text>
+              <circle cx="104" cy="148" r="9" fill="none" stroke="#F5C400" stroke-width="1.5"/><text x="118" y="152" fill="#F5C400">3</text>
+              <circle cx="560" cy="80" r="9" fill="none" stroke="#F5C400" stroke-width="1.5"/><text x="574" y="70" fill="#F5C400">4</text>
+              <text x="252" y="292">línea base</text><text x="-26" y="-12">x = altura total</text>
+            </g>
+          </svg>
+        </div>
+        <div class="card">
+          <ul class="parts">
+            <li><span class="k">1</span><span><b>Llama corta.</b> La pieza izquierda. Arranca baja para que la M se lea en movimiento.</span></li>
+            <li><span class="k">2</span><span><b>Llama alta.</b> La punta derecha marca el ritmo. Nunca se iguala con la izquierda.</span></li>
+            <li><span class="k">3</span><span><b>El corte.</b> Las dos piezas se tocan en un punto. No se separan ni se rellenan.</span></li>
+            <li><span class="k">4</span><span><b>La tilde.</b> “Majú” siempre lleva tilde. Es parte del nombre.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 02 · MOVIMIENTO ═════════ -->
+    <section class="ch gut" id="movimiento" data-sec>
+      <div class="ch-head">
+        <div><span class="num">02 / Movimiento</span><h2 class="rv">La marca <span class="lead-y">se enciende</span>.</h2></div>
+        <p>La M se revela, se arma y respira como una llama. Solo ondea la parte alta y suelta chispas cuadradas. Estas son las animaciones oficiales.</p>
+      </div>
+      <div class="motion">
+        <figure style="margin:0">
+          <div class="clip"><img src="assets/img/mov-revelado-logo.webp" alt="Revelado completo del logo Majú" width="960" height="540"><span class="tag"><i></i>REVELADO · 12 s</span></div>
+          <figcaption class="clip-cap"><span><b>Revelado completo.</b> Intros de video, portada web, eventos.</span><span class="mono">16:9</span></figcaption>
+        </figure>
+        <div class="mstack">
+          <figure style="margin:0">
+            <div class="clip"><img src="assets/img/mov-m-bucle-cuadrado.webp" alt="M en llama, en bucle" width="720" height="720"><span class="tag"><i></i>BUCLE</span></div>
+            <figcaption class="clip-cap"><span><b>Llama en bucle.</b> Redes y fondos.</span><span class="mono">1:1</span></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="g2" style="margin-top:16px">
+        <figure style="margin:0">
+          <div class="clip"><img src="assets/img/mov-m-bucle-horizontal.webp" alt="M en llama, formato horizontal" width="640" height="360"><span class="tag"><i></i>LOOP CORTO</span></div>
+          <figcaption class="clip-cap"><span><b>Loop corto.</b> Cierres de video y presentaciones.</span><span class="mono">16:9</span></figcaption>
+        </figure>
+        <div class="card" style="padding:24px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+          <img src="assets/img/mov-m-firma.webp" alt="M animada para firma de correo" width="120" height="120" style="border-radius:16px;background:#000">
+          <div style="flex:1;min-width:200px;display:flex;flex-direction:column;gap:8px">
+            <b style="font-family:var(--d);font-weight:500;font-size:20px;letter-spacing:-.02em">Firma de correo</b>
+            <p style="color:var(--tx2);font-size:14px">GIF de 300 px para Gmail. Pesa poco y no distrae la lectura.</p>
+            <span class="chip y" style="align-self:flex-start">GIF · 300 × 300</span>
+          </div>
+        </div>
+      </div>
+      <div class="card anim-dl" id="animDl">
+        <div class="ad-head"><div><h3>Descarga las animaciones</h3><p>Alta para video y pantallas grandes. Baja para correo, WhatsApp y web liviana. Los GIF de la M tienen fondo transparente; el MP4 va sobre grafito.</p></div><span class="chip y">GIF · MP4</span></div>
+        <div class="ad-list" id="adList"></div>
+        <p class="kit-note" id="adNote"></p>
+      </div>
+      <div class="mrules">
+        <div class="card mrule"><svg class="ico"><use href="#i-vector"/></svg><b>100% vectorial</b><p>Se anima desde el vector. Nunca se escala un video pequeño.</p></div>
+        <div class="card mrule"><svg class="ico"><use href="#i-contrast"/></svg><b>Una sola tinta</b><p>Solo amarillo Cerati. Se puede invertir a grafito o blanco.</p></div>
+        <div class="card mrule"><svg class="ico"><use href="#i-flame"/></svg><b>Solo ondea la punta</b><p>La base de la M no se mueve. El movimiento es sutil y profesional.</p></div>
+        <div class="card mrule"><svg class="ico"><use href="#i-pause"/></svg><b>Sin resplandor</b><p>Sin brillos, glow ni degradados detrás. Las piezas nunca se separan.</p></div>
+      </div>
+    </section>
+
+    <!-- ═════════ 03 · ESPACIO ═════════ -->
+    <section class="ch gut" id="espacio" data-sec>
+      <div class="ch-head">
+        <div><span class="num">03 / Espacio y tamaño</span><h2 class="rv">Dale <span class="lead-y">aire</span>.</h2></div>
+        <p>La medida <b>x</b> es el ancho de la base de la llama corta. Esa zona queda libre de textos, fotos y otros elementos.</p>
+      </div>
+      <div class="lab">
+        <div class="card">
+          <div class="head"><h3>Zona protegida</h3>
+            <button class="btn btn-o" id="csBtn" aria-pressed="true"><svg class="ico"><use href="#i-check"/></svg>Zona visible</button></div>
+          <div class="cs-box">
+            <div class="cs-wrap" id="csWrap">
+              <span class="cs-zone" aria-hidden="true"></span>
+              <span class="cs-x" style="left:50%;top:calc(var(--x) * -1 + 4px)">x</span>
+              <span class="cs-x" style="left:calc(var(--x) * -1 + 6px);top:45%">x</span>
+              <svg viewBox="0 0 594 270" aria-label="Logo con zona protegida"><use href="#wm"/></svg>
+            </div>
+          </div>
+          <p style="font-size:14px;color:var(--tx2)">Mínimo <b style="color:var(--tx)">1x</b> a cada lado. En vallas y portada web, <b style="color:var(--tx)">2x</b>.</p>
+        </div>
+        <div class="card">
+          <div class="head"><h3>Prueba de tamaño</h3>
+            <div class="seg" id="sizeSeg" role="group" aria-label="Versión"><span class="pill" aria-hidden="true"></span><button data-mode="h" aria-pressed="true">Logo</button><button data-mode="s" aria-pressed="false">Símbolo</button></div></div>
+          <div class="size-view" id="sizeView"></div>
+          <div class="range"><input type="range" id="sizeR" min="12" max="420" value="200" aria-label="Ancho en píxeles"><span class="mono" id="sizeV" style="color:var(--tx);min-width:56px;text-align:right">200 px</span></div>
+          <div class="verd" id="sizeVerd"></div>
+        </div>
+      </div>
+      <div class="card tbl">
+        <table>
+          <thead><tr><th>Versión</th><th>Pantalla recomendado</th><th>Pantalla mínimo</th><th>Impreso mínimo</th></tr></thead>
+          <tbody>
+            <tr><td><b>Logo horizontal</b></td><td>160 px</td><td>120 px</td><td>25 mm</td></tr>
+            <tr><td><b>Símbolo M‑llama</b></td><td>32 px</td><td>16 px (favicon)</td><td>8 mm</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═════════ 04 · USOS ═════════ -->
+    <section class="ch gut" id="usos" data-sec>
+      <div class="ch-head">
+        <div><span class="num">04 / Usos y práctica</span><h2 class="rv">¿<span class="lead-y">Pasa</span> o no pasa?</h2></div>
+        <p>Diez casos reales. Decide rápido y mira por qué. Si aciertas los diez, ya puedes cuidar la marca sin preguntar.</p>
+      </div>
+      <div class="card quiz">
+        <div class="q-view" id="qView"></div>
+        <div class="q-side">
+          <div class="q-top"><span class="mono" id="qN">Caso 1 de 10</span><span class="q-dots" id="qDots" aria-hidden="true"></span></div>
+          <p class="q-q" id="qQ"></p>
+          <div class="q-actions" id="qAct">
+            <button class="btn btn-y" data-a="1"><svg class="ico"><use href="#i-check"/></svg>Pasa</button>
+            <button class="btn btn-o" data-a="0"><svg class="ico"><use href="#i-x"/></svg>No pasa</button>
+          </div>
+          <div class="q-fb" id="qFb" aria-live="polite"></div>
+        </div>
+      </div>
+      <ul class="rules">
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Amarillo sobre blanco.</b> El amarillo va sobre grafito o negro.</span></li>
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Texto blanco sobre amarillo.</b> No se lee. Usa grafito.</span></li>
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Estirar, aplastar o rotar</b> el logo.</span></li>
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Separar las piezas de la M</b> o cambiar su orden.</span></li>
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Degradados, sombras o resplandor.</b> El sistema es plano.</span></li>
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Escribir “Maju”</b> sin tilde o con otra letra.</span></li>
+      </ul>
+    </section>
+
+    <!-- ═════════ 05 · COLOR ═════════ -->
+    <section class="ch yellow gut" id="color" data-sec>
+      <div class="ch-head">
+        <div><span class="num">05 / Color</span><h2 class="rv">El amarillo manda.</h2></div>
+        <p>El amarillo Cerati es el corazón emocional de la marca, no un acento. Es el ambiente; el grafito arma los bloques de contraste. Toca cualquier valor para copiarlo.</p>
+      </div>
+      <div class="sws" id="sws"></div>
+      <div class="ratio-wrap">
+        <div>
+          <div class="ratio" role="img" aria-label="Proporción: amarillo 60%, grafito 30%, blanco 8%, verde 2%">
+            <div style="flex:60;background:var(--y);color:var(--ink)"><b>60%</b>Amarillo</div>
+            <div style="flex:30;background:var(--grafito);color:#fff"><b>30%</b>Grafito</div>
+            <div style="flex:8;background:#fff;color:var(--grafito)"><b>8</b></div>
+            <div style="flex:2;background:var(--v)"></div>
+          </div>
+          <ul class="ratio-legend">
+            <li><b>Amarillo</b>Fondos y ambiente de redes, web y presentaciones.</li>
+            <li><b>Grafito</b>Bloques de texto, botones, el logo sobre amarillo.</li>
+            <li><b>Blanco</b>Documentos largos y firma de correo.</li>
+            <li><b>Verde Sistema</b>Etiquetas de acción en piezas (“Trae tus números”) y estados de la web. Máximo 2%.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="pairs">
+            <div class="pair" style="background:var(--grafito);color:var(--y)"><b>Aa</b><small>AMARILLO / GRAFITO</small><span class="st si" style="position:absolute;right:10px;top:10px"><svg class="ico"><use href="#i-check"/></svg></span></div>
+            <div class="pair" style="background:var(--y);color:var(--grafito);box-shadow:inset 0 0 0 1.5px rgba(26,22,0,.3)"><b>Aa</b><small>GRAFITO / AMARILLO</small><span class="st si" style="position:absolute;right:10px;top:10px"><svg class="ico"><use href="#i-check"/></svg></span></div>
+            <div class="pair" style="background:var(--grafito);color:#fff"><b>Aa</b><small>BLANCO / GRAFITO</small><span class="st si" style="position:absolute;right:10px;top:10px"><svg class="ico"><use href="#i-check"/></svg></span></div>
+            <div class="pair" style="background:#fff;color:var(--grafito)"><b>Aa</b><small>GRAFITO / BLANCO</small><span class="st si" style="position:absolute;right:10px;top:10px"><svg class="ico"><use href="#i-check"/></svg></span></div>
+            <div class="pair" style="background:#fff;color:var(--y)"><b>Aa</b><small style="color:var(--grafito)">AMARILLO / BLANCO</small><span class="st no" style="position:absolute;right:10px;top:10px"><svg class="ico"><use href="#i-x"/></svg></span></div>
+            <div class="pair" style="background:var(--y);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(26,22,0,.3)"><b>Aa</b><small style="color:var(--ink)">BLANCO / AMARILLO</small><span class="st no" style="position:absolute;right:10px;top:10px"><svg class="ico"><use href="#i-x"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 06 · TIPOGRAFÍA ═════════ -->
+    <section class="ch gut" id="tipografia" data-sec>
+      <div class="ch-head">
+        <div><span class="num">06 / Tipografía</span><h2 class="rv">Tres fuentes, <span class="lead-y">tres trabajos</span>.</h2></div>
+        <p>Un sistema con aire tech que se lee bien en tamaños pequeños. Las tres son gratis en Google Fonts, así que todo el equipo puede instalarlas.</p>
+      </div>
+      <div class="faces">
+        <div class="card face"><span class="gl" style="font-family:var(--d);font-weight:500">Aa</span><h3>Geist</h3><p>Títulos, cifras grandes y botones. Peso <b style="color:var(--tx)">Medium 500</b> con letras juntas. Sin pesos extra gruesos.</p><div class="wts"><span class="chip">Títulos</span><span class="chip">Botones</span></div><div class="abc" style="font-family:var(--d)">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>abcdefghijklmnñopqrstuvwxyz · áéíóú · 0123456789</div></div>
+        <div class="card face"><span class="gl" style="font-family:var(--b);font-weight:400;letter-spacing:-.03em">Aa</span><h3 style="font-family:var(--b);font-weight:500;letter-spacing:-.02em">Inter</h3><p>Párrafos, descripciones, captions y documentos. <b style="color:var(--tx)">Regular 400</b> y <b style="color:var(--tx)">Medium 500</b>.</p><div class="wts"><span class="chip">Lectura</span><span class="chip">Interfaz</span></div><div class="abc" style="font-family:var(--b)">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>abcdefghijklmnñopqrstuvwxyz · áéíóú · 0123456789</div></div>
+        <div class="card face"><span class="gl" style="font-family:var(--m);letter-spacing:-.06em">Aa</span><h3 style="font-family:var(--m);letter-spacing:-.02em">Geist Mono</h3><p>Datos, métricas, fechas y etiquetas. Es la voz de “rinde cuentas”: solo para números y medidas.</p><div class="wts"><span class="chip">Cifras</span><span class="chip">Etiquetas</span></div><div class="abc" style="font-family:var(--m)">ROAS 4,8x · CPA $18.400<br>0123456789 · Q4‑2026</div></div>
+      </div>
+      <div class="fontlinks">
+        <a class="card fl" href="https://fonts.google.com/specimen/Geist" target="_blank" rel="noopener"><span class="fl-g" style="font-family:var(--d);font-weight:500">Aa</span><span><b>Geist</b><small>Google Fonts · gratis</small></span><svg class="ico"><use href="#i-ext"/></svg></a>
+        <a class="card fl" href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener"><span class="fl-g" style="font-family:var(--b)">Aa</span><span><b>Inter</b><small>Google Fonts · gratis</small></span><svg class="ico"><use href="#i-ext"/></svg></a>
+        <a class="card fl" href="https://fonts.google.com/specimen/Geist+Mono" target="_blank" rel="noopener"><span class="fl-g" style="font-family:var(--m)">Aa</span><span><b>Geist Mono</b><small>Google Fonts · gratis</small></span><svg class="ico"><use href="#i-ext"/></svg></a>
+      </div>
+      <div class="card fuse">
+        <div class="fuse-head"><h3>Cómo usar las fuentes</h3><div class="seg" id="fuseSeg" role="tablist" aria-label="Herramienta"><span class="pill" aria-hidden="true"></span><button data-f="pc" aria-pressed="true">Instalar en tu equipo</button><button data-f="gs" aria-pressed="false">Google Slides y Docs</button><button data-f="fg" aria-pressed="false">Figma</button><button data-f="web" aria-pressed="false">Web y Elementor</button></div></div>
+        <ol class="steps" data-fp="pc"><li>Abre cada enlace de arriba y toca <b>Get font</b> → <b>Download all</b>.</li><li>Descomprime el archivo y abre la carpeta <b>static</b>.</li><li>Instala los pesos que usa la marca: Geist 500 y 600, Inter 400 y 500, Geist Mono 400.</li><li>Reinicia el programa donde vas a diseñar para que aparezcan.</li></ol>
+        <ol class="steps" data-fp="gs" hidden><li>Abre el menú de fuentes y toca <b>Más fuentes</b>.</li><li>Busca <b>Geist</b>, <b>Inter</b> y <b>Geist Mono</b> y márcalas.</li><li>Títulos en Geist, texto en Inter. Las plantillas del capítulo 10 ya vienen así.</li><li>Si una fuente no aparece en la búsqueda, usa Inter para todo antes que Arial.</li></ol>
+        <ol class="steps" data-fp="fg" hidden><li>Las tres vienen incluidas en Figma; no hay que instalar nada.</li><li>Crea estilos de texto con la escala de abajo: H1, H2, Texto y Dato.</li><li>Usa interlineado y espaciado en porcentaje, como indica la escala.</li></ol>
+        <ol class="steps" data-fp="web" hidden><li>Pega este código en el <b>&lt;head&gt;</b> o en Elementor → Código personalizado.</li><li>En Elementor: Ajustes del sitio → <b>Fuentes globales</b> y asigna las del capítulo 12.</li><li>Si Geist no aparece en la lista de Elementor, súbela en Elementor → <b>Fuentes personalizadas</b>.</li></ol>
+        <div class="code" data-fp="web" hidden><pre id="fontCode">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;</pre><button class="btn btn-o" data-copy-pre="fontCode"><svg class="ico"><use href="#i-copy"/></svg>Copiar</button></div>
+      </div>
+      <div class="card tester">
+        <div class="tester-in"><svg class="ico" style="color:var(--tx3)"><use href="#i-search"/></svg><label class="sr" for="tt">Texto de prueba</label><input id="tt" value="Pasión que rinde cuentas." placeholder="Escribe para probar la jerarquía"></div>
+        <div class="scale">
+          <div class="srow"><span class="mono">H1 · Geist 500<br>72 / 0.95 / −4%</span><div class="t" style="font-family:var(--d);font-weight:500;font-size:clamp(36px,5.4vw,72px);line-height:.95;letter-spacing:-.04em"></div></div>
+          <div class="srow"><span class="mono">H2 · Geist 500<br>36 / 1.05 / −3%</span><div class="t" style="font-family:var(--d);font-weight:500;font-size:clamp(26px,3vw,36px);line-height:1.05;letter-spacing:-.03em"></div></div>
+          <div class="srow"><span class="mono">Texto · Inter 400<br>17 / 1.6</span><div class="t" style="font-size:17px;color:var(--tx2)"></div></div>
+          <div class="srow"><span class="mono">Dato · Geist Mono<br>12 / +4%</span><div class="t" style="font-family:var(--m);font-size:12px;letter-spacing:.04em;color:var(--y)"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 07 · VOZ ═════════ -->
+    <section class="ch gut" id="voz" data-sec>
+      <div class="ch-head">
+        <div><span class="num">07 / Tono de voz</span><h2 class="rv">Con pasión <span class="lead-y">y con números</span>.</h2></div>
+        <p>Majú habla como un experto que te tiene cariño: dice la verdad, muestra los datos y se emociona con tu marca.</p>
+      </div>
+      <div class="voice">
+        <div class="card vt"><span class="si">Directa</span><span class="no">sin ser <s>arrogante</s></span></div>
+        <div class="card vt"><span class="si">Técnica</span><span class="no">sin ser <s>fría</s></span></div>
+        <div class="card vt"><span class="si">Cálida</span><span class="no">sin ser <s>superficial</s></span></div>
+        <div class="card vt"><span class="si">Segura</span><span class="no">sin ser <s>corporativa vacía</s></span></div>
+      </div>
+      <div class="rw-list">
+        <div class="rw"><div class="a">Somos líderes en soluciones integrales de marketing.</div><svg class="ico arr"><use href="#i-arrow"/></svg><div class="b">Te mostramos qué campaña vendió y cuál no. Con números, cada mes.</div></div>
+        <div class="rw"><div class="a">Nadie lo hace como nosotros.</div><svg class="ico arr"><use href="#i-arrow"/></svg><div class="b">Le ponemos pasión a tu marca y te rendimos cuentas de cada peso.</div></div>
+        <div class="rw"><div class="a">Se adjunta el informe de KPIs del periodo.</div><svg class="ico arr"><use href="#i-arrow"/></svg><div class="b">Aquí está tu informe. Las ventas subieron; te contamos qué lo movió.</div></div>
+      </div>
+      <ul class="rules">
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Frases cortas.</b> Una idea por frase.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Tuteamos.</b> Cercanos, nunca confianzudos.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Un dato le gana a un adjetivo.</b> “+18% en ventas”, no “resultados increíbles”.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Jerga explicada.</b> Si usamos un término técnico, lo aterrizamos.</span></li>
+      </ul>
+    </section>
+
+    <!-- ═════════ 08 · FOTOGRAFÍA ═════════ -->
+    <section class="ch gut" id="fotografia" data-sec>
+      <div class="ch-head">
+        <div><span class="num">08 / Fotografía</span><h2 class="rv">Amarillo de fondo, <span class="lead-y">grafito en escena</span>.</h2></div>
+        <p>La fórmula se repite en toda foto de Majú: fondo amarillo, sujeto vestido de grafito y una luz dura que dibuja sombras. Energía de marca deportiva, nada de banco de imágenes.</p>
+      </div>
+      <div class="formula">
+        <div><span class="sw-mini" style="background:var(--y)"></span><b>Fondo amarillo</b><span>Pared, set o cielo. Nunca un filtro.</span></div>
+        <div><span class="sw-mini" style="background:var(--grafito);box-shadow:inset 0 0 0 1px var(--line2)"></span><b>Sujeto en grafito</b><span>Ropa, producto u objeto oscuro.</span></div>
+        <div><svg class="ico" style="color:var(--y);width:22px;height:22px"><use href="#i-contrast"/></svg><b>Una luz dura</b><span>Sombras con forma, contraste alto.</span></div>
+      </div>
+      <div class="pgrid">
+        <figure class="pf p-wide"><img src="assets/img/foto-luz-que-dibuja.webp" alt="Hombre de traje gris en un cuarto amarillo con su sombra en la pared" width="1500" height="1006"><figcaption><b>Luz que dibuja</b><span>La sombra es parte de la composición.</span></figcaption></figure>
+        <figure class="pf"><img src="assets/img/foto-movimiento-real.webp" alt="Atleta corriendo frente a un muro amarillo" width="1500" height="1006"><figcaption><b>Movimiento real</b><span>Acción congelada, no pose.</span></figcaption></figure>
+        <figure class="pf"><img src="assets/img/foto-epica-contraluz.webp" alt="Futbolista cabeceando a contraluz con cielo amarillo" width="1500" height="1006"><figcaption><b>Épica a contraluz</b><span>El héroe en silueta.</span></figcaption></figure>
+        <figure class="pf"><img src="assets/img/foto-producto-heroe.webp" alt="Deportivo gris mate en estudio amarillo" width="1500" height="1006"><figcaption><b>Producto como héroe</b><span>Referencia Audi: estudio limpio, alto impacto.</span></figcaption></figure>
+        <figure class="pf"><img src="assets/img/foto-datos-sobre-amarillo.webp" alt="Portátil y tableta con gráficas sobre mesa amarilla" width="1500" height="1006"><figcaption><b>Datos sobre amarillo</b><span>“Rinde cuentas” también se fotografía.</span></figcaption></figure>
+        <figure class="pf p-wide"><img src="assets/img/foto-calidez-sin-posar.webp" alt="Mujer riendo de perfil frente a pared amarilla" width="1500" height="1006"><figcaption><b>Calidez sin posar</b><span>Risa real, mirada fuera de cámara.</span></figcaption></figure>
+      </div>
+      <ul class="rules">
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Sonrisas de banco de imágenes</b> mirando a cámara.</span></li>
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Fondo blanco plano</b> y luz pareja sin sombras.</span></li>
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Filtro amarillo</b> sobre toda la foto o tonos pastel.</span></li>
+        <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Ropa de colores</b> que compita con el amarillo. El sujeto va en grafito o negro.</span></li>
+      </ul>
+    </section>
+
+    <!-- ═════════ 09 · APLICACIONES ═════════ -->
+    <section class="ch gut" id="aplicaciones" data-sec>
+      <div class="ch-head">
+        <div><span class="num">09 / Aplicaciones</span><h2 class="rv">La marca <span class="lead-y">en uso</span>.</h2></div>
+        <p>Las piezas que el equipo produce cada semana. 90% digital, 10% impreso.</p>
+      </div>
+      <div class="seg tabs" id="tabSeg" role="tablist" aria-label="Tipo de pieza">
+        <span class="pill" aria-hidden="true"></span>
+        <button role="tab" data-tab="redes" aria-pressed="true" aria-selected="true">Redes sociales</button>
+        <button role="tab" data-tab="merch" aria-pressed="false" aria-selected="false">Merch</button>
+        <button role="tab" data-tab="papel" aria-pressed="false" aria-selected="false">Papelería</button>
+        <button role="tab" data-tab="web" aria-pressed="false" aria-selected="false">Web</button>
+      </div>
+
+      <div class="board" data-panel="redes">
+        <div class="posts">
+          <figure class="post"><img class="shadow" src="assets/img/post-dato-duro.webp" alt="Post: -38% en CAC. Seis semanas. Cero humo." width="900" height="1125"><figcaption><b>Dato duro</b><span class="mono">Serie “-38% en CAC”</span></figcaption></figure>
+          <figure class="post"><img class="shadow" src="assets/img/post-opinion.webp" alt="Post: 6 redes mal es peor que una bien." width="900" height="1125"><figcaption><b>Opinión</b><span class="mono">Serie “Ojo Amarillo”</span></figcaption></figure>
+          <figure class="post"><img class="shadow" src="assets/img/post-detras-de-la-marca.webp" alt="Post: El amarillo no es decoración." width="900" height="1125"><figcaption><b>Detrás de la marca</b><span class="mono">Serie “Detrás del Amarillo”</span></figcaption></figure>
+        </div>
+        <div class="anatomy-post">
+          <div><span class="k">1</span><p><b>Etiquetas en las 4 esquinas</b> en Geist Mono con el nombre de la serie.</p></div>
+          <div><span class="k">2</span><p><b>Titular en bloques:</b> una línea sobre franja grafito con texto amarillo.</p></div>
+          <div><span class="k">3</span><p><b>Una etiqueta verde</b> para la acción o el dato. Solo una por pieza.</p></div>
+          <div><span class="k">4</span><p><b>Cierre amarillo</b> con lo que ofrecemos: “Te decimos…”.</p></div>
+        </div>
+      </div>
+
+      <div class="board" data-panel="merch" hidden>
+        <div class="merch">
+          <figure class="pf m-tall"><img src="assets/img/merch-gorra-tote.webp" alt="Gorra y tote bag grafito con logo Majú amarillo" width="1000" height="1339"><figcaption><b>Gorra y tote</b><span>Bordado y estampado en amarillo sobre grafito.</span></figcaption></figure>
+          <figure class="pf"><img src="assets/img/merch-polo.webp" alt="Polo grafito con logo Majú bordado en el pecho" width="1000" height="1338"><figcaption><b>Polo del equipo</b><span>Logo pequeño al pecho, lado izquierdo.</span></figcaption></figure>
+          <figure class="pf"><img src="assets/img/merch-termo.webp" alt="Termo grafito con logo Majú amarillo" width="1000" height="1339"><figcaption><b>Termo</b><span>Versión vertical, centrada.</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="board" data-panel="papel" hidden>
+        <div class="mk" style="margin-bottom:24px"><span class="mono"><span>Firma de correo animada · 600 × 200</span><span>GIF</span></span>
+          <img class="shadow" src="assets/img/firma-correo-animada.gif" alt="Firma de correo animada de Juan Pablo, jefe de operaciones de Majú" width="1200" height="401" style="width:100%;max-width:900px;height:auto;border-radius:10px">
+        </div>
+        <div class="biz">
+          <figure class="mk" style="margin:0"><span class="mono"><span>Tarjeta · frente</span><span>85 × 55 mm</span></span><img class="shadow" src="assets/img/tarjeta-frente.webp" alt="Frente de la tarjeta: M grafito sobre amarillo con el logo Majú" width="900" height="576"></figure>
+          <figure class="mk" style="margin:0"><span class="mono"><span>Tarjeta · respaldo</span><span>QR + datos</span></span><img class="shadow" src="assets/img/tarjeta-respaldo.webp" alt="Respaldo de la tarjeta de Juan Pablo con teléfono, correo y código QR" width="900" height="576"></figure>
+        </div>
+      </div>
+
+      <div class="board" data-panel="web" hidden>
+        <div class="mk-row">
+          <div class="mk" style="flex:1 1 520px"><span class="mono"><span>Portada web · M interactiva en puntos</span></span>
+            <div class="browser shadow" style="width:100%;max-width:900px">
+              <div class="tabbar"><span class="ftab"><span class="fav"><svg viewBox="0 0 402.79 329.9"><use href="#m"/></svg></span>Majú Agencia</span><span class="ftab dim">Nueva pestaña</span></div>
+              <div class="urlbar"><span>maju.agencia.com</span></div>
+              <img src="assets/img/portada-web.webp" alt="Portada web animada de Majú con la M en puntos" width="1100" height="619" style="display:block;width:100%;height:auto">
+            </div>
+          </div>
+          <div class="mk" style="flex:1 1 260px"><span class="mono"><span>Reglas web</span></span>
+            <ul class="rules" style="margin:0;grid-template-columns:1fr">
+              <li class="si"><svg class="ico"><use href="#i-check"/></svg><span>Logo siempre en <b>SVG</b>. Usa el botón “Copiar SVG” del capítulo 01.</span></li>
+              <li class="si"><svg class="ico"><use href="#i-check"/></svg><span>Favicon: <b>M amarilla sobre cuadro grafito</b> a 16, 32 y 180 px.</span></li>
+              <li class="si"><svg class="ico"><use href="#i-check"/></svg><span>Botón principal <b>amarillo con texto grafito</b>. El verde marca estados: listo, enviado, en vivo.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 10 · PRESENTACIONES ═════════ -->
+    <section class="ch gut" id="presentaciones" data-sec>
+      <div class="ch-head">
+        <div><span class="num">10 / Presentaciones</span><h2 class="rv">Slides listas, <span class="lead-y">en un clic</span>.</h2></div>
+        <p>Elige el color y toca <b>Descargar .pptx</b>. Ábrelo en PowerPoint, o súbelo a tu Google Drive y ábrelo con Google Slides. Los fondos vienen en <b>4K</b>.</p>
+      </div>
+      <div class="decks" id="decks"></div>
+      <div class="card fondos"><div class="ad-head"><div><h3>Fondos sueltos en 4K</h3><p>Para Canva, Keynote, video o cualquier programa. Traen logo, M y esquinas: solo agrega tu texto encima.</p></div><span class="chip y">PNG · 4K</span></div><div class="fk-grid"><a class="card fk" href="assets/fondos-4k/maju-fondo-amarillo-seccion-4k.png" download><img src="assets/img/fondo-amarillo-seccion.webp" alt="" loading="lazy" width="400" height="225"><span><b>Amarillo · sección</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-amarillo-frase-4k.png" download><img src="assets/img/fondo-amarillo-frase.webp" alt="" loading="lazy" width="400" height="225"><span><b>Amarillo · frase</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-amarillo-m-4k.png" download><img src="assets/img/fondo-amarillo-m.webp" alt="" loading="lazy" width="400" height="225"><span><b>Amarillo · M</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-claro-seccion-4k.png" download><img src="assets/img/fondo-claro-seccion.webp" alt="" loading="lazy" width="400" height="225"><span><b>Claro · sección</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-claro-frase-4k.png" download><img src="assets/img/fondo-claro-frase.webp" alt="" loading="lazy" width="400" height="225"><span><b>Claro · frase</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-claro-m-4k.png" download><img src="assets/img/fondo-claro-m.webp" alt="" loading="lazy" width="400" height="225"><span><b>Claro · M</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-grafito-seccion-4k.png" download><img src="assets/img/fondo-grafito-seccion.webp" alt="" loading="lazy" width="400" height="225"><span><b>Grafito · sección</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-grafito-frase-4k.png" download><img src="assets/img/fondo-grafito-frase.webp" alt="" loading="lazy" width="400" height="225"><span><b>Grafito · frase</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-grafito-m-4k.png" download><img src="assets/img/fondo-grafito-m.webp" alt="" loading="lazy" width="400" height="225"><span><b>Grafito · M</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-portada-foto-4k.png" download><img src="assets/img/fondo-portada-foto.webp" alt="" loading="lazy" width="400" height="225"><span><b>Portada con foto</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a><a class="card fk" href="assets/fondos-4k/maju-fondo-cierre-gracias-totales-4k.png" download><img src="assets/img/fondo-cierre-gracias-totales.webp" alt="" loading="lazy" width="400" height="225"><span><b>Cierre · Gracias totales</b><small>PNG · 3840×2160</small></span><svg class="ico"><use href="#i-down"/></svg></a></div></div>
+      <ul class="rules">
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Portada y cierre van siempre.</b> Están en las cuatro versiones y no se reemplazan.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Los fondos ya traen logo, M y las 4 esquinas.</b> Están fijos en el fondo de cada diapositiva: no se mueven ni se borran.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Títulos en Geist, texto en Inter.</b> Grafito sobre amarillo o claro; amarillo o blanco sobre grafito.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Una idea por diapositiva.</b> Si no cabe, son dos.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>¿Necesitas más diapositivas?</b> Duplica una de fondo (clic derecho → Duplicar). No dibujes fondos nuevos.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>La foto de portada ya tiene el tinte amarillo de marca.</b> Si necesitas otra foto, pídela a diseño: así conserva el tratamiento del capítulo 08.</span></li>
+      </ul>
+    </section>
+
+    <!-- ═════════ 11 · COPY Y CUENTAS ═════════ -->
+    <section class="ch gut" id="copy" data-sec>
+      <div class="ch-head">
+        <div><span class="num">11 / Copy y cuentas</span><h2 class="rv">Cómo nombrar <span class="lead-y">y presentar</span> Majú.</h2></div>
+        <p>Para quien escribe posts, correos, propuestas o habla con clientes. Copia los textos tal cual y adapta solo lo que está entre corchetes.</p>
+      </div>
+      <div class="g3">
+        <div class="card nm"><span class="mono">Día a día</span><b>Majú</b><p>Redes, conversación, WhatsApp.</p></div>
+        <div class="card nm"><span class="mono">Corporativo</span><b>Majú Agencia</b><p>Propuestas, correos, presentaciones.</p></div>
+        <div class="card nm"><span class="mono">Legal</span><b>Majú Agencia S.A.S.</b><p>Contratos, cotizaciones y facturas.</p></div>
+      </div>
+      <div class="copyblocks">
+        <div class="card cb"><div class="cb-head"><span class="mono">Tagline · siempre con punto final</span><button class="btn btn-o" data-copy-txt="Pasión que rinde cuentas."><svg class="ico"><use href="#i-copy"/></svg>Copiar</button></div><p class="cb-big">Pasión que rinde cuentas.</p></div>
+        <div class="card cb"><div class="cb-head"><span class="mono">Presentación en una línea</span><button class="btn btn-o" data-copy-el="pitch1"><svg class="ico"><use href="#i-copy"/></svg>Copiar</button></div><p id="pitch1">Majú es una agencia de marketing 360 en Colombia: estrategia, contenido, pauta y web con un solo equipo, y resultados que medimos en pesos.</p></div>
+        <div class="card cb"><div class="cb-head"><span class="mono">Párrafo “Sobre Majú” · propuestas y perfiles</span><button class="btn btn-o" data-copy-el="pitch2"><svg class="ico"><use href="#i-copy"/></svg>Copiar</button></div><p id="pitch2">Majú Agencia es una agencia de marketing 360 con enfoque digital. Unimos estrategia, contenido, pauta y desarrollo web en un solo equipo para que las marcas crezcan con pasión y con datos. Cada decisión que tomamos la medimos y te la mostramos: así rendimos cuentas.</p></div>
+        <div class="card cb"><div class="cb-head"><span class="mono">Primer mensaje por WhatsApp</span><button class="btn btn-o" data-copy-el="pitch3"><svg class="ico"><use href="#i-copy"/></svg>Copiar</button></div><p id="pitch3">Hola, [nombre]. Soy [tu nombre], de Majú. Vi [qué viste de su marca] y creo que podemos ayudarte con [objetivo]. ¿Te sirve una llamada de 20 minutos esta semana para mostrarte cómo lo mediríamos?</p></div>
+        <div class="card cb"><div class="cb-head"><span class="mono">Cierre de correo</span><button class="btn btn-o" data-copy-el="pitch4"><svg class="ico"><use href="#i-copy"/></svg>Copiar</button></div><p id="pitch4">Quedo atento. Si algo no está claro, lo revisamos juntos con los números en la mano.</p></div>
+      </div>
+      <div class="lex">
+        <div class="card"><h3>Decimos</h3><ul class="rules" style="margin:0;grid-template-columns:1fr"><li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Clientes potenciales</b> en vez de “leads”.</span></li><li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Retorno de la pauta</b> en vez de “ROAS” (o explícalo la primera vez).</span></li><li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Te mostramos / te rendimos cuentas</b>.</span></li><li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Un dato concreto</b>: “+18% en ventas en seis semanas”.</span></li></ul></div>
+        <div class="card"><h3>No decimos</h3><ul class="rules" style="margin:0;grid-template-columns:1fr"><li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>“Líderes”, “los mejores”, “soluciones integrales”.</b></span></li><li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>“Maju”</b> sin tilde, ni “MAJÚ” en mayúsculas sostenidas dentro de un texto.</span></li><li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Promesas sin número</b>: “resultados increíbles”, “crecimiento garantizado”.</span></li><li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>Usted</b> en redes. Tuteamos; en correos formales se puede usar usted.</span></li></ul></div>
+      </div>
+      <div class="card tbl">
+        <table>
+          <thead><tr><th>Formato</th><th>Así</th><th>No así</th></tr></thead>
+          <tbody>
+            <tr><td><b>Dinero</b></td><td>$18.400 · $2,5 millones</td><td>$18,400 · 2.5M</td></tr>
+            <tr><td><b>Porcentajes</b></td><td>38% · −21%</td><td>38 % · 38 por ciento</td></tr>
+            <tr><td><b>Decimales</b></td><td>4,8x</td><td>4.8x</td></tr>
+            <tr><td><b>Fechas</b></td><td>4 de octubre de 2026 · 04/10/2026</td><td>10/04/2026</td></tr>
+            <tr><td><b>Web y correo</b></td><td>maju.agencia.com</td><td>www.maju.agencia.com · Maju.Agencia.com</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═════════ 12 · GUÍA WEB ═════════ -->
+    <section class="ch gut" id="web" data-sec>
+      <div class="ch-head">
+        <div><span class="num">12 / Guía web</span><h2 class="rv">Para quien <span class="lead-y">implementa</span>.</h2></div>
+        <p>Variables, valores de Elementor y componentes listos para copiar. Si un valor no está aquí, no lo inventes: pregúntalo antes de publicar.</p>
+      </div>
+      <div class="dev-dl">
+        <div><b>Descarga los tokens</b><small>Las mismas variables de esta página, en CSS para cualquier sitio y JSON para Figma o desarrollo.</small></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-y" data-dl-tok="css" hidden><svg class="ico"><use href="#i-down"/></svg>maju-tokens.css</button><button class="btn btn-o" data-dl-tok="json" hidden><svg class="ico"><use href="#i-down"/></svg>maju-tokens.json</button><button class="btn btn-o" data-copy-pre="tokCss"><svg class="ico"><use href="#i-copy"/></svg>Copiar CSS</button></div>
+      </div>
+      <div class="dev">
+        <div class="card code big"><div class="cb-head"><span class="mono">Variables CSS</span></div><pre id="tokCss"></pre></div>
+        <div class="dev-side">
+          <div class="card tbl" style="margin:0">
+            <table>
+              <thead><tr><th>Elementor · Colores globales</th><th>Valor</th></tr></thead>
+              <tbody id="elColors"></tbody>
+            </table>
+          </div>
+          <div class="card tbl" style="margin:0">
+            <table>
+              <thead><tr><th>Elementor · Fuentes globales</th><th>Fuente · peso · tamaño</th></tr></thead>
+              <tbody>
+                <tr><td><b>Principal</b> (H1)</td><td>Geist 500 · 72 / 56 / 40 px · −4%</td></tr>
+                <tr><td><b>Secundaria</b> (H2–H3)</td><td>Geist 500 · 40 / 32 / 28 px · −3%</td></tr>
+                <tr><td><b>Texto</b></td><td>Inter 400 · 17 / 16 px · 1,6</td></tr>
+                <tr><td><b>Acento</b> (datos)</td><td>Geist Mono 400 · 12 px · +4%</td></tr>
+              </tbody>
+            </table>
+            <p class="dev-note">Tamaños: escritorio / tableta (1024 px) / celular (767 px), los mismos cortes de Elementor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="comps">
+        <div class="card comp"><div class="comp-prev"><span class="btn btn-y" style="min-height:52px;padding:0 24px;font-size:16px;border-radius:12px">Agenda tu diagnóstico</span></div><div class="comp-meta"><b>Botón principal</b><small>Amarillo, texto grafito · alto 52 px · radio 12 px · al presionar escala 0,97</small><button class="btn btn-o" data-copy-comp="btnP"><svg class="ico"><use href="#i-copy"/></svg>Copiar CSS</button></div></div>
+        <div class="card comp"><div class="comp-prev"><span class="btn btn-o" style="min-height:52px;padding:0 24px;font-size:16px;border-radius:12px">Ver casos</span></div><div class="comp-meta"><b>Botón secundario</b><small>Borde blanco 14% · mismo alto y radio que el principal</small><button class="btn btn-o" data-copy-comp="btnS"><svg class="ico"><use href="#i-copy"/></svg>Copiar CSS</button></div></div>
+        <div class="card comp"><div class="comp-prev"><span class="chip ok">En vivo</span><span class="chip y">360°</span><span class="chip">Etiqueta</span></div><div class="comp-meta"><b>Etiquetas</b><small>Radio total · 13 px · verde solo para estados</small><button class="btn btn-o" data-copy-comp="chip"><svg class="ico"><use href="#i-copy"/></svg>Copiar CSS</button></div></div>
+        <div class="card comp"><div class="comp-prev"><div class="card" style="padding:18px;width:100%;max-width:260px"><b style="font-family:var(--d);font-weight:500;font-size:18px;letter-spacing:-.02em">Tarjeta</b><p style="color:var(--tx2);font-size:14px;margin-top:4px">Superficie con borde de 1 px.</p></div></div><div class="comp-meta"><b>Tarjeta</b><small>Superficie #1B1D23 · borde 8% · radio 16 px</small><button class="btn btn-o" data-copy-comp="card"><svg class="ico"><use href="#i-copy"/></svg>Copiar CSS</button></div></div>
+      </div>
+      <div class="g4" style="margin-top:16px">
+        <div class="card spec2"><span class="mono">Espaciado</span><b>4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128</b><small>Solo estos valores, en px.</small></div>
+        <div class="card spec2"><span class="mono">Radios</span><b>8 · 12 · 16 · 22 · total</b><small>Botones 12, tarjetas 16, bloques grandes 22.</small></div>
+        <div class="card spec2"><span class="mono">Movimiento</span><b>cubic-bezier(.23,1,.32,1)</b><small>160 ms en botones, 240 ms en paneles. Nada más lento que 300 ms en interfaz.</small></div>
+        <div class="card spec2"><span class="mono">Ancho máximo</span><b>1240 px de contenido</b><small>Márgenes laterales: 16 px en celular, hasta 56 px en escritorio.</small></div>
+      </div>
+      <ul class="rules">
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Logo en SVG</b> desde el kit del capítulo 01. En WordPress, activa la carga de SVG con un plugin de confianza (por ejemplo, Safe SVG).</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Favicon</b>: descarga “Favicon PNG” del kit y súbelo en Ajustes del sitio → Identidad del sitio.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Contraste</b>: amarillo y blanco solo sobre grafito; sobre amarillo, texto grafito. Nunca amarillo sobre blanco.</span></li>
+        <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Movimiento</b>: respeta “reducir movimiento” del sistema operativo (prefers-reduced-motion).</span></li>
+      </ul>
+    </section>
+
+    <section class="end gut">
+      <div>
+        <h2>Pasión que<br>rinde cuentas.</h2>
+        <p>¿Algo que este manual no resuelve? Escríbele a Juan Pablo antes de publicar la pieza.</p>
+      </div>
+      <svg class="wm" viewBox="0 0 594 270" aria-label="Majú"><use href="#wm"/></svg>
+    </section>
+    <div class="foot gut"><span class="mono">Majú Agencia S.A.S. · Manual de marca v1.0 · 2026</span><span class="mono">Diseño: Andrés Ñustes</span></div>
+  </main>
+</div>
+
+<div class="palette" id="nov" role="dialog" aria-modal="true" aria-label="Novedades del manual" hidden>
+  <div class="pal nov">
+    <div class="pal-in"><svg class="ico" style="color:var(--y)"><use href="#i-spark"/></svg><b style="flex:1;font-family:var(--d);font-weight:500;letter-spacing:-.02em">Novedades del manual</b><button class="kbtn" id="closeNov" style="height:30px">Cerrar</button></div>
+    <ol class="nov-list" id="novList"></ol>
+  </div>
+</div>
+<div class="palette" id="pal" role="dialog" aria-modal="true" aria-label="Buscar en el manual" hidden>
+  <div class="pal">
+    <div class="pal-in"><svg class="ico" style="color:var(--tx3)"><use href="#i-search"/></svg><label class="sr" for="palQ">Buscar</label><input id="palQ" placeholder="Busca un capítulo, color o regla…" autocomplete="off"><kbd class="mono">ESC</kbd></div>
+    <ul id="palL" role="listbox"></ul>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"><svg class="ico"><use href="#i-check"/></svg><span id="toastT"></span></div>
+
+<script>
+(function(){
+  var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+
+  /* ── Aviso ── */
+  var tt;
+  function toast(t){ $('#toastT').textContent=t; var el=$('#toast'); el.classList.add('show'); clearTimeout(tt); tt=setTimeout(function(){el.classList.remove('show')},1800); }
+  function copy(text,btn,label){
+    function ok(){ toast(label||'Copiado'); if(btn){ btn.classList.add('done'); setTimeout(function(){btn.classList.remove('done')},1200);} }
+    function fb(){ var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy')}catch(e){} ta.remove(); ok(); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok,fb); } else fb();
+  }
+
+  /* ── Control segmentado con indicador ── */
+  function seg(el,onPick){
+    var pill=$('.pill',el), btns=$$('button',el);
+    function place(b,instant){ if(instant) pill.style.transition='none'; pill.style.width=b.offsetWidth+'px'; pill.style.transform='translateX('+b.offsetLeft+'px)'; if(instant){ pill.offsetWidth; pill.style.transition=''; } }
+    btns.forEach(function(b){ b.addEventListener('click',function(){ btns.forEach(function(x){ x.setAttribute('aria-pressed',x===b); if(x.hasAttribute('aria-selected')) x.setAttribute('aria-selected',x===b); }); place(b); onPick(b); }); });
+    var cur=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true'})[0]||btns[0];
+    el._place=function(){ var c=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true'})[0]||btns[0]; place(c,true); };
+    requestAnimationFrame(function(){ place(cur,true) });
+    addEventListener('resize',function(){ var c=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true'})[0]; if(c) place(c,true); });
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ var c=btns.filter(function(b){return b.getAttribute('aria-pressed')==='true'})[0]; if(c) place(c,true); });
+  }
+
+  /* ── 00 · Campo de puntos con la M ── */
+  (function(){
+    var hero=$('#inicio'), cv=$('#field'), ctx=cv.getContext('2d'), vis=$('#heroVis'), hint=$('#hint'), xy=$('#xy');
+    var ps=$$('#m path'), P1=new Path2D(ps[0].getAttribute('d')), P2=new Path2D(ps[1].getAttribute('d'));
+    var probe=document.createElement('canvas').getContext('2d');
+    var MW=402.79, MH=329.9, W=0,H=0,DPR=1,S=1,OX=0,OY=0,R=160,SP=12,D=[],E=[],B=[];
+    var mouse={x:0,y:0,tx:0,ty:0,on:false}, touch=matchMedia('(hover: none)').matches, born=0;
+    if(touch) hint.textContent='TOCA LA M';
+    function build(){
+      var r=hero.getBoundingClientRect(), v=vis.getBoundingClientRect();
+      W=r.width; H=r.height; DPR=Math.min(2,devicePixelRatio||1);
+      cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR);
+      var vx=v.left-r.left, vy=v.top-r.top, vw=v.width, vh=v.height;
+      var mh=Math.min(vh*0.78, vw*0.92*MH/MW); S=mh/MH; var mw=MW*S;
+      OX=vx+(vw-mw)/2; OY=vy+(vh-mh)/2+10;
+      SP=Math.max(9,Math.min(14,S*30)); R=Math.max(100,Math.min(170,mh*0.32));
+      var cx=OX+mw/2, cy=OY+mh*0.6, rx=mw*1.05, ry=mh*1.05; D=[];
+      for(var y=SP/2;y<H;y+=SP) for(var x=SP/2;x<W;x+=SP){
+        var u=(x-OX)/S, w=(y-OY)/S, ins=probe.isPointInPath(P1,u,w)||probe.isPointInPath(P2,u,w), a=1;
+        if(!ins){ var f=1-Math.hypot((x-cx)/rx,(y-cy)/ry); if(f<=0) continue; a=0.04+f*0.14; }
+        var sx=x, sy=y;
+        if(ins&&!RM){ var ang=Math.random()*6.283, rad=60+Math.random()*Math.max(W,H)*0.5; sx=cx+Math.cos(ang)*rad; sy=cy+Math.sin(ang)*rad; }
+        D.push({hx:x,hy:y,x:sx,y:sy,vx:0,vy:0,ins:ins,a:a,top:ins?Math.max(0,1-(y-OY)/(mh*0.5)):0,ph:Math.random()*6.283});
+      }
+      if(RM) draw(0,0);
+    }
+    function ember(){ /* chispas cuadradas desde la punta alta, como en la animación oficial */
+      var tip=Math.random()<.75?{u:322,v:8}:{u:74,v:118};
+      E.push({x:OX+tip.u*S+(Math.random()-.5)*14,y:OY+tip.v*S,vx:(Math.random()-.3)*0.5,vy:-(0.6+Math.random()*0.9),s:(3+Math.random()*5)*Math.max(.7,S*2.2),r:Math.random()*1.5,vr:(Math.random()-.5)*0.08,life:1});
+    }
+    function draw(T,dt){
+      ctx.setTransform(DPR,0,0,DPR,0,0); ctx.clearRect(0,0,W,H);
+      var yel=new Path2D(), grey={}, i, d;
+      for(i=0;i<D.length;i++){
+        d=D[i];
+        if(!RM){
+          var k=d.ins?0.05:0.06, fx=(d.hx-d.x)*k, fy=(d.hy-d.y)*k;
+          if(d.ins&&T>1.4){ fy+=-d.top*(1.4+1.2*Math.sin(T*3.1+d.hx*0.03+d.ph*0.3))*0.16; fx+=d.top*Math.sin(T*2.2+d.hy*0.05)*0.1; }
+          if(mouse.on){ var dx=d.x-mouse.x, dy=d.y-mouse.y, dist=Math.hypot(dx,dy)||1; if(dist<R){ var kk=Math.pow(1-dist/R,2)*2.4*(d.ins?1:.6); fx+=dx/dist*kk; fy+=dy/dist*kk; } }
+          d.vx=(d.vx+fx)*0.82; d.vy=(d.vy+fy)*0.82; d.x+=d.vx; d.y+=d.vy;
+        }
+        var disp=Math.min(1,Math.hypot(d.x-d.hx,d.y-d.hy)/40);
+        if(d.ins){ var rr=SP*0.2+disp*1.4; yel.moveTo(d.x+rr,d.y); yel.arc(d.x,d.y,rr,0,6.2832); }
+        else { var al=Math.min(.5,d.a+disp*.3), key=(Math.round(al*20)/20).toFixed(2), p=grey[key]||(grey[key]=new Path2D()), g=1.1+disp; p.moveTo(d.x+g,d.y); p.arc(d.x,d.y,g,0,6.2832); }
+      }
+      for(var kx in grey){ ctx.fillStyle='rgba(255,255,255,'+kx+')'; ctx.fill(grey[kx]); }
+      ctx.fillStyle='#F5C400'; ctx.fill(yel);
+      if(!RM){
+        if(T>1.6&&Math.random()<0.045) ember();
+        for(i=E.length-1;i>=0;i--){ var e=E[i]; e.x+=e.vx; e.y+=e.vy; e.r+=e.vr; e.life-=0.008; if(e.life<=0){E.splice(i,1);continue;}
+          ctx.save(); ctx.translate(e.x,e.y); ctx.rotate(e.r); ctx.globalAlpha=Math.min(1,e.life*1.6); ctx.fillRect(-e.s/2,-e.s/2,e.s,e.s); ctx.restore(); }
+        for(i=B.length-1;i>=0;i--){ var b=B[i], age=(T-b.t)/0.7; if(age>1){B.splice(i,1);continue;}
+          ctx.beginPath(); ctx.arc(b.x,b.y,24+age*R*1.7,0,6.2832); ctx.strokeStyle='rgba(245,196,0,'+(0.45*(1-age))+')'; ctx.lineWidth=1.5; ctx.stroke(); }
+        if(mouse.on&&!touch){ ctx.beginPath(); ctx.arc(mouse.x,mouse.y,R,0,6.2832); ctx.setLineDash([4,8]); ctx.strokeStyle='rgba(245,196,0,.16)'; ctx.lineWidth=1; ctx.stroke(); ctx.setLineDash([]); }
+      }
+    }
+    var run=false, vis2=true, t0=null;
+    function loop(t){ if(!vis2||document.hidden){run=false;return;} if(t0===null) t0=t; var T=(t-t0)/1000; mouse.x+=(mouse.tx-mouse.x)*.25; mouse.y+=(mouse.ty-mouse.y)*.25; draw(T); requestAnimationFrame(loop); }
+    function start(){ if(RM||run) return; run=true; requestAnimationFrame(loop); }
+    function loc(e){ var r=hero.getBoundingClientRect(); return [e.clientX-r.left,e.clientY-r.top]; }
+    hero.addEventListener('pointermove',function(e){ var p=loc(e); mouse.tx=p[0]; mouse.ty=p[1]; if(!mouse.on){mouse.x=p[0];mouse.y=p[1];} mouse.on=true; hint.style.opacity=0; xy.textContent='X '+(p[0]/1000).toFixed(3).replace('.',',')+' / Y '+(p[1]/1000).toFixed(3).replace('.',','); });
+    hero.addEventListener('pointerleave',function(){ mouse.on=false; });
+    hero.addEventListener('pointerup',function(e){ if(e.pointerType!=='mouse') mouse.on=false; });
+    hero.addEventListener('pointerdown',function(e){
+      if(e.target.closest('a,button')) return; var p=loc(e), T=t0===null?0:(performance.now()-t0)/1000, BR=R*1.9;
+      for(var i=0;i<D.length;i++){ var d=D[i], dx=d.x-p[0], dy=d.y-p[1], dist=Math.hypot(dx,dy)||1; if(dist<BR){ var k=(1-dist/BR)*18; d.vx+=dx/dist*k; d.vy+=dy/dist*k; } }
+      B.push({x:p[0],y:p[1],t:T}); for(var j=0;j<8;j++) ember();
+    });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ vis2=es[0].isIntersecting; if(vis2) start(); }).observe(hero);
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden) start(); });
+    var rt; addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ build(); D.forEach(function(d){d.x=d.hx;d.y=d.hy;}); },150); });
+    build(); start();
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ build(); });
+  })();
+
+  /* ── Progreso, índice y capítulos vistos ── */
+  var secs=$$('[data-sec]'), ixs=$$('.ix'), seen={};
+  try{ seen=JSON.parse(localStorage.getItem('maju-vistos')||'{}')||{}; }catch(e){ seen={}; }
+  function paintSeen(){ var n=0; ixs.forEach(function(a){ var on=!!seen[a.dataset.s]; a.classList.toggle('seen',on); if(on) n++; }); $('#seenN').textContent=n+'/'+ixs.length; $('#seenBar').style.transform='scaleX('+(n/ixs.length)+')'; if(n===ixs.length&&!paintSeen.done){ paintSeen.done=true; } }
+  paintSeen();
+  var spyLock=0;
+  function setCur(id){ ixs.forEach(function(a){ a.setAttribute('aria-current',a.dataset.s===id?'true':'false'); });
+    if(!seen[id]){ seen[id]=1; try{localStorage.setItem('maju-vistos',JSON.stringify(seen))}catch(x){} paintSeen(); } }
+  function spy(){ if(Date.now()<spyLock) return; var line=innerHeight*0.32, cur=secs[0].id, h=document.documentElement;
+    secs.forEach(function(s){ if(s.getBoundingClientRect().top<=line) cur=s.id; });
+    if(h.scrollTop+innerHeight>=h.scrollHeight-4) cur=secs[secs.length-1].id;
+    setCur(cur); }
+  function go(id){ var el=document.getElementById(id); if(!el) return;
+    var top=el.getBoundingClientRect().top+window.pageYOffset-64;
+    setCur(id); spyLock=Date.now()+1200;
+    window.scrollTo({top:Math.max(0,top),behavior:RM?'auto':'smooth'});
+    try{history.replaceState(null,'','#'+id)}catch(x){} }
+  window.__go=go;
+  document.addEventListener('click',function(e){ var a=e.target.closest('a[href^="#"]'); if(!a) return; var id=a.getAttribute('href').slice(1); if(!id||!document.getElementById(id)) return; e.preventDefault(); go(id); });
+  var ticking=false; addEventListener('scroll',function(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; spy(); }); },{passive:true});
+  addEventListener('load',spy); spy();
+  if('IntersectionObserver' in window){
+    /* Revelado de títulos: parten visibles; al entrar, un barrido corto con clip-path */
+    if(!RM&&Element.prototype.animate){
+      var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; io2.unobserve(e.target);
+        e.target.animate([{clipPath:'inset(0 0 100% 0)',transform:'translateY(18px)',filter:'blur(4px)'},{clipPath:'inset(0 0 -10% 0)',transform:'none',filter:'blur(0)'}],{duration:700,easing:'cubic-bezier(.23,1,.32,1)'}); }); },{rootMargin:'0px 0px -12% 0px'});
+      $$('.rv').forEach(function(h){ var r=h.getBoundingClientRect(); if(r.top>innerHeight) io2.observe(h); });
+    }
+  }
+  var prog=$('#prog');
+  addEventListener('scroll',function(){ var h=document.documentElement; prog.style.transform='scaleX('+Math.min(1,h.scrollTop/((h.scrollHeight-h.clientHeight)||1))+')'; },{passive:true});
+
+  /* ── 01 · Escenario del logo ── */
+  var BG={
+    graf:{cls:'bg-graf',c:'var(--y)',L:'FONDO · GRAFITO #2A2D35',R:'LOGO · AMARILLO CERATI',v:'<span class="chip ok">Versión principal</span>La combinación con más fuerza.'},
+    y:{cls:'bg-y',c:'var(--grafito)',L:'FONDO · AMARILLO #F5C400',R:'LOGO · GRAFITO',v:'<span class="chip ok">Correcto</span>Sobre amarillo, el logo va en grafito.'},
+    w:{cls:'bg-w',c:'var(--grafito)',L:'FONDO · BLANCO',R:'LOGO · GRAFITO',v:'<span class="chip y">Solo documentos</span>Nunca amarillo sobre blanco.'},
+    k:{cls:'bg-k',c:'var(--y)',L:'FONDO · NEGRO #0C0C0C',R:'LOGO · AMARILLO CERATI',v:'<span class="chip ok">Correcto</span>Video, eventos y piezas nocturnas.'}
+  };
+  var stage=$('#stage'), curBg='graf';
+  seg($('#bgSeg'),function(b){ var c=BG[b.dataset.bg]; curBg=b.dataset.bg; stage.className='stage '+c.cls; $('#stageLogo').style.color=c.c; $('#stageL').textContent=c.L; $('#stageR').textContent=c.R; $('#stageL').style.color=$('#stageR').style.color=(b.dataset.bg==='graf'||b.dataset.bg==='k')?'':'#6B6A63'; $('#bgVerdict').innerHTML=c.v; });
+  $('#bgVerdict').innerHTML=BG.graf.v;
+  function svgSrc(which,hex){
+    var ps=$$('#m path').map(function(p){return '<path d="'+p.getAttribute('d')+'"/>'}).join('');
+    if(which==='m') return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.79 329.9" fill="'+hex+'">'+ps+'</svg>';
+    var aju=$('#wm > path').getAttribute('d');
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 594 270" fill="'+hex+'"><g transform="translate(0 1.5) scale(.6157)">'+ps+'</g><path fill-rule="evenodd" transform="translate(245 -5)" d="'+aju+'"/></svg>';
+  }
+
+
+  /* ── 01 · Kit de descarga (SVG y PNG reales) ── */
+  (function(){
+    var K={v:'h',c:'#F5C400',f:'svg',w:2048}, CN={'#F5C400':'amarillo','#2A2D35':'grafito','#FFFFFF':'blanco','#0C0C0C':'negro'};
+    var dl=null;
+    function build(withSize){
+      var mp=$$('#m path').map(function(p){return '<path d="'+p.getAttribute('d')+'"/>'}).join(''), aju=$('#wm > path').getAttribute('d');
+      if(K.v==='h'){ var W=withSize?K.w:594, H=Math.round(W*270/594);
+        return {w:W,h:H,svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 594 270" width="'+W+'" height="'+H+'" fill="'+K.c+'"><g transform="translate(0 1.5) scale(.6157)">'+mp+'</g><path fill-rule="evenodd" transform="translate(245 -5)" d="'+aju+'"/></svg>'}; }
+      if(K.v==='s'){ var W2=withSize?K.w:403, H2=Math.round(W2*329.9/402.79);
+        return {w:W2,h:H2,svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.79 329.9" width="'+W2+'" height="'+H2+'" fill="'+K.c+'">'+mp+'</svg>'}; }
+      var bg=(K.c==='#2A2D35'||K.c==='#0C0C0C')?'#F5C400':'#2A2D35', S=withSize?Math.min(K.w,512):512;
+      return {w:S,h:S,svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="'+S+'" height="'+S+'"><rect width="100" height="100" rx="22" fill="'+bg+'"/><g transform="translate(19 25.3) scale(.15393)" fill="'+K.c+'">'+mp+'</g></svg>'};
+    }
+    function fname(){ var n={h:'logo',s:'simbolo',f:'favicon'}[K.v]; return 'maju-'+n+'-'+CN[K.c]+(K.f==='png'?'-'+(K.v==='f'?512:K.w)+'px':'')+'.'+K.f; }
+    function render(){
+      var b=build(false); $('#kitPrev').innerHTML=b.svg.replace(/ width="\d+" height="\d+"/,'');
+      $('#kitName').textContent=fname();
+      var showSize=K.f==='png'&&K.v!=='f'; var row=$('#kSizeRow'); var was=row.hidden; row.hidden=!showSize; if(was&&showSize&&$('#kSize')._place) $('#kSize')._place();
+      $('#kNote').textContent= K.v==='f'?'Favicon a 512 px. El navegador lo reduce a 32 y 16 px.': K.c==='#FFFFFF'?'Blanco: solo sobre grafito, negro o fotos oscuras.': K.c==='#F5C400'?'Amarillo: solo sobre grafito o negro. Nunca sobre blanco.':'';
+    }
+    function pick(key,conv){ return function(b){ K[key]=conv?conv(b.dataset.v):b.dataset.v; render(); }; }
+    seg($('#kVer'),pick('v')); seg($('#kCol'),pick('c')); seg($('#kFmt'),pick('f')); seg($('#kSize'),pick('w',Number));
+    render();
+    function png(b){ return new Promise(function(res,rej){ var img=new Image(), url=URL.createObjectURL(new Blob([b.svg],{type:'image/svg+xml'}));
+      img.onload=function(){ var c=document.createElement('canvas'); c.width=b.w; c.height=b.h; c.getContext('2d').drawImage(img,0,0,b.w,b.h); URL.revokeObjectURL(url); c.toBlob(function(x){ x?res(x):rej(new Error('png')); },'image/png'); };
+      img.onerror=function(){ URL.revokeObjectURL(url); rej(new Error('img')); }; img.src=url; }); }
+    $('#kCopy').addEventListener('click',function(){ copy(build(false).svg.replace(/ width="\d+" height="\d+"/,''),this,'SVG copiado'); });
+    $('#kDl').addEventListener('click',async function(){
+      var btn=this; if(!dl) return; btn.disabled=true;
+      try{ var b=build(true), data=K.f==='svg'?b.svg:await png(b); await dl.save({filename:fname(),data:data}); toast(fname()+' descargado'); }
+      catch(e){ var c=e&&e.code; toast(c==='declined'?'Descarga cancelada':c==='rate_limited'?'Ya hay una descarga abierta':'No se pudo descargar. Usa Copiar SVG.'); }
+      btn.disabled=false;
+    });
+    (async function(){
+      try{ dl=window.claude&&window.claude.use?await window.claude.use('downloads'):null; }catch(e){ dl=null; }
+      if(dl){ $('#kDl').hidden=false; }
+      else { $('#kNote').textContent='La descarga funciona al abrir el manual en claude.ai. Aquí puedes copiar el SVG.'; }
+    })();
+  })();
+
+  /* ── 10 · Presentaciones: se crean en el Drive de quien hace clic ── */
+  (function(){
+    var PPTX={amarillo:'assets/presentaciones/maju-presentacion-amarillo.pptx',claro:'assets/presentaciones/maju-presentacion-claro.pptx',grafito:'assets/presentaciones/maju-presentacion-grafito.pptx',completa:'assets/presentaciones/maju-presentacion-completa.pptx'};
+    var IMG={cover:'assets/img/slide-cover.webp',gr:'assets/img/slide-gr.webp',ys:'assets/img/slide-ys.webp',yc:'assets/img/slide-yc.webp',ym:'assets/img/slide-ym.webp',ls:'assets/img/slide-ls.webp',lc:'assets/img/slide-lc.webp',lm:'assets/img/slide-lm.webp',ds:'assets/img/slide-ds.webp',dc:'assets/img/slide-dc.webp',dm:'assets/img/slide-dm.webp'};
+    var D=[
+      {k:'amarillo',n:'Amarillo',d:'#F4C400',s:['cover','ys','yc','ym','gr'],t:'Para clientes y propuestas.'},
+      {k:'claro',n:'Claro',d:'#F2F2F0',s:['cover','ls','lc','lm','gr'],t:'Para informes con mucho texto o datos.'},
+      {k:'grafito',n:'Grafito',d:'#2A2D35',s:['cover','ds','dc','dm','gr'],t:'Para eventos, video y pantallas grandes.'},
+      {k:'completa',n:'Completa',d:'linear-gradient(90deg,#F4C400 33%,#F2F2F0 0 66%,#2A2D35 0)',s:['cover','ys','yc','ym','ls','lc','lm','ds','dc','dm','gr'],t:'Los tres colores en un solo archivo.'}
+    ];
+    var DRIVE='Google Drive', mcp=null, dl=null;
+    $('#decks').innerHTML=D.map(function(x){
+      var thumbs=x.s.map(function(id){ return '<img src="'+IMG[id]+'" alt="" class="'+((id==='cover'||id==='gr')?'fix':'')+'">'; }).join('');
+      return '<article class="card dk'+(x.k==='completa'?' all':'')+'" data-k="'+x.k+'"><div class="dk-strip">'+thumbs+'</div><div class="dk-body"><div><b><span class="dot" style="background:'+x.d+'"></span>'+x.n+'</b><small>'+x.s.length+' diapositivas · '+x.t+'</small></div>'+
+        '<div class="dk-act"><button class="btn btn-y" data-mk="'+x.k+'" hidden><svg class="ico"><use href="#i-ext"/></svg>Crear en mi Drive</button><button class="btn btn-o" data-pp="'+x.k+'" hidden><svg class="ico"><use href="#i-down"/></svg>Descargar .pptx</button></div></div><p class="dk-msg" aria-live="polite"></p></article>';
+    }).join('');
+    function today(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+    function b64ToBytes(b){ var s=atob(b), u=new Uint8Array(s.length); for(var i=0;i<s.length;i++) u[i]=s.charCodeAt(i); return u; }
+    function msg(k,html){ var el=$('.dk[data-k="'+k+'"] .dk-msg'); el.innerHTML=html; }
+    var MSG={
+      server_not_connected:'Conecta Google Drive en claude.ai → Configuración → Conectores y vuelve a intentarlo. Mientras, descarga el .pptx.',
+      needs_reauth:'Tu conexión con Google Drive venció. Reconéctala en claude.ai → Configuración → Conectores.',
+      selection_required:'Tienes más de una cuenta de Google Drive conectada. Elige una en el aviso de claude.ai y vuelve a intentarlo.',
+      not_in_manifest:'No diste permiso para usar Google Drive en esta página. Puedes activarlo en el menú Permisos del manual o descargar el .pptx.',
+      blocked_by_policy:'Tu organización no permite crear archivos desde aquí. Descarga el .pptx.',
+      approval_required:'Tu organización pide aprobación para crear archivos. Descarga el .pptx.'
+    };
+    document.addEventListener('click',async function(e){
+      var b=e.target.closest('[data-mk]'); if(b){
+        var k=b.dataset.mk, x=D.filter(function(d){return d.k===k})[0]; b.disabled=true; var old=b.innerHTML; b.innerHTML='Creando…'; msg(k,'');
+        try{
+          var r=await mcp.callTool(DRIVE,'create_file',{title:'Majú · Presentación '+x.n+' · '+today(),base64Content:PPTX[k],contentMimeType:'application/vnd.openxmlformats-officedocument.presentationml.presentation'},{cache:false});
+          var p=r&&r.payload, f=(p&&(p.file||p))||{}, url=f.viewUrl||f.webViewLink||(f.id?'https://docs.google.com/presentation/d/'+f.id+'/edit':'');
+          msg(k, url?'<span class="chip ok">Listo</span> Se creó en tu Drive: <a href="'+url+'" target="_blank" rel="noopener">abrir presentación</a>':'<span class="chip ok">Listo</span> Se creó en tu Drive. Búscala como “Majú · Presentación '+x.n+'”.');
+          toast('Presentación creada en tu Drive');
+        }catch(err){
+          var c=err&&err.code;
+          if(c==='server_unavailable'||c==='upstream_error') msg(k,'Google no respondió a tiempo. Revisa tu Drive antes de intentarlo otra vez: puede que el archivo sí se haya creado.');
+          else if(c==='tool_error') msg(k,'Google Drive no pudo crear el archivo: '+(err.message||'error desconocido')+'. Descarga el .pptx.');
+          else msg(k,MSG[c]||'No se pudo crear la presentación. Descarga el .pptx e impórtala en Google Slides.');
+        }
+        b.disabled=false; b.innerHTML=old; return;
+      }
+      var p2=e.target.closest('[data-pp]'); if(p2){
+        var k2=p2.dataset.pp, x2=D.filter(function(d){return d.k===k2})[0];
+        try{ await dl.save({filename:'maju-presentacion-'+k2+'.pptx',data:await (await fetch(PPTX[k2])).blob()}); toast('Descargado. Súbelo a Drive y ábrelo con Google Slides.'); }
+        catch(err){ var c2=err&&err.code; msg(k2,c2==='declined'?'':c2==='extension_not_enabled'?'Este visor no permite descargar .pptx.':'No se pudo descargar.'); }
+      }
+    });
+    (async function(){
+      try{ mcp=window.claude&&window.claude.use?await window.claude.use('mcp'):null; }catch(e){ mcp=null; }
+      try{ dl=window.claude&&window.claude.use?await window.claude.use('downloads'):null; }catch(e){ dl=null; }
+      if(mcp) $$('[data-mk]').forEach(function(b){ b.hidden=false; });
+      if(dl) $$('[data-pp]').forEach(function(b){ b.hidden=false; });
+      if(!mcp&&!dl) $$('.dk-msg').forEach(function(m){ m.textContent='Abre el manual en claude.ai para crear o descargar esta presentación.'; });
+    })();
+  })();
+
+
+  /* ── 06 · Uso de fuentes ── */
+  seg($('#fuseSeg'),function(b){ $$('[data-fp]').forEach(function(el){ el.hidden=el.dataset.fp!==b.dataset.f; }); });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-copy-pre]'); if(a){ copy(document.getElementById(a.dataset.copyPre).textContent,a,'Código copiado'); return; }
+    var c=e.target.closest('[data-copy-txt]'); if(c){ copy(c.dataset.copyTxt,c,'Copiado'); return; }
+    var d=e.target.closest('[data-copy-el]'); if(d){ copy(document.getElementById(d.dataset.copyEl).textContent,d,'Texto copiado'); return; }
+    var f=e.target.closest('[data-copy-comp]'); if(f){ copy(COMP[f.dataset.copyComp],f,'CSS copiado'); return; }
+  });
+
+  /* ── 12 · Tokens ── */
+  var TOK={
+    color:{'amarillo-cerati':'#F5C400','amarillo-claro':'#F7D033','grafito':'#2A2D35','grafito-profundo':'#15171C','superficie':'#1B1D23','superficie-2':'#22252C','blanco':'#FFFFFF','claro':'#F2F2F0','texto':'#F3F1EC','texto-2':'#A7A6A2','tinta-sobre-amarillo':'#1A1600','verde-sistema':'#43A955','linea':'rgba(255,255,255,0.08)'},
+    font:{'display':"'Geist', 'Helvetica Neue', Arial, sans-serif",'body':"'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif",'mono':"'Geist Mono', ui-monospace, Menlo, monospace"},
+    size:{'h1':'clamp(40px, 6vw, 72px)','h2':'clamp(28px, 3.4vw, 40px)','body':'17px','data':'12px'},
+    space:{'1':'4px','2':'8px','3':'12px','4':'16px','5':'24px','6':'32px','7':'48px','8':'64px','9':'96px','10':'128px'},
+    radius:{'sm':'8px','md':'12px','lg':'16px','xl':'22px','full':'999px'},
+    motion:{'ease-out':'cubic-bezier(.23,1,.32,1)','fast':'160ms','base':'240ms'}
+  };
+  function tokCss(){
+    var L=['/* Majú · tokens de marca v6.1 · maju.agencia.com */',':root {'];
+    Object.keys(TOK).forEach(function(g){ L.push('  /* '+g+' */'); Object.keys(TOK[g]).forEach(function(k){ L.push('  --maju-'+(g==='color'?'':g+'-')+k+': '+TOK[g][k]+';'); }); });
+    L.push('}'); return L.join('\n');
+  }
+  $('#tokCss').textContent=tokCss();
+  var EL=[['Principal','amarillo-cerati'],['Secundario','grafito'],['Texto','grafito'],['Acento','verde-sistema'],['Fondo oscuro','grafito-profundo'],['Fondo claro','claro'],['Blanco','blanco']];
+  $('#elColors').innerHTML=EL.map(function(r){ var v=TOK.color[r[1]]; return '<tr><td><b>'+r[0]+'</b></td><td><span class="sw-dot2" style="background:'+v+'"></span><span class="mono" style="color:var(--tx)">'+v+'</span> <button class="cp" data-c="'+v+'" aria-label="Copiar '+v+'" style="color:var(--tx3)"><svg class="ico"><use href="#i-copy"/></svg></button></td></tr>'; }).join('');
+  $('#elColors').addEventListener('click',function(e){ var b=e.target.closest('[data-c]'); if(b) copy(b.dataset.c,b,b.dataset.c+' copiado'); });
+  var COMP={
+    btnP:'.maju-btn {\n  display: inline-flex; align-items: center; justify-content: center; gap: 10px;\n  min-height: 52px; padding: 0 24px; border: 0; border-radius: 12px;\n  background: var(--maju-amarillo-cerati); color: var(--maju-grafito);\n  font: 600 16px/1.2 var(--maju-font-body);\n  transition: transform var(--maju-motion-fast) var(--maju-motion-ease-out), background-color var(--maju-motion-fast) ease;\n}\n.maju-btn:hover { background: var(--maju-amarillo-claro); }\n.maju-btn:active { transform: scale(.97); }',
+    btnS:'.maju-btn-sec {\n  display: inline-flex; align-items: center; justify-content: center; gap: 10px;\n  min-height: 52px; padding: 0 24px; border-radius: 12px;\n  background: transparent; color: var(--maju-texto);\n  border: 1px solid rgba(255,255,255,.14);\n  font: 500 16px/1.2 var(--maju-font-body);\n  transition: transform var(--maju-motion-fast) var(--maju-motion-ease-out), border-color var(--maju-motion-fast) ease;\n}\n.maju-btn-sec:hover { border-color: rgba(255,255,255,.3); }\n.maju-btn-sec:active { transform: scale(.97); }',
+    chip:'.maju-chip {\n  display: inline-flex; align-items: center; gap: 7px;\n  padding: 5px 11px; border-radius: 999px; font-size: 13px;\n  border: 1px solid rgba(255,255,255,.14); color: var(--maju-texto-2);\n}\n.maju-chip--estado { border-color: rgba(67,169,85,.4); background: rgba(67,169,85,.1); color: #7CD38B; }\n.maju-chip--marca { border-color: rgba(245,196,0,.4); background: rgba(245,196,0,.1); color: var(--maju-amarillo-cerati); }',
+    card:'.maju-card {\n  background: var(--maju-superficie);\n  border: 1px solid var(--maju-linea);\n  border-radius: var(--maju-radius-lg);\n  padding: var(--maju-space-5);\n}'
+  };
+  (async function(){
+    var d=null; try{ d=window.claude&&window.claude.use?await window.claude.use('downloads'):null; }catch(e){}
+    if(!d) return;
+    $$('[data-dl-tok]').forEach(function(b){ b.hidden=false; b.addEventListener('click',async function(){
+      var css=b.dataset.dlTok==='css';
+      var data=css?tokCss()+'\n\n'+Object.keys(COMP).map(function(k){return COMP[k]}).join('\n\n')+'\n':JSON.stringify(TOK,null,2);
+      try{ await d.save({filename:css?'maju-tokens.css':'maju-tokens.json',data:data}); toast('Descargado'); }catch(e){ if(e&&e.code!=='declined') toast('No se pudo descargar. Usa Copiar CSS.'); }
+    }); });
+  })();
+
+
+  /* ── 02 · Descarga de animaciones ── */
+  (function(){
+    var A=[{"n": "Revelado del logo completo", "m": "16:9 · 12 s", "thumb": "anim/maju-revelado-logo-baja.gif", "o": [{"k": "alta", "lab": "GIF 1920×1080", "f": "maju-revelado-logo-alta.gif", "s": "2,4 MB"}, {"k": "baja", "lab": "GIF 960×540", "f": "maju-revelado-logo-baja.gif", "s": "651 KB"}, {"k": "mp4", "lab": "MP4 1920×1080", "f": "maju-revelado-logo.mp4", "s": "601 KB"}]}, {"n": "M en bucle · cuadrado", "m": "1:1 · 4 s", "thumb": "anim/maju-m-bucle-cuadrado-baja.gif", "o": [{"k": "alta", "lab": "GIF 1080×1080", "f": "maju-m-bucle-cuadrado-alta.gif", "s": "570 KB"}, {"k": "baja", "lab": "GIF 540×540", "f": "maju-m-bucle-cuadrado-baja.gif", "s": "159 KB"}, {"k": "mp4", "lab": "MP4 1080×1080", "f": "maju-m-bucle-cuadrado.mp4", "s": "121 KB"}]}, {"n": "M en bucle · horizontal", "m": "16:9 · 8 s", "thumb": "anim/maju-m-bucle-horizontal-baja.gif", "o": [{"k": "alta", "lab": "GIF 640×360", "f": "maju-m-bucle-horizontal-alta.gif", "s": "255 KB"}, {"k": "baja", "lab": "GIF 320×180", "f": "maju-m-bucle-horizontal-baja.gif", "s": "117 KB"}]}, {"n": "M para firma de correo", "m": "1:1 · 4 s", "thumb": "anim/maju-m-firma-baja.gif", "o": [{"k": "alta", "lab": "GIF 300×300", "f": "maju-m-firma-alta.gif", "s": "68 KB"}, {"k": "baja", "lab": "GIF 150×150", "f": "maju-m-firma-baja.gif", "s": "32 KB"}]}, {"n": "Firma de correo animada", "m": "Juan Pablo · 8 s", "thumb": "anim/maju-firma-correo-baja.gif", "o": [{"k": "alta", "lab": "GIF 1200×401", "f": "maju-firma-correo-alta.gif", "s": "727 KB"}, {"k": "baja", "lab": "GIF 600×200 · para Gmail", "f": "maju-firma-correo-baja.gif", "s": "148 KB"}]}, {"n": "Portada web animada", "m": "16:9 · 6 s", "thumb": "anim/maju-portada-web-baja.gif", "o": [{"k": "alta", "lab": "GIF 1920×1080", "f": "maju-portada-web-alta.gif", "s": "3,4 MB"}, {"k": "baja", "lab": "GIF 960×540", "f": "maju-portada-web-baja.gif", "s": "1,2 MB"}, {"k": "mp4", "lab": "MP4 1920×1080", "f": "maju-portada-web.mp4", "s": "978 KB"}]}], dl=null;
+    $('#adList').innerHTML=A.map(function(a){
+      return '<div class="ad-row"><img class="ad-thumb" src="'+a.thumb+'" alt="" loading="lazy"><div><b>'+a.n+'</b><small>'+a.m+'</small></div><div class="ad-btns">'+
+        a.o.map(function(o){ return '<button class="btn '+(o.k==='alta'?'btn-y':'btn-o')+'" data-af="'+o.f+'">'+(o.k==='alta'?'Alta':o.k==='baja'?'Baja':'MP4')+'<span>'+o.lab+' · '+o.s+'</span></button>'; }).join('')+'</div></div>';
+    }).join('');
+    $('#adList').addEventListener('click',async function(e){
+      var b=e.target.closest('[data-af]'); if(!b) return;
+      var f=b.dataset.af;
+      if(!dl){ window.open('anim/'+f,'_blank'); return; }
+      b.disabled=true;
+      try{ var r=await fetch('anim/'+f); if(!r.ok) throw {code:'fetch'}; var blob=await r.blob(); await dl.save({filename:f,data:blob}); toast(f+' descargado'); }
+      catch(err){ var c=err&&err.code; if(c!=='declined') toast(c==='rate_limited'?'Ya hay una descarga abierta':c==='extension_not_enabled'?'Este visor no permite descargar MP4':'No se pudo descargar. Intenta de nuevo.'); }
+      b.disabled=false;
+    });
+    (async function(){ try{ dl=window.claude&&window.claude.use?await window.claude.use('downloads'):null; }catch(e){ dl=null; }
+      if(!dl) $('#adNote').textContent='La descarga directa funciona al abrir el manual en claude.ai.'; })();
+  })();
+
+  /* ── Novedades ── */
+  (function(){
+    var N=[{"v": "v6.1", "d": "16 oct 2026", "t": "Versión web para todo el equipo", "i": ["El manual vive en su propia web y funciona en cualquier navegador.", "Todas las descargas son directas: logos, animaciones, tokens y presentaciones.", "Presentaciones rehechas con fondos en 4K y textos editables.", "Fondos de presentación sueltos en 4K."]}, {"v": "v6", "d": "4 oct 2026", "t": "Descargas, novedades y comentarios", "i": ["Descarga de las animaciones de la M y del logo completo en Alta, Baja y MP4.", "Esta sección de novedades.", "Botón Comentar en cada capítulo para dejar notas."]}, {"v": "v5.1", "d": "4 oct 2026", "t": "Cierre editable", "i": ["El slide “Gracias totales” tiene los textos de las esquinas editables."]}, {"v": "v5", "d": "4 oct 2026", "t": "Un manual para todo el equipo", "i": ["Rutas por rol en la portada.", "Presentaciones que se crean en tu Google Drive.", "Enlaces y uso de las fuentes.", "Capítulos Copy y cuentas, y Guía web."]}, {"v": "v4", "d": "4 oct 2026", "t": "Kit de descarga", "i": ["Logo en SVG y PNG con fondo transparente.", "Tarjeta de presentación oficial.", "Capítulo de presentaciones."]}, {"v": "v3", "d": "4 oct 2026", "t": "Piezas reales", "i": ["Logo corregido.", "Posts, fotografía, merch, firma y portada web reales."]}, {"v": "v2", "d": "4 oct 2026", "t": "Dirección tech", "i": ["M viva en puntos, animaciones, buscador y modo práctica."]}, {"v": "v1", "d": "4 oct 2026", "t": "Primera versión", "i": ["Manual navegable con la estructura del manual de Licsy."]}], last=null; try{ last=localStorage.getItem('maju-nov'); }catch(e){}
+    var cur=N[0].v, nov=$('#nov');
+    if(last!==cur) $('#novDot').hidden=false;
+    function idx(v){ for(var i=0;i<N.length;i++) if(N[i].v===v) return i; return N.length; }
+    function render(){ var li=last?idx(last):1; $('#novList').innerHTML=N.map(function(n,i){ return '<li><span class="v">'+n.v+'<small>'+n.d+'</small></span><div><b>'+n.t+'</b>'+(i<li?'<span class="new">NUEVO</span>':'')+'<ul>'+n.i.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></li>'; }).join(''); }
+    var lastFocus=null;
+    function open(){ lastFocus=document.activeElement; render(); nov.hidden=false; $('#closeNov').focus(); last=cur; try{ localStorage.setItem('maju-nov',cur); }catch(e){} $('#novDot').hidden=true; }
+    function close(){ nov.hidden=true; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
+    $('#openNov').addEventListener('click',open); $('#closeNov').addEventListener('click',close);
+    nov.addEventListener('click',function(e){ if(e.target===nov) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!nov.hidden) close(); });
+  })();
+
+  /* ── Comentar por capítulo ── */
+  (async function(){
+    var cm=null; try{ cm=window.claude&&window.claude.use?await window.claude.use('comments'):null; }catch(e){ cm=null; }
+    if(!cm) return;
+    $$('.ch-head').forEach(function(h){
+      var b=document.createElement('button'); b.className='cmt'; b.type='button';
+      b.innerHTML='<svg class="ico"><use href="#i-chat"/></svg>Comentar';
+      b.addEventListener('click',async function(){
+        var target=h.querySelector('h2')||h;
+        try{ await cm.openComposer({element:target}); }
+        catch(err){ var c=err&&err.code; if(c==='unavailable'||c==='forbidden'||c==='not_granted'){ $$('.cmt').forEach(function(x){x.remove()}); toast('Los comentarios no están disponibles en esta vista'); } else if(c==='rate_limited') toast('Espera un momento e inténtalo de nuevo'); }
+      });
+      h.appendChild(b);
+    });
+  })();
+
+  /* ── 03 · Zona protegida y tamaño ── */
+  var csb=$('#csBtn'), csw=$('#csWrap');
+  csb.addEventListener('click',function(){ var on=csb.getAttribute('aria-pressed')!=='true'; csb.setAttribute('aria-pressed',on); csw.classList.toggle('cs-off',!on); csb.lastChild.textContent=on?'Zona visible':'Mostrar zona'; });
+  var mode='h', sr=$('#sizeR');
+  function size(){
+    var w=+sr.value; $('#sizeV').textContent=w+' px';
+    $('#sizeView').innerHTML= mode==='h' ? '<svg viewBox="0 0 594 270" style="width:'+w+'px"><use href="#wm"/></svg>' : '<svg viewBox="0 0 402.79 329.9" style="width:'+w+'px"><use href="#m"/></svg>';
+    var min=mode==='h'?120:16, rec=mode==='h'?160:32, h;
+    if(w<min) h='<span class="chip no">No permitido</span>'+(mode==='h'?'La tilde y la “j” se pierden. Usa el símbolo solo.':'Por debajo del favicon.');
+    else if(w<rec) h='<span class="chip y">Límite</span>Solo si no hay más espacio.';
+    else h='<span class="chip ok">Correcto</span>Se lee sin esfuerzo en pantalla.';
+    $('#sizeVerd').innerHTML=h;
+  }
+  seg($('#sizeSeg'),function(b){ mode=b.dataset.mode; sr.max=mode==='h'?420:220; if(+sr.value>+sr.max) sr.value=sr.max; size(); });
+  sr.addEventListener('input',size); size();
+
+  /* ── 04 · Práctica ── */
+  var WM='<use href="#wm"/>', MP=$$('#m path').map(function(p){return p.getAttribute('d')});
+  function wm(color,style,extra){ return '<svg viewBox="0 0 594 270" style="color:'+color+';'+(style||'')+'">'+(extra||WM)+'</svg>'; }
+  var Q=[
+    {bg:'#fff',h:wm('var(--y)'),q:'Logo amarillo sobre fondo blanco.',a:0,w:'El amarillo nunca va sobre blanco. Cámbialo a grafito.'},
+    {bg:'var(--y)',h:wm('var(--grafito)'),q:'Logo grafito sobre fondo amarillo.',a:1,w:'Es la versión oficial para fondos amarillos.'},
+    {bg:'var(--grafito)',h:wm('var(--y)','transform:scaleX(1.35)'),q:'Logo estirado para llenar el ancho del banner.',a:0,w:'Nunca se deforma. Escala siempre en proporción.'},
+    {bg:'var(--grafito)',h:'<svg viewBox="-40 -40 482 410" style="color:var(--y);width:min(60%,260px)"><g fill="currentColor"><path transform="translate(-34 22) rotate(-8 50 260)" d="'+MP[0]+'"/><path transform="translate(26 -18)" d="'+MP[1]+'"/></g></svg>',q:'Piezas de la M separadas para darle movimiento.',a:0,w:'Las dos piezas de la M siempre van juntas.'},
+    {bg:'var(--grafito)',h:wm('var(--y)'),q:'Logo amarillo sobre grafito, con su zona libre.',a:1,w:'Es la versión principal. Pasa.'},
+    {bg:'var(--y)',h:'<span style="display:inline-flex;padding:18px 34px;border-radius:12px;background:var(--y);box-shadow:inset 0 0 0 2px rgba(26,22,0,.18);color:#fff;font:600 30px var(--d);letter-spacing:-.03em">Agenda tu diagnóstico</span>',q:'Botón amarillo con texto blanco.',a:0,w:'Blanco sobre amarillo no se lee. El texto va en grafito.'},
+    {bg:'var(--grafito)',h:wm('var(--y)','',' <g clip-path="url(#noTilde)"><use href="#wm"/></g>'),q:'“Maju” sin tilde para que se vea más limpio.',a:0,w:'La tilde es parte del nombre. Nunca se quita.'},
+    {bg:'var(--grafito)',h:'<svg viewBox="0 0 594 270"><defs><linearGradient id="gq" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#E5484D"/><stop offset="1" stop-color="#F5C400"/></linearGradient></defs><g fill="url(#gq)"><g transform="translate(0 1.5) scale(.6157)"><path d="'+MP[0]+'"/><path d="'+MP[1]+'"/></g><path fill-rule="evenodd" transform="translate(245 -5)" d="'+$('#wm > path').getAttribute('d')+'"/></g></svg>',q:'Logo con degradado de fuego.',a:0,w:'El sistema es plano. Sin degradados.'},
+    {bg:'#0C0C0C',h:wm('var(--y)','filter:drop-shadow(0 0 18px rgba(245,196,0,.85)) drop-shadow(0 0 40px rgba(245,120,0,.6))'),q:'Logo con resplandor para que brille en video.',a:0,w:'Sin glow ni brillos. Ni siquiera en video.'},
+    {bg:'var(--y)',h:'<svg viewBox="0 0 402.79 329.9" style="color:var(--grafito);width:min(46%,200px)"><use href="#m"/></svg>',q:'Solo el símbolo, grafito sobre amarillo, en un avatar.',a:1,w:'El símbolo funciona solo. Pasa.'}
+  ];
+  var qi=0, sc=0, ans=[], done=false;
+  var dots=$('#qDots'); dots.innerHTML=Q.map(function(){return '<i></i>'}).join('');
+  function rQ(){
+    var q=Q[qi], v=$('#qView'); v.style.background=q.bg; v.innerHTML=q.h;
+    $('#qN').textContent='Caso '+(qi+1)+' de '+Q.length; $('#qQ').textContent=q.q; $('#qFb').innerHTML='';
+    $$('#qAct button').forEach(function(b){ b.disabled=false; b.style.opacity=''; });
+    $$('i',dots).forEach(function(d,k){ d.className= k<ans.length?(ans[k]?'r':'w'):(k===qi?'on':''); });
+    done=false;
+  }
+  $$('#qAct button').forEach(function(b){ b.addEventListener('click',function(){
+    if(done) return; done=true; var q=Q[qi], right=(+b.dataset.a===q.a); ans.push(right); if(right) sc++;
+    $$('#qAct button').forEach(function(x){ x.disabled=true; if(x!==b) x.style.opacity='.4'; });
+    $$('i',dots)[qi].className=right?'r':'w';
+    var last=qi===Q.length-1;
+    $('#qFb').innerHTML='<div class="q-anim" style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">'+(right?'<span class="chip ok">Correcto</span>':'<span class="chip no">Incorrecto</span>')+'<p>'+q.w+'</p><button class="btn btn-o" id="qNext">'+(last?'Ver resultado':'Siguiente caso')+' <svg class="ico"><use href="#i-arrow"/></svg></button></div>';
+    $('#qNext').addEventListener('click',function(){
+      if(!last){ qi++; rQ(); return; }
+      $('#qQ').textContent= sc===Q.length?'10 de 10. Ya cuidas la marca sin preguntar.':sc+' de '+Q.length+'. Repasa la lista de abajo y vuelve a intentarlo.';
+      $('#qFb').innerHTML='<div class="q-anim"><button class="btn btn-y" id="qRe">Reintentar</button></div>';
+      $('#qView').style.background='var(--y)'; $('#qView').innerHTML='<svg viewBox="0 0 402.79 329.9" style="color:var(--grafito);width:min(40%,180px)"><use href="#m"/></svg>';
+      $('#qRe').addEventListener('click',function(){ qi=0; sc=0; ans=[]; rQ(); });
+    });
+  }); });
+  rQ();
+
+  /* ── 05 · Muestras de color ── */
+  var SW=[
+    {n:'Amarillo Cerati',r:'Protagonista',bg:'#F5C400',fg:'#1A1600',hex:'#F5C400',rgb:'245, 196, 0',cmyk:'0, 20, 100, 4',pan:'7406 C*'},
+    {n:'Grafito',r:'Contraste',bg:'#2A2D35',fg:'#F5C400',hex:'#2A2D35',rgb:'42, 45, 53',cmyk:'21, 15, 0, 79',pan:'432 C*'},
+    {n:'Blanco',r:'Respiro',bg:'#FFFFFF',fg:'#2A2D35',hex:'#FFFFFF',rgb:'255, 255, 255',cmyk:'0, 0, 0, 0',pan:'Papel'},
+    {n:'Verde Sistema',r:'Acción · 2%',bg:'#43A955',fg:'#FFFFFF',hex:'#43A955',rgb:'67, 169, 85',cmyk:'60, 0, 50, 34',pan:'7739 C*'}
+  ];
+  $('#sws').innerHTML=SW.map(function(s){
+    function row(k,v){ return '<div class="row"><dt>'+k+'</dt><dd>'+v+'</dd><button class="cp" data-c="'+v+'" aria-label="Copiar '+k+' de '+s.n+'"><svg class="ico"><use href="#i-copy"/></svg></button></div>'; }
+    return '<div class="sw"><div class="chipc" style="background:'+s.bg+';color:'+s.fg+';'+(s.hex==='#FFFFFF'?'box-shadow:inset 0 -1px 0 #ECE9E1':'')+'"><span>'+s.r.toUpperCase()+'</span><b>'+s.n+'</b></div><dl>'+row('HEX',s.hex)+row('RGB',s.rgb)+row('CMYK',s.cmyk)+row('PANTONE',s.pan)+'</dl></div>';
+  }).join('')+'';
+  $('#sws').addEventListener('click',function(e){ var b=e.target.closest('[data-c]'); if(b) copy(b.dataset.c,b,b.dataset.c+' copiado'); });
+
+  /* ── 06 · Probador ── */
+  var ti=$('#tt'); function rt(){ var v=ti.value||'Pasión que rinde cuentas.'; $$('.srow .t').forEach(function(d){ d.textContent=v; }); } ti.addEventListener('input',rt); rt();
+
+  /* ── 09 · Pestañas ── */
+  seg($('#tabSeg'),function(b){ $$('[data-panel]').forEach(function(p){ p.hidden=p.dataset.panel!==b.dataset.tab; }); });
+
+  /* ── Buscador ⌘K (sin animación: se usa muchas veces) ── */
+  var ITEMS=[].concat(
+    ixs.map(function(a){ return {t:a.textContent.trim().replace(/^\d+/,''),k:'Capítulo '+a.querySelector('.n').textContent,go:'#'+a.dataset.s}; }),
+    SW.map(function(s){ return {t:s.n+' · '+s.hex,k:'Copiar HEX',c:s.hex,sw:s.bg}; }),
+    [{t:'Descargar logo en SVG o PNG',k:'Kit',go:'#kit'},{t:'Plantillas de Google Slides',k:'Presentaciones',go:'#presentaciones'},{t:'Fondos de presentación en 4K',k:'Presentaciones',go:'#presentaciones'},{t:'Descargar fuentes Geist e Inter',k:'Tipografía',go:'#tipografia'},{t:'Descargar animaciones de la M (GIF y MP4)',k:'Movimiento',go:'#animDl'},{t:'Tagline y párrafo Sobre Majú',k:'Copy',go:'#copy'},{t:'Cómo escribir el nombre Majú',k:'Copy',go:'#copy'},{t:'Variables CSS y tokens',k:'Desarrollo',go:'#web'},{t:'Colores y fuentes de Elementor',k:'Desarrollo',go:'#web'},{t:'Botón principal (CSS)',k:'Desarrollo',go:'#web'},{t:'Tarjeta de presentación',k:'Pieza',go:'#aplicaciones'},{t:'Copiar SVG del logo (amarillo)',k:'SVG',svg:'wm'},{t:'Copiar SVG del símbolo (amarillo)',k:'SVG',svg:'m'},
+     {t:'Tamaño mínimo del logo',k:'Regla',go:'#espacio'},{t:'Amarillo sobre blanco',k:'Regla',go:'#usos'},{t:'Animaciones de la M',k:'Regla',go:'#movimiento'},{t:'Firma de correo',k:'Pieza',go:'#aplicaciones'},{t:'Fuentes: Geist, Inter, Geist Mono',k:'Regla',go:'#tipografia'}]
+  );
+  var pal=$('#pal'), pq=$('#palQ'), pl=$('#palL'), sel=0, list=[], lastFocus=null;
+  function norm(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  function rP(){ var q=norm(pq.value.trim()); list=ITEMS.filter(function(i){ return !q||norm(i.t+' '+i.k).indexOf(q)>-1; }); sel=Math.min(sel,Math.max(0,list.length-1));
+    pl.innerHTML=list.length?list.map(function(i,k){ return '<li role="option" data-k="'+k+'" aria-selected="'+(k===sel)+'">'+(i.sw?'<span class="sw-dot" style="background:'+i.sw+'"></span>':'<svg class="ico" style="color:var(--tx3)"><use href="#'+(i.svg?'i-copy':'i-arrow')+'"/></svg>')+'<span>'+i.t+'</span><span class="k">'+i.k+'</span></li>'; }).join(''):'<li class="empty">Nada con ese nombre. Prueba “color”, “logo” o “tamaño”.</li>'; }
+  function act(i){ if(!i) return; closeP(); if(i.go) go(i.go.slice(1)); if(i.c) copy(i.c,null,i.c+' copiado'); if(i.svg) copy(svgSrc(i.svg,'#F5C400'),null,'SVG copiado'); }
+  function openP(){ lastFocus=document.activeElement; pal.hidden=false; pq.value=''; sel=0; rP(); pq.focus(); }
+  function closeP(){ pal.hidden=true; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
+  $('#openPal').addEventListener('click',openP); $$('[data-open-pal]').forEach(function(b){ b.addEventListener('click',openP); });
+  pal.addEventListener('click',function(e){ if(e.target===pal) closeP(); var li=e.target.closest('li[data-k]'); if(li) act(list[+li.dataset.k]); });
+  pq.addEventListener('input',function(){ sel=0; rP(); });
+  document.addEventListener('keydown',function(e){
+    if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){ e.preventDefault(); pal.hidden?openP():closeP(); return; }
+    if(pal.hidden) return;
+    if(e.key==='Escape'){ closeP(); }
+    else if(e.key==='ArrowDown'){ e.preventDefault(); sel=Math.min(sel+1,list.length-1); rP(); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); sel=Math.max(sel-1,0); rP(); }
+    else if(e.key==='Enter'){ e.preventDefault(); act(list[sel]); }
+  });
+})();
+</script>
+
+</body></html>
