@@ -668,7 +668,7 @@ td b{font-weight:500}
 <header class="top gut">
   <a class="brand" href="#inicio" aria-label="Majú, ir al inicio">
     <svg viewBox="0 0 594 270" aria-hidden="true"><use href="#wm"/></svg>
-    <span class="mono">Manual de marca · v6.2</span>
+    <span class="mono">Manual de marca · v6.3</span>
   </a>
   <span class="sp"></span>
   <span class="status mono"><i></i>Propuesta 2 · aprobación</span>
@@ -705,7 +705,7 @@ td b{font-weight:500}
       <canvas id="field" aria-hidden="true"></canvas>
       <div class="grid" aria-hidden="true"></div>
       <div class="hero-copy">
-        <span class="pill-lg"><b>v6.2</b>Identidad visual · Majú Agencia S.A.S.</span>
+        <span class="pill-lg"><b>v6.3</b>Identidad visual · Majú Agencia S.A.S.</span>
         <h1>Manual de <span class="y">marca</span><span class="cur" aria-hidden="true"></span></h1>
         <p class="sub">Las reglas para que Majú se vea igual de fuerte en un post, una web o una tarjeta. <b>Pasión que rinde cuentas</b>, también en cada píxel.</p>
         <div class="hero-ctas">
@@ -1152,7 +1152,7 @@ td b{font-weight:500}
           <div class="mk" style="flex:1 1 520px"><span class="mono"><span>Portada web · M interactiva en puntos</span></span>
             <div class="browser shadow" style="width:100%;max-width:900px">
               <div class="tabbar"><span class="ftab"><span class="fav"><svg viewBox="0 0 402.79 329.9"><use href="#m"/></svg></span>Majú Agencia</span><span class="ftab dim">Nueva pestaña</span></div>
-              <div class="urlbar"><span>maju.agencia.com</span></div>
+              <div class="urlbar"><span>maju-agencia.com</span></div>
               <img src="assets/img/portada-web.webp" alt="Portada web animada de Majú con la M en puntos" width="1100" height="619" style="display:block;width:100%;height:auto">
             </div>
           </div>
@@ -1215,7 +1215,7 @@ td b{font-weight:500}
             <tr><td><b>Porcentajes</b></td><td>38% · −21%</td><td>38 % · 38 por ciento</td></tr>
             <tr><td><b>Decimales</b></td><td>4,8x</td><td>4.8x</td></tr>
             <tr><td><b>Fechas</b></td><td>4 de octubre de 2026 · 04/10/2026</td><td>10/04/2026</td></tr>
-            <tr><td><b>Web y correo</b></td><td>maju.agencia.com</td><td>www.maju.agencia.com · Maju.Agencia.com</td></tr>
+            <tr><td><b>Web y correo</b></td><td>maju-agencia.com · nombre@maju-agencia.com</td><td>maju.agencia.com · www.maju-agencia.com · Maju-Agencia.com</td></tr>
           </tbody>
         </table>
       </div>
@@ -1568,7 +1568,7 @@ td b{font-weight:500}
     motion:{'ease-out':'cubic-bezier(.23,1,.32,1)','fast':'160ms','base':'240ms'}
   };
   function tokCss(){
-    var L=['/* Majú · tokens de marca v6.2 · maju.agencia.com */',':root {'];
+    var L=['/* Majú · tokens de marca v6.3 · maju-agencia.com */',':root {'];
     Object.keys(TOK).forEach(function(g){ L.push('  /* '+g+' */'); Object.keys(TOK[g]).forEach(function(k){ L.push('  --maju-'+(g==='color'?'':g+'-')+k+': '+TOK[g][k]+';'); }); });
     L.push('}'); return L.join('\n');
   }
@@ -1620,7 +1620,7 @@ td b{font-weight:500}
 
   /* ── Novedades ── */
   (function(){
-    var N=[{"v": "v6.2", "d": "16 oct 2026", "t": "Foto de perfil", "i": ["Logo con fondo para redes en tres versiones: principal, alterna y neutra.", "Descarga en PNG, JPG y SVG, con vista previa en círculo y cuadrado."]}, {"v": "v6.1", "d": "16 oct 2026", "t": "Versión web para todo el equipo", "i": ["El manual vive en su propia web y funciona en cualquier navegador.", "Todas las descargas son directas: logos, animaciones, tokens y presentaciones.", "Presentaciones rehechas con fondos en 4K y textos editables.", "Fondos de presentación sueltos en 4K."]}, {"v": "v6", "d": "4 oct 2026", "t": "Descargas, novedades y comentarios", "i": ["Descarga de las animaciones de la M y del logo completo en Alta, Baja y MP4.", "Esta sección de novedades.", "Botón Comentar en cada capítulo para dejar notas."]}, {"v": "v5.1", "d": "4 oct 2026", "t": "Cierre editable", "i": ["El slide “Gracias totales” tiene los textos de las esquinas editables."]}, {"v": "v5", "d": "4 oct 2026", "t": "Un manual para todo el equipo", "i": ["Rutas por rol en la portada.", "Presentaciones que se crean en tu Google Drive.", "Enlaces y uso de las fuentes.", "Capítulos Copy y cuentas, y Guía web."]}, {"v": "v4", "d": "4 oct 2026", "t": "Kit de descarga", "i": ["Logo en SVG y PNG con fondo transparente.", "Tarjeta de presentación oficial.", "Capítulo de presentaciones."]}, {"v": "v3", "d": "4 oct 2026", "t": "Piezas reales", "i": ["Logo corregido.", "Posts, fotografía, merch, firma y portada web reales."]}, {"v": "v2", "d": "4 oct 2026", "t": "Dirección tech", "i": ["M viva en puntos, animaciones, buscador y modo práctica."]}, {"v": "v1", "d": "4 oct 2026", "t": "Primera versión", "i": ["Manual navegable con la estructura del manual de Licsy."]}], last=null; try{ last=localStorage.getItem('maju-nov'); }catch(e){}
+    var N=[{"v": "v6.3", "d": "16 oct 2026", "t": "Dominio oficial: maju-agencia.com", "i": ["El dominio de Majú es maju-agencia.com, con guion. Se corrigió en el manual, la guía de copy y los tokens.", "Si ves maju.agencia.com (con punto) en alguna pieza, está desactualizada: no la uses.", "Fondos, presentaciones, tarjeta y firma de correo se actualizan en la próxima versión."]}, {"v": "v6.2", "d": "16 oct 2026", "t": "Foto de perfil", "i": ["Logo con fondo para redes en tres versiones: principal, alterna y neutra.", "Descarga en PNG, JPG y SVG, con vista previa en círculo y cuadrado."]}, {"v": "v6.1", "d": "16 oct 2026", "t": "Versión web para todo el equipo", "i": ["El manual vive en su propia web y funciona en cualquier navegador.", "Todas las descargas son directas: logos, animaciones, tokens y presentaciones.", "Presentaciones rehechas con fondos en 4K y textos editables.", "Fondos de presentación sueltos en 4K."]}, {"v": "v6", "d": "4 oct 2026", "t": "Descargas, novedades y comentarios", "i": ["Descarga de las animaciones de la M y del logo completo en Alta, Baja y MP4.", "Esta sección de novedades.", "Botón Comentar en cada capítulo para dejar notas."]}, {"v": "v5.1", "d": "4 oct 2026", "t": "Cierre editable", "i": ["El slide “Gracias totales” tiene los textos de las esquinas editables."]}, {"v": "v5", "d": "4 oct 2026", "t": "Un manual para todo el equipo", "i": ["Rutas por rol en la portada.", "Presentaciones que se crean en tu Google Drive.", "Enlaces y uso de las fuentes.", "Capítulos Copy y cuentas, y Guía web."]}, {"v": "v4", "d": "4 oct 2026", "t": "Kit de descarga", "i": ["Logo en SVG y PNG con fondo transparente.", "Tarjeta de presentación oficial.", "Capítulo de presentaciones."]}, {"v": "v3", "d": "4 oct 2026", "t": "Piezas reales", "i": ["Logo corregido.", "Posts, fotografía, merch, firma y portada web reales."]}, {"v": "v2", "d": "4 oct 2026", "t": "Dirección tech", "i": ["M viva en puntos, animaciones, buscador y modo práctica."]}, {"v": "v1", "d": "4 oct 2026", "t": "Primera versión", "i": ["Manual navegable con la estructura del manual de Licsy."]}], last=null; try{ last=localStorage.getItem('maju-nov'); }catch(e){}
     var cur=N[0].v, nov=$('#nov');
     if(last!==cur) $('#novDot').hidden=false;
     function idx(v){ for(var i=0;i<N.length;i++) if(N[i].v===v) return i; return N.length; }

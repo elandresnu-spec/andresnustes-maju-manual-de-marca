@@ -20,5 +20,7 @@ Abre `index.html` en el navegador o visita la versión publicada en GitHub Pages
 1. Reemplaza el archivo que cambió en su carpeta, con el **mismo nombre**.
 2. Sube el cambio a GitHub. La web se actualiza sola en uno o dos minutos.
 
+Dominio oficial: **maju-agencia.com** (con guion).
+
 Colores clave: Amarillo Cerati `#F5C400` · Grafito `#2A2D35` · Verde Sistema `#43A955` (solo interfaz).
 Tipografías: Geist (títulos), Inter (texto), Geist Mono (datos).
