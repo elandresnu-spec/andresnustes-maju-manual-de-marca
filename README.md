@@ -13,6 +13,8 @@ Abre `index.html` en el navegador o visita la versión publicada en GitHub Pages
 | `assets/presentaciones/` | Plantillas `.pptx` (Amarillo, Claro, Grafito y Completa) con fondos 4K y textos editables. Se abren en PowerPoint o en Google Slides. |
 | `assets/fondos-4k/` | Fondos de diapositiva sueltos en PNG 3840 × 2160. |
 | `assets/logo/` | Símbolo M en SVG (amarillo, blanco y grafito) y favicon. El logo completo en SVG/PNG se descarga desde el capítulo Kit del manual. |
+| `assets/perfil/` | Foto de perfil en 3 colores: cuadrada (PNG, JPG, SVG) y circular (PNG, SVG). |
+| `assets/papeleria/` | Tarjeta de presentación (frente y respaldo) y firma de correo, en PNG y SVG. |
 | `assets/img/` | Imágenes que muestra el manual (fotografía, posts, merch, papelería, vistas previas). |
 
 ## Cómo actualizar el manual

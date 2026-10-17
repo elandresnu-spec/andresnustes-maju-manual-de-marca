@@ -548,17 +548,22 @@ td b{font-weight:500}
 .pfp-wrap h3{font-size:22px}.pfp-wrap .ad-head p{color:var(--tx2);font-size:15px;margin-top:6px;max-width:60ch}
 .pfp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
 .pfp{display:flex;flex-direction:column;overflow:hidden}
-.pfp-stage{position:relative;aspect-ratio:16/11;display:grid;place-items:center;border-bottom:1px solid var(--line)}
-.pfp-stage img{grid-area:1/1;width:min(52%,180px);height:auto;aspect-ratio:1;transition:opacity 260ms ease,border-radius 320ms var(--ease)}
-.pfp-sq{opacity:.16;border-radius:4px}
-.pfp-ci{border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.pfp-wrap.sq .pfp-ci{border-radius:4px}
-.pfp-wrap.sq .pfp-sq{opacity:0}
+.pfp-stage{position:relative;aspect-ratio:16/11;display:grid;place-items:center;border-bottom:1px solid var(--line);background:var(--s1)}
+.pfp-stage img{grid-area:1/1;width:min(52%,180px);height:auto;aspect-ratio:1;transition:opacity 220ms ease,transform 320ms var(--ease)}
+.pfp-sq{opacity:0;transform:scale(.96)}
+.pfp-wrap.sq .pfp-sq{opacity:1;transform:none}
+.pfp-wrap.sq .pfp-ci{opacity:0;transform:scale(.96)}
+.pfp-dl-s{display:none!important}
+.pfp-wrap.sq .pfp-dl-s{display:flex!important}
+.pfp-wrap.sq .pfp-dl-c{display:none!important}
 .pfp-body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
 .pfp-t{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .pfp-t b{font-family:var(--d);font-weight:500;font-size:17px;letter-spacing:-.02em}
 .pfp-body p{color:var(--tx2);font-size:14px;flex:1}
 .pfp .ad-btns a{text-decoration:none}
+/* Papelería descargable */
+.pap-dl{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pap-dl a{text-decoration:none}
 /* Fondos 4K (versión web) */
 .fondos{margin-top:16px;padding:22px;display:flex;flex-direction:column;gap:16px}
 .fondos h3{font-size:22px}.fondos p{color:var(--tx2);font-size:15px;margin-top:6px;max-width:62ch}
@@ -668,7 +673,7 @@ td b{font-weight:500}
 <header class="top gut">
   <a class="brand" href="#inicio" aria-label="Majú, ir al inicio">
     <svg viewBox="0 0 594 270" aria-hidden="true"><use href="#wm"/></svg>
-    <span class="mono">Manual de marca · v6.3</span>
+    <span class="mono">Manual de marca · v6.4</span>
   </a>
   <span class="sp"></span>
   <span class="status mono"><i></i>Propuesta 2 · aprobación</span>
@@ -705,7 +710,7 @@ td b{font-weight:500}
       <canvas id="field" aria-hidden="true"></canvas>
       <div class="grid" aria-hidden="true"></div>
       <div class="hero-copy">
-        <span class="pill-lg"><b>v6.3</b>Identidad visual · Majú Agencia S.A.S.</span>
+        <span class="pill-lg"><b>v6.4</b>Identidad visual · Majú Agencia S.A.S.</span>
         <h1>Manual de <span class="y">marca</span><span class="cur" aria-hidden="true"></span></h1>
         <p class="sub">Las reglas para que Majú se vea igual de fuerte en un post, una web o una tarjeta. <b>Pasión que rinde cuentas</b>, también en cada píxel.</p>
         <div class="hero-ctas">
@@ -770,59 +775,71 @@ td b{font-weight:500}
 
       <div class="card pfp-wrap" id="perfil">
         <div class="ad-head">
-          <div><h3>Foto de perfil</h3><p>El símbolo M con fondo, listo para subir a cualquier red. Las redes lo recortan en círculo: la M ya está ubicada para que no se corte.</p></div>
+          <div><h3>Foto de perfil</h3><p>El símbolo M con fondo, listo para subir a cualquier red. Elige <b>Círculo</b> o <b>Cuadrado</b>: los botones descargan la forma que estás viendo.</p></div>
           <div class="seg" id="pfpSeg" role="group" aria-label="Vista previa"><span class="pill" aria-hidden="true"></span><button data-v="c" aria-pressed="true">Círculo</button><button data-v="s" aria-pressed="false">Cuadrado</button></div>
         </div>
         <div class="pfp-grid">
         <article class="card pfp">
-          <div class="pfp-stage" style="background:#1B1D23">
-            <img class="pfp-sq" src="assets/img/perfil-amarillo-sobre-grafito.webp" alt="" width="240" height="240" loading="lazy">
-            <img class="pfp-ci" src="assets/img/perfil-amarillo-sobre-grafito.webp" alt="Foto de perfil Majú: amarillo sobre grafito" width="240" height="240" loading="lazy">
+          <div class="pfp-stage">
+            <img class="pfp-ci" src="assets/img/perfil-amarillo-sobre-grafito-circular.webp" alt="Foto de perfil Majú circular: amarillo sobre grafito" width="240" height="240" loading="lazy">
+            <img class="pfp-sq" src="assets/img/perfil-amarillo-sobre-grafito.webp" alt="Foto de perfil Majú cuadrada: amarillo sobre grafito" width="240" height="240" loading="lazy">
           </div>
           <div class="pfp-body">
             <div class="pfp-t"><b>Amarillo sobre grafito</b><span class="chip ok">Principal</span></div>
             <p>Instagram, LinkedIn, Facebook, TikTok, WhatsApp Business y Google.</p>
-            <div class="ad-btns">
-              <a class="btn btn-y" href="assets/perfil/maju-perfil-amarillo-sobre-grafito.png" download>PNG<span>3001 px · 163 KB</span></a>
-              <a class="btn btn-o" href="assets/perfil/maju-perfil-amarillo-sobre-grafito.jpg" download>JPG<span>2576 px · 89 KB</span></a>
-              <a class="btn btn-o" href="assets/perfil/maju-perfil-amarillo-sobre-grafito.svg" download>SVG<span>Vector</span></a>
+            <div class="ad-btns pfp-dl-c">
+              <a class="btn btn-y" href="assets/perfil/maju-perfil-amarillo-sobre-grafito-circular.png" download>PNG<span>Círculo · 125 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-amarillo-sobre-grafito-circular.svg" download>SVG<span>Círculo · vector</span></a>
+            </div>
+            <div class="ad-btns pfp-dl-s">
+              <a class="btn btn-y" href="assets/perfil/maju-perfil-amarillo-sobre-grafito.png" download>PNG<span>Cuadrado · 163 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-amarillo-sobre-grafito.jpg" download>JPG<span>Cuadrado · 89 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-amarillo-sobre-grafito.svg" download>SVG<span>Cuadrado · vector</span></a>
             </div>
           </div>
         </article>
         <article class="card pfp">
-          <div class="pfp-stage" style="background:#1B1D23">
-            <img class="pfp-sq" src="assets/img/perfil-grafito-sobre-amarillo.webp" alt="" width="240" height="240" loading="lazy">
-            <img class="pfp-ci" src="assets/img/perfil-grafito-sobre-amarillo.webp" alt="Foto de perfil Majú: grafito sobre amarillo" width="240" height="240" loading="lazy">
+          <div class="pfp-stage">
+            <img class="pfp-ci" src="assets/img/perfil-grafito-sobre-amarillo-circular.webp" alt="Foto de perfil Majú circular: grafito sobre amarillo" width="240" height="240" loading="lazy">
+            <img class="pfp-sq" src="assets/img/perfil-grafito-sobre-amarillo.webp" alt="Foto de perfil Majú cuadrada: grafito sobre amarillo" width="240" height="240" loading="lazy">
           </div>
           <div class="pfp-body">
             <div class="pfp-t"><b>Grafito sobre amarillo</b><span class="chip">Alterna</span></div>
             <p>Cuando la red tiene fondo oscuro, o para campañas donde el perfil debe saltar a la vista.</p>
-            <div class="ad-btns">
-              <a class="btn btn-y" href="assets/perfil/maju-perfil-grafito-sobre-amarillo.png" download>PNG<span>3001 px · 161 KB</span></a>
-              <a class="btn btn-o" href="assets/perfil/maju-perfil-grafito-sobre-amarillo.jpg" download>JPG<span>2576 px · 88 KB</span></a>
-              <a class="btn btn-o" href="assets/perfil/maju-perfil-grafito-sobre-amarillo.svg" download>SVG<span>Vector</span></a>
+            <div class="ad-btns pfp-dl-c">
+              <a class="btn btn-y" href="assets/perfil/maju-perfil-grafito-sobre-amarillo-circular.png" download>PNG<span>Círculo · 124 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-grafito-sobre-amarillo-circular.svg" download>SVG<span>Círculo · vector</span></a>
+            </div>
+            <div class="ad-btns pfp-dl-s">
+              <a class="btn btn-y" href="assets/perfil/maju-perfil-grafito-sobre-amarillo.png" download>PNG<span>Cuadrado · 161 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-grafito-sobre-amarillo.jpg" download>JPG<span>Cuadrado · 88 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-grafito-sobre-amarillo.svg" download>SVG<span>Cuadrado · vector</span></a>
             </div>
           </div>
         </article>
         <article class="card pfp">
-          <div class="pfp-stage" style="background:#1B1D23">
-            <img class="pfp-sq" src="assets/img/perfil-blanco-sobre-grafito.webp" alt="" width="240" height="240" loading="lazy">
-            <img class="pfp-ci" src="assets/img/perfil-blanco-sobre-grafito.webp" alt="Foto de perfil Majú: blanco sobre grafito" width="240" height="240" loading="lazy">
+          <div class="pfp-stage">
+            <img class="pfp-ci" src="assets/img/perfil-blanco-sobre-grafito-circular.webp" alt="Foto de perfil Majú circular: blanco sobre grafito" width="240" height="240" loading="lazy">
+            <img class="pfp-sq" src="assets/img/perfil-blanco-sobre-grafito.webp" alt="Foto de perfil Majú cuadrada: blanco sobre grafito" width="240" height="240" loading="lazy">
           </div>
           <div class="pfp-body">
             <div class="pfp-t"><b>Blanco sobre grafito</b><span class="chip">Neutra</span></div>
             <p>Herramientas internas: Gmail, Slack, Drive, calendario, Zoom.</p>
-            <div class="ad-btns">
-              <a class="btn btn-y" href="assets/perfil/maju-perfil-blanco-sobre-grafito.png" download>PNG<span>3001 px · 157 KB</span></a>
-              <a class="btn btn-o" href="assets/perfil/maju-perfil-blanco-sobre-grafito.jpg" download>JPG<span>2576 px · 85 KB</span></a>
-              <a class="btn btn-o" href="assets/perfil/maju-perfil-blanco-sobre-grafito.svg" download>SVG<span>Vector</span></a>
+            <div class="ad-btns pfp-dl-c">
+              <a class="btn btn-y" href="assets/perfil/maju-perfil-blanco-sobre-grafito-circular.png" download>PNG<span>Círculo · 123 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-blanco-sobre-grafito-circular.svg" download>SVG<span>Círculo · vector</span></a>
+            </div>
+            <div class="ad-btns pfp-dl-s">
+              <a class="btn btn-y" href="assets/perfil/maju-perfil-blanco-sobre-grafito.png" download>PNG<span>Cuadrado · 157 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-blanco-sobre-grafito.jpg" download>JPG<span>Cuadrado · 85 KB</span></a>
+              <a class="btn btn-o" href="assets/perfil/maju-perfil-blanco-sobre-grafito.svg" download>SVG<span>Cuadrado · vector</span></a>
             </div>
           </div>
         </article>
         </div>
         <ul class="rules" style="margin-top:4px">
           <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Una sola foto para todas las cuentas de Majú.</b> Usa la principal; la alterna y la neutra solo en los casos que indica cada una.</span></li>
-          <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Sube el PNG.</b> El JPG es para plataformas que no aceptan PNG. El SVG es para diseño y web.</span></li>
+          <li class="si"><svg class="ico"><use href="#i-check"/></svg><span><b>Para redes, sube el cuadrado:</b> la red lo recorta sola. El círculo es para firmas, presentaciones, web y documentos.</span></li>
           <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>No hagas zoom, no la gires</b> ni le agregues bordes, texto o el logo completo.</span></li>
           <li class="no"><svg class="ico"><use href="#i-x"/></svg><span><b>No uses foto de perfil personal en cuentas de Majú</b> ni la M sin fondo: según el modo claro u oscuro de la app, se pierde.</span></li>
         </ul>
@@ -1138,12 +1155,23 @@ td b{font-weight:500}
       </div>
 
       <div class="board" data-panel="papel" hidden>
-        <div class="mk" style="margin-bottom:24px"><span class="mono"><span>Firma de correo animada · 600 × 200</span><span>GIF</span></span>
-          <img class="shadow" src="assets/img/firma-correo-animada.gif" alt="Firma de correo animada de Juan Pablo, jefe de operaciones de Majú" width="1200" height="401" style="width:100%;max-width:900px;height:auto;border-radius:10px">
+        <div class="mk" style="margin-bottom:24px"><span class="mono"><span>Firma de correo · 600 × 200</span><span>PNG</span></span>
+          <img class="shadow" src="assets/img/firma-correo.webp" alt="Firma de correo de Juan Pablo, jefe de operaciones de Majú" width="1200" height="400" style="width:100%;max-width:900px;height:auto;border-radius:10px">
+          <div class="ad-btns pap-dl">
+            <a class="btn btn-y" href="assets/papeleria/maju-firma-correo-600.png" download>PNG<span>600 × 200 · para Gmail</span></a>
+            <a class="btn btn-o" href="assets/papeleria/maju-firma-correo-1200.png" download>PNG<span>1200 × 400 · pantallas nítidas</span></a>
+            <a class="btn btn-o" href="assets/papeleria/maju-firma-correo.svg" download>SVG<span>Editable · 1.2 MB</span></a>
+          </div>
         </div>
         <div class="biz">
           <figure class="mk" style="margin:0"><span class="mono"><span>Tarjeta · frente</span><span>85 × 55 mm</span></span><img class="shadow" src="assets/img/tarjeta-frente.webp" alt="Frente de la tarjeta: M grafito sobre amarillo con el logo Majú" width="900" height="576"></figure>
           <figure class="mk" style="margin:0"><span class="mono"><span>Tarjeta · respaldo</span><span>QR + datos</span></span><img class="shadow" src="assets/img/tarjeta-respaldo.webp" alt="Respaldo de la tarjeta de Juan Pablo con teléfono, correo y código QR" width="900" height="576"></figure>
+        </div>
+        <div class="ad-btns pap-dl">
+          <a class="btn btn-y" href="assets/papeleria/maju-tarjeta-frente.png" download>Frente<span>PNG · 2732 × 1748</span></a>
+          <a class="btn btn-y" href="assets/papeleria/maju-tarjeta-respaldo.png" download>Respaldo<span>PNG · 2732 × 1748</span></a>
+          <a class="btn btn-o" href="assets/papeleria/maju-tarjeta-frente.svg" download>Frente<span>SVG · imprenta</span></a>
+          <a class="btn btn-o" href="assets/papeleria/maju-tarjeta-respaldo.svg" download>Respaldo<span>SVG · imprenta</span></a>
         </div>
       </div>
 
@@ -1568,7 +1596,7 @@ td b{font-weight:500}
     motion:{'ease-out':'cubic-bezier(.23,1,.32,1)','fast':'160ms','base':'240ms'}
   };
   function tokCss(){
-    var L=['/* Majú · tokens de marca v6.3 · maju-agencia.com */',':root {'];
+    var L=['/* Majú · tokens de marca v6.4 · maju-agencia.com */',':root {'];
     Object.keys(TOK).forEach(function(g){ L.push('  /* '+g+' */'); Object.keys(TOK[g]).forEach(function(k){ L.push('  --maju-'+(g==='color'?'':g+'-')+k+': '+TOK[g][k]+';'); }); });
     L.push('}'); return L.join('\n');
   }
@@ -1595,7 +1623,7 @@ td b{font-weight:500}
 
   /* ── 02 · Descarga de animaciones ── */
   (function(){
-    var A=[{"n": "Revelado del logo completo", "m": "16:9 · 12 s", "thumb": "anim/maju-revelado-logo-baja.gif", "o": [{"k": "alta", "lab": "GIF 1920×1080", "f": "maju-revelado-logo-alta.gif", "s": "2,4 MB"}, {"k": "baja", "lab": "GIF 960×540", "f": "maju-revelado-logo-baja.gif", "s": "651 KB"}, {"k": "mp4", "lab": "MP4 1920×1080", "f": "maju-revelado-logo.mp4", "s": "601 KB"}]}, {"n": "M en bucle · cuadrado", "m": "1:1 · 4 s", "thumb": "anim/maju-m-bucle-cuadrado-baja.gif", "o": [{"k": "alta", "lab": "GIF 1080×1080", "f": "maju-m-bucle-cuadrado-alta.gif", "s": "570 KB"}, {"k": "baja", "lab": "GIF 540×540", "f": "maju-m-bucle-cuadrado-baja.gif", "s": "159 KB"}, {"k": "mp4", "lab": "MP4 1080×1080", "f": "maju-m-bucle-cuadrado.mp4", "s": "121 KB"}]}, {"n": "M en bucle · horizontal", "m": "16:9 · 8 s", "thumb": "anim/maju-m-bucle-horizontal-baja.gif", "o": [{"k": "alta", "lab": "GIF 640×360", "f": "maju-m-bucle-horizontal-alta.gif", "s": "255 KB"}, {"k": "baja", "lab": "GIF 320×180", "f": "maju-m-bucle-horizontal-baja.gif", "s": "117 KB"}]}, {"n": "M para firma de correo", "m": "1:1 · 4 s", "thumb": "anim/maju-m-firma-baja.gif", "o": [{"k": "alta", "lab": "GIF 300×300", "f": "maju-m-firma-alta.gif", "s": "68 KB"}, {"k": "baja", "lab": "GIF 150×150", "f": "maju-m-firma-baja.gif", "s": "32 KB"}]}, {"n": "Firma de correo animada", "m": "Juan Pablo · 8 s", "thumb": "anim/maju-firma-correo-baja.gif", "o": [{"k": "alta", "lab": "GIF 1200×401", "f": "maju-firma-correo-alta.gif", "s": "727 KB"}, {"k": "baja", "lab": "GIF 600×200 · para Gmail", "f": "maju-firma-correo-baja.gif", "s": "148 KB"}]}, {"n": "Portada web animada", "m": "16:9 · 6 s", "thumb": "anim/maju-portada-web-baja.gif", "o": [{"k": "alta", "lab": "GIF 1920×1080", "f": "maju-portada-web-alta.gif", "s": "3,4 MB"}, {"k": "baja", "lab": "GIF 960×540", "f": "maju-portada-web-baja.gif", "s": "1,2 MB"}, {"k": "mp4", "lab": "MP4 1920×1080", "f": "maju-portada-web.mp4", "s": "978 KB"}]}], dl=null;
+    var A=[{"n": "Revelado del logo completo", "m": "16:9 · 12 s", "thumb": "anim/maju-revelado-logo-baja.gif", "o": [{"k": "alta", "lab": "GIF 1920×1080", "f": "maju-revelado-logo-alta.gif", "s": "2,4 MB"}, {"k": "baja", "lab": "GIF 960×540", "f": "maju-revelado-logo-baja.gif", "s": "651 KB"}, {"k": "mp4", "lab": "MP4 1920×1080", "f": "maju-revelado-logo.mp4", "s": "601 KB"}]}, {"n": "M en bucle · cuadrado", "m": "1:1 · 4 s", "thumb": "anim/maju-m-bucle-cuadrado-baja.gif", "o": [{"k": "alta", "lab": "GIF 1080×1080", "f": "maju-m-bucle-cuadrado-alta.gif", "s": "570 KB"}, {"k": "baja", "lab": "GIF 540×540", "f": "maju-m-bucle-cuadrado-baja.gif", "s": "159 KB"}, {"k": "mp4", "lab": "MP4 1080×1080", "f": "maju-m-bucle-cuadrado.mp4", "s": "121 KB"}]}, {"n": "M en bucle · horizontal", "m": "16:9 · 8 s", "thumb": "anim/maju-m-bucle-horizontal-baja.gif", "o": [{"k": "alta", "lab": "GIF 640×360", "f": "maju-m-bucle-horizontal-alta.gif", "s": "255 KB"}, {"k": "baja", "lab": "GIF 320×180", "f": "maju-m-bucle-horizontal-baja.gif", "s": "117 KB"}]}, {"n": "M para firma de correo", "m": "1:1 · 4 s", "thumb": "anim/maju-m-firma-baja.gif", "o": [{"k": "alta", "lab": "GIF 300×300", "f": "maju-m-firma-alta.gif", "s": "68 KB"}, {"k": "baja", "lab": "GIF 150×150", "f": "maju-m-firma-baja.gif", "s": "32 KB"}]}, {"n": "Portada web animada", "m": "16:9 · 6 s", "thumb": "anim/maju-portada-web-baja.gif", "o": [{"k": "alta", "lab": "GIF 1920×1080", "f": "maju-portada-web-alta.gif", "s": "3,4 MB"}, {"k": "baja", "lab": "GIF 960×540", "f": "maju-portada-web-baja.gif", "s": "1,2 MB"}, {"k": "mp4", "lab": "MP4 1920×1080", "f": "maju-portada-web.mp4", "s": "978 KB"}]}], dl=null;
     $('#adList').innerHTML=A.map(function(a){
       return '<div class="ad-row"><img class="ad-thumb" src="'+a.thumb+'" alt="" loading="lazy"><div><b>'+a.n+'</b><small>'+a.m+'</small></div><div class="ad-btns">'+
         a.o.map(function(o){ return '<button class="btn '+(o.k==='alta'?'btn-y':'btn-o')+'" data-af="'+o.f+'">'+(o.k==='alta'?'Alta':o.k==='baja'?'Baja':'MP4')+'<span>'+o.lab+' · '+o.s+'</span></button>'; }).join('')+'</div></div>';
@@ -1620,7 +1648,7 @@ td b{font-weight:500}
 
   /* ── Novedades ── */
   (function(){
-    var N=[{"v": "v6.3", "d": "16 oct 2026", "t": "Dominio oficial: maju-agencia.com", "i": ["El dominio de Majú es maju-agencia.com, con guion. Se corrigió en el manual, la guía de copy y los tokens.", "Si ves maju.agencia.com (con punto) en alguna pieza, está desactualizada: no la uses.", "Fondos, presentaciones, tarjeta y firma de correo se actualizan en la próxima versión."]}, {"v": "v6.2", "d": "16 oct 2026", "t": "Foto de perfil", "i": ["Logo con fondo para redes en tres versiones: principal, alterna y neutra.", "Descarga en PNG, JPG y SVG, con vista previa en círculo y cuadrado."]}, {"v": "v6.1", "d": "16 oct 2026", "t": "Versión web para todo el equipo", "i": ["El manual vive en su propia web y funciona en cualquier navegador.", "Todas las descargas son directas: logos, animaciones, tokens y presentaciones.", "Presentaciones rehechas con fondos en 4K y textos editables.", "Fondos de presentación sueltos en 4K."]}, {"v": "v6", "d": "4 oct 2026", "t": "Descargas, novedades y comentarios", "i": ["Descarga de las animaciones de la M y del logo completo en Alta, Baja y MP4.", "Esta sección de novedades.", "Botón Comentar en cada capítulo para dejar notas."]}, {"v": "v5.1", "d": "4 oct 2026", "t": "Cierre editable", "i": ["El slide “Gracias totales” tiene los textos de las esquinas editables."]}, {"v": "v5", "d": "4 oct 2026", "t": "Un manual para todo el equipo", "i": ["Rutas por rol en la portada.", "Presentaciones que se crean en tu Google Drive.", "Enlaces y uso de las fuentes.", "Capítulos Copy y cuentas, y Guía web."]}, {"v": "v4", "d": "4 oct 2026", "t": "Kit de descarga", "i": ["Logo en SVG y PNG con fondo transparente.", "Tarjeta de presentación oficial.", "Capítulo de presentaciones."]}, {"v": "v3", "d": "4 oct 2026", "t": "Piezas reales", "i": ["Logo corregido.", "Posts, fotografía, merch, firma y portada web reales."]}, {"v": "v2", "d": "4 oct 2026", "t": "Dirección tech", "i": ["M viva en puntos, animaciones, buscador y modo práctica."]}, {"v": "v1", "d": "4 oct 2026", "t": "Primera versión", "i": ["Manual navegable con la estructura del manual de Licsy."]}], last=null; try{ last=localStorage.getItem('maju-nov'); }catch(e){}
+    var N=[{"v": "v6.4", "d": "16 oct 2026", "t": "Dominio corregido en todas las piezas", "i": ["Fondos 4K y las 4 presentaciones con maju-agencia.com.", "Nueva tarjeta de presentación y firma de correo, descargables en PNG y SVG.", "Foto de perfil: el botón Círculo o Cuadrado ahora descarga la forma que ves, sin halo cuadrado.", "La firma de correo animada sale de las descargas hasta tener su versión con el dominio nuevo."]}, {"v": "v6.3", "d": "16 oct 2026", "t": "Dominio oficial: maju-agencia.com", "i": ["El dominio de Majú es maju-agencia.com, con guion. Se corrigió en el manual, la guía de copy y los tokens.", "Si ves maju.agencia.com (con punto) en alguna pieza, está desactualizada: no la uses.", "Fondos, presentaciones, tarjeta y firma de correo se actualizan en la próxima versión."]}, {"v": "v6.2", "d": "16 oct 2026", "t": "Foto de perfil", "i": ["Logo con fondo para redes en tres versiones: principal, alterna y neutra.", "Descarga en PNG, JPG y SVG, con vista previa en círculo y cuadrado."]}, {"v": "v6.1", "d": "16 oct 2026", "t": "Versión web para todo el equipo", "i": ["El manual vive en su propia web y funciona en cualquier navegador.", "Todas las descargas son directas: logos, animaciones, tokens y presentaciones.", "Presentaciones rehechas con fondos en 4K y textos editables.", "Fondos de presentación sueltos en 4K."]}, {"v": "v6", "d": "4 oct 2026", "t": "Descargas, novedades y comentarios", "i": ["Descarga de las animaciones de la M y del logo completo en Alta, Baja y MP4.", "Esta sección de novedades.", "Botón Comentar en cada capítulo para dejar notas."]}, {"v": "v5.1", "d": "4 oct 2026", "t": "Cierre editable", "i": ["El slide “Gracias totales” tiene los textos de las esquinas editables."]}, {"v": "v5", "d": "4 oct 2026", "t": "Un manual para todo el equipo", "i": ["Rutas por rol en la portada.", "Presentaciones que se crean en tu Google Drive.", "Enlaces y uso de las fuentes.", "Capítulos Copy y cuentas, y Guía web."]}, {"v": "v4", "d": "4 oct 2026", "t": "Kit de descarga", "i": ["Logo en SVG y PNG con fondo transparente.", "Tarjeta de presentación oficial.", "Capítulo de presentaciones."]}, {"v": "v3", "d": "4 oct 2026", "t": "Piezas reales", "i": ["Logo corregido.", "Posts, fotografía, merch, firma y portada web reales."]}, {"v": "v2", "d": "4 oct 2026", "t": "Dirección tech", "i": ["M viva en puntos, animaciones, buscador y modo práctica."]}, {"v": "v1", "d": "4 oct 2026", "t": "Primera versión", "i": ["Manual navegable con la estructura del manual de Licsy."]}], last=null; try{ last=localStorage.getItem('maju-nov'); }catch(e){}
     var cur=N[0].v, nov=$('#nov');
     if(last!==cur) $('#novDot').hidden=false;
     function idx(v){ for(var i=0;i<N.length;i++) if(N[i].v===v) return i; return N.length; }
@@ -1728,7 +1756,7 @@ td b{font-weight:500}
   var ITEMS=[].concat(
     ixs.map(function(a){ return {t:a.textContent.trim().replace(/^\d+/,''),k:'Capítulo '+a.querySelector('.n').textContent,go:'#'+a.dataset.s}; }),
     SW.map(function(s){ return {t:s.n+' · '+s.hex,k:'Copiar HEX',c:s.hex,sw:s.bg}; }),
-    [{t:'Descargar logo en SVG o PNG',k:'Kit',go:'#kit'},{t:'Foto de perfil para redes (PNG, JPG, SVG)',k:'Logo',go:'#perfil'},{t:'Plantillas de Google Slides',k:'Presentaciones',go:'#presentaciones'},{t:'Fondos de presentación en 4K',k:'Presentaciones',go:'#presentaciones'},{t:'Descargar fuentes Geist e Inter',k:'Tipografía',go:'#tipografia'},{t:'Descargar animaciones de la M (GIF y MP4)',k:'Movimiento',go:'#animDl'},{t:'Tagline y párrafo Sobre Majú',k:'Copy',go:'#copy'},{t:'Cómo escribir el nombre Majú',k:'Copy',go:'#copy'},{t:'Variables CSS y tokens',k:'Desarrollo',go:'#web'},{t:'Colores y fuentes de Elementor',k:'Desarrollo',go:'#web'},{t:'Botón principal (CSS)',k:'Desarrollo',go:'#web'},{t:'Tarjeta de presentación',k:'Pieza',go:'#aplicaciones'},{t:'Copiar SVG del logo (amarillo)',k:'SVG',svg:'wm'},{t:'Copiar SVG del símbolo (amarillo)',k:'SVG',svg:'m'},
+    [{t:'Descargar logo en SVG o PNG',k:'Kit',go:'#kit'},{t:'Foto de perfil para redes (PNG, JPG, SVG)',k:'Logo',go:'#perfil'},{t:'Firma de correo y tarjeta de presentación',k:'Papelería',go:'#aplicaciones'},{t:'Plantillas de Google Slides',k:'Presentaciones',go:'#presentaciones'},{t:'Fondos de presentación en 4K',k:'Presentaciones',go:'#presentaciones'},{t:'Descargar fuentes Geist e Inter',k:'Tipografía',go:'#tipografia'},{t:'Descargar animaciones de la M (GIF y MP4)',k:'Movimiento',go:'#animDl'},{t:'Tagline y párrafo Sobre Majú',k:'Copy',go:'#copy'},{t:'Cómo escribir el nombre Majú',k:'Copy',go:'#copy'},{t:'Variables CSS y tokens',k:'Desarrollo',go:'#web'},{t:'Colores y fuentes de Elementor',k:'Desarrollo',go:'#web'},{t:'Botón principal (CSS)',k:'Desarrollo',go:'#web'},{t:'Tarjeta de presentación',k:'Pieza',go:'#aplicaciones'},{t:'Copiar SVG del logo (amarillo)',k:'SVG',svg:'wm'},{t:'Copiar SVG del símbolo (amarillo)',k:'SVG',svg:'m'},
      {t:'Tamaño mínimo del logo',k:'Regla',go:'#espacio'},{t:'Amarillo sobre blanco',k:'Regla',go:'#usos'},{t:'Animaciones de la M',k:'Regla',go:'#movimiento'},{t:'Firma de correo',k:'Pieza',go:'#aplicaciones'},{t:'Fuentes: Geist, Inter, Geist Mono',k:'Regla',go:'#tipografia'}]
   );
   var pal=$('#pal'), pq=$('#palQ'), pl=$('#palL'), sel=0, list=[], lastFocus=null;
