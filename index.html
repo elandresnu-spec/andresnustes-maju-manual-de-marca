@@ -673,7 +673,7 @@ td b{font-weight:500}
 <header class="top gut">
   <a class="brand" href="#inicio" aria-label="Majú, ir al inicio">
     <svg viewBox="0 0 594 270" aria-hidden="true"><use href="#wm"/></svg>
-    <span class="mono">Manual de marca · v6.4</span>
+    <span class="mono">Manual de marca · v6.5</span>
   </a>
   <span class="sp"></span>
   <span class="status mono"><i></i>Propuesta 2 · aprobación</span>
@@ -710,7 +710,7 @@ td b{font-weight:500}
       <canvas id="field" aria-hidden="true"></canvas>
       <div class="grid" aria-hidden="true"></div>
       <div class="hero-copy">
-        <span class="pill-lg"><b>v6.4</b>Identidad visual · Majú Agencia S.A.S.</span>
+        <span class="pill-lg"><b>v6.5</b>Identidad visual · Majú Agencia S.A.S.</span>
         <h1>Manual de <span class="y">marca</span><span class="cur" aria-hidden="true"></span></h1>
         <p class="sub">Las reglas para que Majú se vea igual de fuerte en un post, una web o una tarjeta. <b>Pasión que rinde cuentas</b>, también en cada píxel.</p>
         <div class="hero-ctas">
@@ -1165,13 +1165,25 @@ td b{font-weight:500}
         </div>
         <div class="biz">
           <figure class="mk" style="margin:0"><span class="mono"><span>Tarjeta · frente</span><span>85 × 55 mm</span></span><img class="shadow" src="assets/img/tarjeta-frente.webp" alt="Frente de la tarjeta: M grafito sobre amarillo con el logo Majú" width="900" height="576"></figure>
-          <figure class="mk" style="margin:0"><span class="mono"><span>Tarjeta · respaldo</span><span>QR + datos</span></span><img class="shadow" src="assets/img/tarjeta-respaldo.webp" alt="Respaldo de la tarjeta de Juan Pablo con teléfono, correo y código QR" width="900" height="576"></figure>
+          <figure class="mk" style="margin:0"><span class="mono"><span>Tarjeta · respaldo</span><span>QR Majú + datos</span></span><img class="shadow" src="assets/img/tarjeta-respaldo.webp" alt="Respaldo de la tarjeta de Juan Pablo con teléfono, correo y código QR" width="900" height="576"></figure>
         </div>
         <div class="ad-btns pap-dl">
           <a class="btn btn-y" href="assets/papeleria/maju-tarjeta-frente.png" download>Frente<span>PNG · 2732 × 1748</span></a>
           <a class="btn btn-y" href="assets/papeleria/maju-tarjeta-respaldo.png" download>Respaldo<span>PNG · 2732 × 1748</span></a>
           <a class="btn btn-o" href="assets/papeleria/maju-tarjeta-frente.svg" download>Frente<span>SVG · imprenta</span></a>
           <a class="btn btn-o" href="assets/papeleria/maju-tarjeta-respaldo.svg" download>Respaldo<span>SVG · imprenta</span></a>
+        </div>
+        <div class="card" style="margin-top:16px;padding:18px;display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+          <img src="assets/papeleria/maju-qr-tarjeta.png" alt="Código QR de Majú con la M dibujada en puntos" width="140" height="140" style="border-radius:10px">
+          <div style="flex:1 1 280px;display:flex;flex-direction:column;gap:8px">
+            <b style="font-family:var(--d);font-weight:500;font-size:18px;letter-spacing:-.02em">QR de la tarjeta</b>
+            <p style="color:var(--tx2);font-size:14px">La M está dibujada con los mismos puntos del código. Lleva a <b>maju-agencia.com</b>. Imprímelo de mínimo <b>2,5 cm</b> de lado, sin cambiarle los colores, y pruébalo con dos celulares antes de mandar a imprenta.</p>
+            <div class="ad-btns pap-dl" style="margin-top:2px">
+              <a class="btn btn-y" href="assets/papeleria/maju-qr-tarjeta.svg" download>SVG<span>Con fondo amarillo</span></a>
+              <a class="btn btn-o" href="assets/papeleria/maju-qr-tarjeta-transparente.svg" download>SVG<span>Fondo transparente</span></a>
+              <a class="btn btn-o" href="assets/papeleria/maju-qr-tarjeta.png" download>PNG<span>2000 px</span></a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1596,7 +1608,7 @@ td b{font-weight:500}
     motion:{'ease-out':'cubic-bezier(.23,1,.32,1)','fast':'160ms','base':'240ms'}
   };
   function tokCss(){
-    var L=['/* Majú · tokens de marca v6.4 · maju-agencia.com */',':root {'];
+    var L=['/* Majú · tokens de marca v6.5 · maju-agencia.com */',':root {'];
     Object.keys(TOK).forEach(function(g){ L.push('  /* '+g+' */'); Object.keys(TOK[g]).forEach(function(k){ L.push('  --maju-'+(g==='color'?'':g+'-')+k+': '+TOK[g][k]+';'); }); });
     L.push('}'); return L.join('\n');
   }
@@ -1648,7 +1660,7 @@ td b{font-weight:500}
 
   /* ── Novedades ── */
   (function(){
-    var N=[{"v": "v6.4", "d": "16 oct 2026", "t": "Dominio corregido en todas las piezas", "i": ["Fondos 4K y las 4 presentaciones con maju-agencia.com.", "Nueva tarjeta de presentación y firma de correo, descargables en PNG y SVG.", "Foto de perfil: el botón Círculo o Cuadrado ahora descarga la forma que ves, sin halo cuadrado.", "La firma de correo animada sale de las descargas hasta tener su versión con el dominio nuevo."]}, {"v": "v6.3", "d": "16 oct 2026", "t": "Dominio oficial: maju-agencia.com", "i": ["El dominio de Majú es maju-agencia.com, con guion. Se corrigió en el manual, la guía de copy y los tokens.", "Si ves maju.agencia.com (con punto) en alguna pieza, está desactualizada: no la uses.", "Fondos, presentaciones, tarjeta y firma de correo se actualizan en la próxima versión."]}, {"v": "v6.2", "d": "16 oct 2026", "t": "Foto de perfil", "i": ["Logo con fondo para redes en tres versiones: principal, alterna y neutra.", "Descarga en PNG, JPG y SVG, con vista previa en círculo y cuadrado."]}, {"v": "v6.1", "d": "16 oct 2026", "t": "Versión web para todo el equipo", "i": ["El manual vive en su propia web y funciona en cualquier navegador.", "Todas las descargas son directas: logos, animaciones, tokens y presentaciones.", "Presentaciones rehechas con fondos en 4K y textos editables.", "Fondos de presentación sueltos en 4K."]}, {"v": "v6", "d": "4 oct 2026", "t": "Descargas, novedades y comentarios", "i": ["Descarga de las animaciones de la M y del logo completo en Alta, Baja y MP4.", "Esta sección de novedades.", "Botón Comentar en cada capítulo para dejar notas."]}, {"v": "v5.1", "d": "4 oct 2026", "t": "Cierre editable", "i": ["El slide “Gracias totales” tiene los textos de las esquinas editables."]}, {"v": "v5", "d": "4 oct 2026", "t": "Un manual para todo el equipo", "i": ["Rutas por rol en la portada.", "Presentaciones que se crean en tu Google Drive.", "Enlaces y uso de las fuentes.", "Capítulos Copy y cuentas, y Guía web."]}, {"v": "v4", "d": "4 oct 2026", "t": "Kit de descarga", "i": ["Logo en SVG y PNG con fondo transparente.", "Tarjeta de presentación oficial.", "Capítulo de presentaciones."]}, {"v": "v3", "d": "4 oct 2026", "t": "Piezas reales", "i": ["Logo corregido.", "Posts, fotografía, merch, firma y portada web reales."]}, {"v": "v2", "d": "4 oct 2026", "t": "Dirección tech", "i": ["M viva en puntos, animaciones, buscador y modo práctica."]}, {"v": "v1", "d": "4 oct 2026", "t": "Primera versión", "i": ["Manual navegable con la estructura del manual de Licsy."]}], last=null; try{ last=localStorage.getItem('maju-nov'); }catch(e){}
+    var N=[{"v": "v6.5", "d": "16 oct 2026", "t": "QR de marca en la tarjeta", "i": ["Nuevo QR con la M dibujada en puntos, que lleva a maju-agencia.com.", "Respaldo de la tarjeta corregido, sin el correo viejo.", "QR descargable en SVG y PNG en Papelería."]}, {"v": "v6.4", "d": "16 oct 2026", "t": "Dominio corregido en todas las piezas", "i": ["Fondos 4K y las 4 presentaciones con maju-agencia.com.", "Nueva tarjeta de presentación y firma de correo, descargables en PNG y SVG.", "Foto de perfil: el botón Círculo o Cuadrado ahora descarga la forma que ves, sin halo cuadrado.", "La firma de correo animada sale de las descargas hasta tener su versión con el dominio nuevo."]}, {"v": "v6.3", "d": "16 oct 2026", "t": "Dominio oficial: maju-agencia.com", "i": ["El dominio de Majú es maju-agencia.com, con guion. Se corrigió en el manual, la guía de copy y los tokens.", "Si ves maju.agencia.com (con punto) en alguna pieza, está desactualizada: no la uses.", "Fondos, presentaciones, tarjeta y firma de correo se actualizan en la próxima versión."]}, {"v": "v6.2", "d": "16 oct 2026", "t": "Foto de perfil", "i": ["Logo con fondo para redes en tres versiones: principal, alterna y neutra.", "Descarga en PNG, JPG y SVG, con vista previa en círculo y cuadrado."]}, {"v": "v6.1", "d": "16 oct 2026", "t": "Versión web para todo el equipo", "i": ["El manual vive en su propia web y funciona en cualquier navegador.", "Todas las descargas son directas: logos, animaciones, tokens y presentaciones.", "Presentaciones rehechas con fondos en 4K y textos editables.", "Fondos de presentación sueltos en 4K."]}, {"v": "v6", "d": "4 oct 2026", "t": "Descargas, novedades y comentarios", "i": ["Descarga de las animaciones de la M y del logo completo en Alta, Baja y MP4.", "Esta sección de novedades.", "Botón Comentar en cada capítulo para dejar notas."]}, {"v": "v5.1", "d": "4 oct 2026", "t": "Cierre editable", "i": ["El slide “Gracias totales” tiene los textos de las esquinas editables."]}, {"v": "v5", "d": "4 oct 2026", "t": "Un manual para todo el equipo", "i": ["Rutas por rol en la portada.", "Presentaciones que se crean en tu Google Drive.", "Enlaces y uso de las fuentes.", "Capítulos Copy y cuentas, y Guía web."]}, {"v": "v4", "d": "4 oct 2026", "t": "Kit de descarga", "i": ["Logo en SVG y PNG con fondo transparente.", "Tarjeta de presentación oficial.", "Capítulo de presentaciones."]}, {"v": "v3", "d": "4 oct 2026", "t": "Piezas reales", "i": ["Logo corregido.", "Posts, fotografía, merch, firma y portada web reales."]}, {"v": "v2", "d": "4 oct 2026", "t": "Dirección tech", "i": ["M viva en puntos, animaciones, buscador y modo práctica."]}, {"v": "v1", "d": "4 oct 2026", "t": "Primera versión", "i": ["Manual navegable con la estructura del manual de Licsy."]}], last=null; try{ last=localStorage.getItem('maju-nov'); }catch(e){}
     var cur=N[0].v, nov=$('#nov');
     if(last!==cur) $('#novDot').hidden=false;
     function idx(v){ for(var i=0;i<N.length;i++) if(N[i].v===v) return i; return N.length; }
@@ -1756,7 +1768,7 @@ td b{font-weight:500}
   var ITEMS=[].concat(
     ixs.map(function(a){ return {t:a.textContent.trim().replace(/^\d+/,''),k:'Capítulo '+a.querySelector('.n').textContent,go:'#'+a.dataset.s}; }),
     SW.map(function(s){ return {t:s.n+' · '+s.hex,k:'Copiar HEX',c:s.hex,sw:s.bg}; }),
-    [{t:'Descargar logo en SVG o PNG',k:'Kit',go:'#kit'},{t:'Foto de perfil para redes (PNG, JPG, SVG)',k:'Logo',go:'#perfil'},{t:'Firma de correo y tarjeta de presentación',k:'Papelería',go:'#aplicaciones'},{t:'Plantillas de Google Slides',k:'Presentaciones',go:'#presentaciones'},{t:'Fondos de presentación en 4K',k:'Presentaciones',go:'#presentaciones'},{t:'Descargar fuentes Geist e Inter',k:'Tipografía',go:'#tipografia'},{t:'Descargar animaciones de la M (GIF y MP4)',k:'Movimiento',go:'#animDl'},{t:'Tagline y párrafo Sobre Majú',k:'Copy',go:'#copy'},{t:'Cómo escribir el nombre Majú',k:'Copy',go:'#copy'},{t:'Variables CSS y tokens',k:'Desarrollo',go:'#web'},{t:'Colores y fuentes de Elementor',k:'Desarrollo',go:'#web'},{t:'Botón principal (CSS)',k:'Desarrollo',go:'#web'},{t:'Tarjeta de presentación',k:'Pieza',go:'#aplicaciones'},{t:'Copiar SVG del logo (amarillo)',k:'SVG',svg:'wm'},{t:'Copiar SVG del símbolo (amarillo)',k:'SVG',svg:'m'},
+    [{t:'Descargar logo en SVG o PNG',k:'Kit',go:'#kit'},{t:'Foto de perfil para redes (PNG, JPG, SVG)',k:'Logo',go:'#perfil'},{t:'Firma de correo y tarjeta de presentación',k:'Papelería',go:'#aplicaciones'},{t:'Código QR con la M',k:'Papelería',go:'#aplicaciones'},{t:'Plantillas de Google Slides',k:'Presentaciones',go:'#presentaciones'},{t:'Fondos de presentación en 4K',k:'Presentaciones',go:'#presentaciones'},{t:'Descargar fuentes Geist e Inter',k:'Tipografía',go:'#tipografia'},{t:'Descargar animaciones de la M (GIF y MP4)',k:'Movimiento',go:'#animDl'},{t:'Tagline y párrafo Sobre Majú',k:'Copy',go:'#copy'},{t:'Cómo escribir el nombre Majú',k:'Copy',go:'#copy'},{t:'Variables CSS y tokens',k:'Desarrollo',go:'#web'},{t:'Colores y fuentes de Elementor',k:'Desarrollo',go:'#web'},{t:'Botón principal (CSS)',k:'Desarrollo',go:'#web'},{t:'Tarjeta de presentación',k:'Pieza',go:'#aplicaciones'},{t:'Copiar SVG del logo (amarillo)',k:'SVG',svg:'wm'},{t:'Copiar SVG del símbolo (amarillo)',k:'SVG',svg:'m'},
      {t:'Tamaño mínimo del logo',k:'Regla',go:'#espacio'},{t:'Amarillo sobre blanco',k:'Regla',go:'#usos'},{t:'Animaciones de la M',k:'Regla',go:'#movimiento'},{t:'Firma de correo',k:'Pieza',go:'#aplicaciones'},{t:'Fuentes: Geist, Inter, Geist Mono',k:'Regla',go:'#tipografia'}]
   );
   var pal=$('#pal'), pq=$('#palQ'), pl=$('#palL'), sel=0, list=[], lastFocus=null;
